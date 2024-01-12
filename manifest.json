@@ -1,6 +1,11 @@
 {
   "short_name": "Hiiter Demo",
   "name": "Hiiter Demo App",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#ffffff",
+  "background_color": "#EE817B",
   "icons": [
     {
       "src": "favicon.ico",
@@ -17,10 +22,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#EE817B",
-  "orientation": "portrait"
+  ]
 }
