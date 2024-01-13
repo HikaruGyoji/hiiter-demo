@@ -1,10 +1,11 @@
 .card-img {
   width: 100px;
+  margin-top: 20px;
 }
 
 .card-wrapper {
   display: flex;
-  padding: 25px 40px 0;
+  padding: 0px 35px;
   flex-direction: column;
   background-color: white;
   margin: 10px;
@@ -13,4 +14,5 @@
 
 .card-wrapper p {
   color: black;
+  margin: 3px;
 }

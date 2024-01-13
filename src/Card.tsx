@@ -14,7 +14,7 @@ function Card() {
 
   // カードが選択されているかどうかに応じてスタイルを設定
   const cardStyle = {
-    backgroundColor: isSelected ? '#ee817b' : 'white',
+    backgroundColor: isSelected ? '#f6afaa' : 'white',
   };
 
   return (
