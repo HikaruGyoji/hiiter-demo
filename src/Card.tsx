@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './styles/Card.css';
-import muscle from './assets/img/muscle.png';
 
-function Card() {
+function Card(props: { img: string; title: string }) {
   // カードが選択されているかどうかを管理する状態
   const [isSelected, setIsSelected] = useState(false);
 
@@ -19,8 +18,8 @@ function Card() {
 
   return (
     <div className='card-wrapper' style={cardStyle} onClick={handleClick}>
-      <img src={muscle} alt='' className='card-img' />
-      <p>筋力アップ</p>
+      <img src={props.img} alt='' className='card-img' />
+      <p>{props.title}</p>
     </div>
   );
 }

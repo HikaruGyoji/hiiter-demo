@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import './styles/UserInfo1.css';
 import Header from './Header';
 import Card from './Card';
+import easy from './assets/img/easy.png';
+import normal from './assets/img/normal.png';
+import difficult from './assets/img/difficult.png';
 
 function UserInfo2() {
   return (
@@ -13,16 +16,16 @@ function UserInfo2() {
         <header className='userinfo-header'>
           <div className='userinfo1-wrapper'>
             <div className='card-boxes'>
-              <Card />
-              <Card />
+              <Card img={easy} title={'初級'} />
+              <Card img={normal} title={'中級'} />
             </div>
             <div className='card-boxes'>
-              <Card />
-              <Card />
+              <Card img={difficult} title={'上級'} />
+              <Card img={easy} title={'初級'} />
             </div>
             <div className='card-boxes'>
-              <Card />
-              <Card />
+              <Card img={easy} title={'初級'} />
+              <Card img={easy} title={'初級'} />
             </div>
           </div>
 
