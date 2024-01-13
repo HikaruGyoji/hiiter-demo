@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/hiiter-demo/static/css/main.0cafb0f0.css",
-    "main.js": "/hiiter-demo/static/js/main.bd800fc4.js",
+    "main.css": "/hiiter-demo/static/css/main.974fc339.css",
+    "main.js": "/hiiter-demo/static/js/main.f24bc49d.js",
     "static/js/787.89c1857e.chunk.js": "/hiiter-demo/static/js/787.89c1857e.chunk.js",
     "static/media/logo.png": "/hiiter-demo/static/media/logo.1a4e0cc4e09b0c5c12de.png",
     "service-worker.js": "/hiiter-demo/service-worker.js",
     "index.html": "/hiiter-demo/index.html",
-    "main.0cafb0f0.css.map": "/hiiter-demo/static/css/main.0cafb0f0.css.map",
-    "main.bd800fc4.js.map": "/hiiter-demo/static/js/main.bd800fc4.js.map",
+    "main.974fc339.css.map": "/hiiter-demo/static/css/main.974fc339.css.map",
+    "main.f24bc49d.js.map": "/hiiter-demo/static/js/main.f24bc49d.js.map",
     "787.89c1857e.chunk.js.map": "/hiiter-demo/static/js/787.89c1857e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0cafb0f0.css",
-    "static/js/main.bd800fc4.js"
+    "static/css/main.974fc339.css",
+    "static/js/main.f24bc49d.js"
   ]
 }
