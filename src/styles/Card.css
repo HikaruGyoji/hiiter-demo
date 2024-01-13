@@ -1,0 +1,16 @@
+.card-img {
+  width: 100px;
+}
+
+.card-wrapper {
+  display: flex;
+  padding: 25px 40px 0;
+  flex-direction: column;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.card-wrapper p {
+  color: black;
+}
