@@ -4,9 +4,9 @@ import Header from './Header';
 
 function Login() {
   return (
-    <>
+    <div className='Login'>
       <Header name='ログイン' />
-      <div className='Login'>
+      <div>
         <header className='Login-header'>
           <input
             className='input-box'
@@ -33,12 +33,9 @@ function Login() {
           <Link to='/login' className='button -x'>
             Xでログイン
           </Link>
-          <Routes>
-            <Route path='/login' element={<Login />} />
-          </Routes>
         </header>
       </div>
-    </>
+    </div>
   );
 }
 

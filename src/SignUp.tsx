@@ -1,13 +1,12 @@
 import { Routes, Route, Link } from 'react-router-dom';
-import './styles/Login.css';
+import './styles/SignUp.css';
 import Header from './Header';
-import Login from './Login';
 
 function SignUp() {
   return (
-    <>
+    <div className='signup'>
       <Header name='新規登録' />
-      <div className='Login'>
+      <div>
         <header className='Login-header'>
           <input
             className='input-box'
@@ -22,24 +21,21 @@ function SignUp() {
             placeholder='パスワード'
           />
 
-          <Link to='/signup' className='button -primary'>
+          <Link to='/userinfo1' className='button -primary'>
             メールアドレスで登録
           </Link>
-          <Link to='/login' className='button -google'>
+          <Link to='/userinfo1' className='button -google'>
             Googleでサインアップ
           </Link>
-          <Link to='/signup' className='button -line'>
+          <Link to='/userinfo1' className='button -line'>
             Lineでサインアップ
           </Link>
-          <Link to='/login' className='button -x'>
+          <Link to='/userinfo1' className='button -x'>
             Xでサインアップ
           </Link>
-          <Routes>
-            <Route path='/login' element={<Login />} />
-          </Routes>
         </header>
       </div>
-    </>
+    </div>
   );
 }
 

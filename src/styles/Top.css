@@ -7,12 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .Top-logo {
-    animation: Top-logo-spin infinite 20s linear;
-  }
-}
-
 .Top-header {
   background-image: linear-gradient(
     180deg,
@@ -38,7 +32,7 @@
 }
 
 .button {
-  width: 340px;
+  width: 280px;
   padding: 10px 15px;
   font-size: 16px;
   color: white;
@@ -71,7 +65,7 @@
 }
 
 .input-box {
-  width: 325px;
+  width: 280px;
   height: 35px;
   border: none;
   margin-bottom: 10px;
