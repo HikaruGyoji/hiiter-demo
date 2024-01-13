@@ -1,16 +1,16 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './Login';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Top from './Top';
+import Login from './Login';
+import SignUp from './SignUp';
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Top />} />
-        <Route path='/login' element={<Login />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+const App = () => (
+  <HashRouter>
+    <Routes>
+      <Route path='/' element={<Top />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<SignUp />} />
+    </Routes>
+  </HashRouter>
+);
 
 export default App;

@@ -38,8 +38,8 @@
 }
 
 .button {
-  width: 250px;
-  padding: 15px;
+  width: 340px;
+  padding: 10px 15px;
   font-size: 16px;
   color: white;
   border: none;
@@ -63,11 +63,19 @@
 }
 
 .-line {
-  background-color: #0f0;
+  background-color: #00bc00;
 }
 
 .-x {
   background-color: #000;
+}
+
+.input-box {
+  width: 325px;
+  height: 35px;
+  border: none;
+  margin-bottom: 10px;
+  padding: 0 20px;
 }
 
 @keyframes Top-logo-spin {
