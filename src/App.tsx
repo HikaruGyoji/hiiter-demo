@@ -1,16 +1,15 @@
-import React from 'react';
-import logo from './logo.png';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './Login';
+import Top from './Top';
 
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='logo-position' alt='logo' />
-        <button className='start-button'>さぁ始めよう</button>
-        <button className='account-button'>アカウントをお持ちの方</button>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Top />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

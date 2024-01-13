@@ -1,0 +1,47 @@
+.Login {
+  text-align: center;
+}
+
+.Login-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: #f6afaa;
+}
+
+.button {
+  width: 250px;
+  padding: 15px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.-primary {
+  background-color: #ee817b;
+}
+
+.-secondary {
+  background-color: #f6afaa;
+}
+
+.-google {
+  background-color: #fff;
+  color: #000;
+}
+
+.-line {
+  background-color: #0f0;
+}
+
+.-x {
+  background-color: #000;
+}
