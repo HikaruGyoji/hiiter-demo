@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hiiter-demo/static/css/main.bdd6521e.css",
-    "main.js": "/hiiter-demo/static/js/main.da5b2e7f.js",
+    "main.css": "/hiiter-demo/static/css/main.65e2da6f.css",
+    "main.js": "/hiiter-demo/static/js/main.bc32d9ff.js",
     "static/js/787.89c1857e.chunk.js": "/hiiter-demo/static/js/787.89c1857e.chunk.js",
     "static/media/difficult.png": "/hiiter-demo/static/media/difficult.c9454f796801584da16a.png",
     "static/media/muscle.png": "/hiiter-demo/static/media/muscle.65ac31080e774b49dd7f.png",
@@ -12,12 +12,12 @@
     "static/media/diet.png": "/hiiter-demo/static/media/diet.a6d2eb175e02b8276a32.png",
     "service-worker.js": "/hiiter-demo/service-worker.js",
     "index.html": "/hiiter-demo/index.html",
-    "main.bdd6521e.css.map": "/hiiter-demo/static/css/main.bdd6521e.css.map",
-    "main.da5b2e7f.js.map": "/hiiter-demo/static/js/main.da5b2e7f.js.map",
+    "main.65e2da6f.css.map": "/hiiter-demo/static/css/main.65e2da6f.css.map",
+    "main.bc32d9ff.js.map": "/hiiter-demo/static/js/main.bc32d9ff.js.map",
     "787.89c1857e.chunk.js.map": "/hiiter-demo/static/js/787.89c1857e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bdd6521e.css",
-    "static/js/main.da5b2e7f.js"
+    "static/css/main.65e2da6f.css",
+    "static/js/main.bc32d9ff.js"
   ]
 }
