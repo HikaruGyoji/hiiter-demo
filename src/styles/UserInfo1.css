@@ -31,3 +31,29 @@
 .userinfo-span {
   font-size: 12px;
 }
+
+.userinfo-header label {
+  color: black;
+}
+
+.userinfo-header select {
+  width: 320px;
+}
+
+.userinfo-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.userinfo-message {
+  margin: 20px 0;
+}
+
+.userinfo-message p {
+  margin: 0;
+}
+
+.userinfo-wrapper {
+  margin-bottom: 20px;
+}

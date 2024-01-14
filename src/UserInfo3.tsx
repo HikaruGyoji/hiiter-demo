@@ -20,7 +20,7 @@ function UserInfo3() {
               <Card img={muscle} title={'筋力アップ'} />
             </div>
             <div className='card-boxes'>
-              <Card img={health} title={'健康増進'} />{' '}
+              <Card img={health} title={'健康増進'} />
               <Card img={muscle} title={'筋力アップ'} />
             </div>
             <div className='card-boxes'>

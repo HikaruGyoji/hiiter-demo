@@ -21,11 +21,6 @@ function UserInfo2() {
             </div>
             <div className='card-boxes'>
               <Card img={difficult} title={'上級'} />
-              <Card img={easy} title={'初級'} />
-            </div>
-            <div className='card-boxes'>
-              <Card img={easy} title={'初級'} />
-              <Card img={easy} title={'初級'} />
             </div>
           </div>
 
