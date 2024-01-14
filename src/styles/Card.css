@@ -1,16 +1,19 @@
 .card-img {
   width: 100px;
   height: 80px;
-  margin-top: 20px;
 }
 
 .card-wrapper {
   display: flex;
-  padding: 0px 22px;
+  width: 150px;
+  height: 150px;
   flex-direction: column;
   background-color: white;
   margin: 10px;
+  gap: 15px;
   border-radius: 5px;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-wrapper p {
