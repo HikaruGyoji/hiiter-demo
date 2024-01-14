@@ -5,8 +5,19 @@ import Card from './Card';
 import muscle from './assets/img/muscle.png';
 import health from './assets/img/health.png';
 import diet from './assets/img/diet.png';
+import React, { useState } from 'react'; // React を追加
 
 function UserInfo3() {
+  const [selectedCards, setSelectedCards] = useState<string[]>([]); // stringの配列であることを明示的に指定
+
+  const handleCardClick = (title: string) => {
+    const newSelectedCards = selectedCards.includes(title)
+      ? selectedCards.filter((selectedTitle) => selectedTitle !== title)
+      : [...selectedCards, title];
+
+    setSelectedCards(newSelectedCards);
+  };
+
   return (
     <div className='userinfo1'>
       <Header name='ユーザー情報(3/4)' />
@@ -16,16 +27,46 @@ function UserInfo3() {
         <header className='userinfo-header'>
           <div className='userinfo1-wrapper'>
             <div className='card-boxes'>
-              <Card img={diet} title={'ダイエット'} />
-              <Card img={muscle} title={'筋力アップ'} />
+              <Card
+                img={diet}
+                title={'ダイエット'}
+                isSelected={selectedCards.includes('ダイエット')}
+                onClick={handleCardClick}
+              />
+              <Card
+                img={muscle}
+                title={'筋力アップ'}
+                isSelected={selectedCards.includes('筋力アップ')}
+                onClick={handleCardClick}
+              />
             </div>
             <div className='card-boxes'>
-              <Card img={health} title={'健康増進'} />
-              <Card img={muscle} title={'筋力アップ'} />
+              <Card
+                img={health}
+                title={'健康増進'}
+                isSelected={selectedCards.includes('健康増進')}
+                onClick={handleCardClick}
+              />
+              <Card
+                img={muscle}
+                title={'筋力アップ'}
+                isSelected={selectedCards.includes('筋力アップ')}
+                onClick={handleCardClick}
+              />
             </div>
             <div className='card-boxes'>
-              <Card img={muscle} title={'筋力アップ'} />
-              <Card img={muscle} title={'筋力アップ'} />
+              <Card
+                img={muscle}
+                title={'筋力アップ'}
+                isSelected={selectedCards.includes('筋力アップ')}
+                onClick={handleCardClick}
+              />
+              <Card
+                img={muscle}
+                title={'筋力アップ'}
+                isSelected={selectedCards.includes('筋力アップ')}
+                onClick={handleCardClick}
+              />
             </div>
           </div>
 

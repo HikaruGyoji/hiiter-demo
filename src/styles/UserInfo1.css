@@ -1,6 +1,9 @@
-input {
+input,
+select {
   -webkit-appearance: none;
-  border-radius: 0;
+  color: gray;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .userinfo1 {

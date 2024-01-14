@@ -5,8 +5,21 @@ import Card from './Card';
 import muscle from './assets/img/muscle.png';
 import health from './assets/img/health.png';
 import diet from './assets/img/diet.png';
+import React, { useState } from 'react';
 
 function UserInfo1() {
+  const [selectedCard, setSelectedCard] = useState<string | null>(null); // Nullable string
+
+  const handleCardClick = (title: string) => {
+    if (selectedCard === title) {
+      // If the same card is clicked again, unselect it
+      setSelectedCard(null);
+    } else {
+      // Replace the previously selected card with the newly selected one
+      setSelectedCard(title);
+    }
+  };
+
   return (
     <div className='userinfo1'>
       <Header name='ユーザー情報(1/4)' />
@@ -18,16 +31,46 @@ function UserInfo1() {
         <header className='userinfo-header'>
           <div className='userinfo1-wrapper'>
             <div className='card-boxes'>
-              <Card img={diet} title={'ダイエット'} />
-              <Card img={muscle} title={'筋力アップ'} />
+              <Card
+                img={diet}
+                title={'ダイエット'}
+                isSelected={selectedCard === 'ダイエット'}
+                onClick={handleCardClick}
+              />
+              <Card
+                img={muscle}
+                title={'筋力アップ'}
+                isSelected={selectedCard === '筋力アップ'}
+                onClick={handleCardClick}
+              />
             </div>
             <div className='card-boxes'>
-              <Card img={health} title={'健康増進'} />{' '}
-              <Card img={muscle} title={'筋力アップ'} />
+              <Card
+                img={health}
+                title={'健康増進'}
+                isSelected={selectedCard === '健康増進'}
+                onClick={handleCardClick}
+              />
+              <Card
+                img={muscle}
+                title={'筋力アップ'}
+                isSelected={selectedCard === '筋力アップ'}
+                onClick={handleCardClick}
+              />
             </div>
             <div className='card-boxes'>
-              <Card img={muscle} title={'筋力アップ'} />
-              <Card img={muscle} title={'筋力アップ'} />
+              <Card
+                img={diet}
+                title={'筋力アップ'}
+                isSelected={selectedCard === '筋力アップ'}
+                onClick={handleCardClick}
+              />
+              <Card
+                img={muscle}
+                title={'筋力アップ'}
+                isSelected={selectedCard === '筋力アップ'}
+                onClick={handleCardClick}
+              />
             </div>
           </div>
 
