@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/hiiter-demo/static/css/main.be520424.css",
-    "main.js": "/hiiter-demo/static/js/main.b5e2660e.js",
+    "main.css": "/hiiter-demo/static/css/main.ecbb4399.css",
+    "main.js": "/hiiter-demo/static/js/main.50a2c4e6.js",
     "static/js/787.89c1857e.chunk.js": "/hiiter-demo/static/js/787.89c1857e.chunk.js",
+    "static/media/custom.png": "/hiiter-demo/static/media/custom.699b2d74d828cf2f0a23.png",
     "static/media/difficult.png": "/hiiter-demo/static/media/difficult.c9454f796801584da16a.png",
+    "static/media/stress.png": "/hiiter-demo/static/media/stress.9760618928f684bee40e.png",
     "static/media/muscle.png": "/hiiter-demo/static/media/muscle.65ac31080e774b49dd7f.png",
     "static/media/easy.png": "/hiiter-demo/static/media/easy.e01f8f479fa20223607a.png",
     "static/media/logo.png": "/hiiter-demo/static/media/logo.1a4e0cc4e09b0c5c12de.png",
     "static/media/normal.png": "/hiiter-demo/static/media/normal.cbb2db21cf0d486a9b01.png",
     "static/media/health.png": "/hiiter-demo/static/media/health.cf2247530372a9057acb.png",
+    "static/media/physical.png": "/hiiter-demo/static/media/physical.bbe78d3252ff823dfb95.png",
     "static/media/diet.png": "/hiiter-demo/static/media/diet.a6d2eb175e02b8276a32.png",
     "service-worker.js": "/hiiter-demo/service-worker.js",
     "index.html": "/hiiter-demo/index.html",
-    "main.be520424.css.map": "/hiiter-demo/static/css/main.be520424.css.map",
-    "main.b5e2660e.js.map": "/hiiter-demo/static/js/main.b5e2660e.js.map",
+    "main.ecbb4399.css.map": "/hiiter-demo/static/css/main.ecbb4399.css.map",
+    "main.50a2c4e6.js.map": "/hiiter-demo/static/js/main.50a2c4e6.js.map",
     "787.89c1857e.chunk.js.map": "/hiiter-demo/static/js/787.89c1857e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.be520424.css",
-    "static/js/main.b5e2660e.js"
+    "static/css/main.ecbb4399.css",
+    "static/js/main.50a2c4e6.js"
   ]
 }
