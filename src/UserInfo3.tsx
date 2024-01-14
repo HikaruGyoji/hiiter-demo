@@ -73,9 +73,15 @@ function UserInfo3() {
             </div>
           </div>
 
-          <Link to='/userinfo4' className='button -primary'>
-            次へ
-          </Link>
+          {selectedCards.length > 0 ? (
+            <Link to='/userinfo4' className='button -primary'>
+              次へ
+            </Link>
+          ) : (
+            <button className='button -primary -disabled' disabled>
+              次へ
+            </button>
+          )}
         </header>
       </div>
     </div>

@@ -43,6 +43,12 @@
   text-decoration: none;
 }
 
+.-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  width: 310px;
+}
+
 .-primary {
   background-color: #ee817b;
 }

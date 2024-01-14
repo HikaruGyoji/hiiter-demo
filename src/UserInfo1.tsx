@@ -11,14 +11,12 @@ import custom from './assets/img/custom.png';
 import React, { useState } from 'react';
 
 function UserInfo1() {
-  const [selectedCard, setSelectedCard] = useState<string | null>(null); // Nullable string
+  const [selectedCard, setSelectedCard] = useState<string | null>(null);
 
   const handleCardClick = (title: string) => {
     if (selectedCard === title) {
-      // If the same card is clicked again, unselect it
       setSelectedCard(null);
     } else {
-      // Replace the previously selected card with the newly selected one
       setSelectedCard(title);
     }
   };
@@ -38,13 +36,13 @@ function UserInfo1() {
                 img={diet}
                 title={'ダイエット'}
                 isSelected={selectedCard === 'ダイエット'}
-                onClick={handleCardClick}
+                onClick={() => handleCardClick('ダイエット')}
               />
               <Card
                 img={muscle}
                 title={'筋力アップ'}
                 isSelected={selectedCard === '筋力アップ'}
-                onClick={handleCardClick}
+                onClick={() => handleCardClick('筋力アップ')}
               />
             </div>
             <div className='card-boxes'>
@@ -52,13 +50,13 @@ function UserInfo1() {
                 img={physical}
                 title={'持久力（体力）をつけたい'}
                 isSelected={selectedCard === '持久力（体力）をつけたい'}
-                onClick={handleCardClick}
+                onClick={() => handleCardClick('持久力（体力）をつけたい')}
               />
               <Card
                 img={health}
                 title={'健康維持'}
                 isSelected={selectedCard === '健康維持'}
-                onClick={handleCardClick}
+                onClick={() => handleCardClick('健康維持')}
               />
             </div>
             <div className='card-boxes'>
@@ -66,20 +64,26 @@ function UserInfo1() {
                 img={stress}
                 title={'ストレス解消'}
                 isSelected={selectedCard === 'ストレス解消'}
-                onClick={handleCardClick}
+                onClick={() => handleCardClick('ストレス解消')}
               />
               <Card
                 img={custom}
                 title={'運動習慣を付けたい'}
                 isSelected={selectedCard === '運動習慣を付けたい'}
-                onClick={handleCardClick}
+                onClick={() => handleCardClick('運動習慣を付けたい')}
               />
             </div>
           </div>
 
-          <Link to='/userinfo2' className='button -primary'>
-            次へ
-          </Link>
+          {selectedCard ? (
+            <Link to='/userinfo2' className='button -primary'>
+              次へ
+            </Link>
+          ) : (
+            <button className='button -primary -disabled' disabled>
+              次へ
+            </button>
+          )}
         </header>
       </div>
     </div>
