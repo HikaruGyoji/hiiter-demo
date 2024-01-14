@@ -10,7 +10,7 @@ function UserInfo1() {
   return (
     <div className='userinfo1'>
       <Header name='ユーザー情報(1/4)' />
-      <div>
+      <div className='margin-area'>
         <p className='userinfo-text'>運動の目的を一つ選んでください</p>
         <span className='userinfo-span'>
           最も重視する項目を1つ選んでください

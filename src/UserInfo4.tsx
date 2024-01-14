@@ -6,7 +6,7 @@ function UserInfo1() {
   return (
     <div className='userinfo1'>
       <Header name='ユーザー情報(4/4)' />
-      <div>
+      <div className='margin-area'>
         <div className='userinfo-message'>
           <p>さぁまもなく運動開始です。</p>
           <p>ニックネームと目標を記入しましょう！</p>

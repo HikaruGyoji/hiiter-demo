@@ -1,3 +1,8 @@
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 .userinfo1 {
   text-align: center;
   height: 100vh;
@@ -6,6 +11,10 @@
 
 .card-boxes {
   display: flex;
+}
+
+.margin-area {
+  padding-top: 120px;
 }
 
 .userinfo1-wrapper {

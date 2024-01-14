@@ -10,7 +10,7 @@ function UserInfo3() {
   return (
     <div className='userinfo1'>
       <Header name='ユーザー情報(3/4)' />
-      <div>
+      <div className='margin-area'>
         <p className='userinfo-text'>運動の悩みを選んでください</p>
         <span className='userinfo-span'>複数選択可</span>
         <header className='userinfo-header'>

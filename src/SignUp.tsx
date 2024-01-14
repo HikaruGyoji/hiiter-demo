@@ -6,7 +6,7 @@ function SignUp() {
   return (
     <div className='signup'>
       <Header name='新規登録' />
-      <div>
+      <div className='margin-area'>
         <header className='Login-header'>
           <input
             className='input-box'
