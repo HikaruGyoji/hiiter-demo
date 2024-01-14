@@ -5,6 +5,9 @@ import Card from './Card';
 import muscle from './assets/img/muscle.png';
 import health from './assets/img/health.png';
 import diet from './assets/img/diet.png';
+import physical from './assets/img/physical.png';
+import stress from './assets/img/stress.png';
+import custom from './assets/img/custom.png';
 import React, { useState } from 'react'; // React を追加
 
 function UserInfo3() {
@@ -42,29 +45,29 @@ function UserInfo3() {
             </div>
             <div className='card-boxes'>
               <Card
-                img={health}
-                title={'健康増進'}
-                isSelected={selectedCards.includes('健康増進')}
+                img={physical}
+                title={'持久力（体力）をつけたい'}
+                isSelected={selectedCards.includes('持久力（体力）をつけたい')}
                 onClick={handleCardClick}
               />
               <Card
-                img={muscle}
-                title={'筋力アップ'}
-                isSelected={selectedCards.includes('筋力アップ')}
+                img={health}
+                title={'健康維持'}
+                isSelected={selectedCards.includes('健康維持')}
                 onClick={handleCardClick}
               />
             </div>
             <div className='card-boxes'>
               <Card
-                img={muscle}
-                title={'筋力アップ'}
-                isSelected={selectedCards.includes('筋力アップ')}
+                img={stress}
+                title={'ストレス解消'}
+                isSelected={selectedCards.includes('ストレス解消')}
                 onClick={handleCardClick}
               />
               <Card
-                img={muscle}
-                title={'筋力アップ'}
-                isSelected={selectedCards.includes('筋力アップ')}
+                img={custom}
+                title={'運動習慣を付けたい'}
+                isSelected={selectedCards.includes('運動習慣を付けたい')}
                 onClick={handleCardClick}
               />
             </div>
