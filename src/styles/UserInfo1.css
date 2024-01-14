@@ -1,9 +1,10 @@
 input,
 select {
   -webkit-appearance: none;
-  color: gray;
+  color: black;
   background-color: white;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 .userinfo1 {
