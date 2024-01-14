@@ -6,7 +6,7 @@ function Login() {
   return (
     <div className='Login'>
       <Header name='ログイン' />
-      <div>
+      <div className='margin-area'>
         <header className='Login-header'>
           <input
             className='input-box'
