@@ -60,7 +60,7 @@ function UserInfo1() {
             </div>
             <div className='card-boxes'>
               <Card
-                img={diet}
+                img={muscle}
                 title={'筋力アップ'}
                 isSelected={selectedCard === '筋力アップ'}
                 onClick={handleCardClick}
