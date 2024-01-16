@@ -1,36 +1,45 @@
 import { Link } from 'react-router-dom';
-import './styles/SignUp.module.scss';
+import styles from './styles/SignUp.module.scss';
 import Header from './Header';
 
 function SignUp() {
   return (
-    <div className='signup'>
+    <div className={styles['signup']}>
       <Header name='新規登録' />
-      <div className='margin-area'>
-        <header className='Login-header'>
+      <div className={styles['margin-area']}>
+        <header className={styles['header']}>
           <input
-            className='input-box'
+            className={styles['input-box']}
             type='email'
             id='email'
             placeholder='メールアドレス'
           />
           <input
-            className='input-box'
+            className={styles['input-box']}
             type='password'
             id='password'
             placeholder='パスワード'
           />
 
-          <Link to='/userinfo1' className='button -primary'>
+          <Link
+            to='/userinfo1'
+            className={`${styles.button} ${styles['-primary']}`}
+          >
             メールアドレスで登録
           </Link>
-          <Link to='/userinfo1' className='button -google'>
+          <Link
+            to='/userinfo1'
+            className={`${styles.button} ${styles['-google']}`}
+          >
             Googleでサインアップ
           </Link>
-          <Link to='/userinfo1' className='button -line'>
+          <Link
+            to='/userinfo1'
+            className={`${styles.button} ${styles['-line']}`}
+          >
             Lineでサインアップ
           </Link>
-          <Link to='/userinfo1' className='button -x'>
+          <Link to='/userinfo1' className={`${styles.button} ${styles['-x']}`}>
             Xでサインアップ
           </Link>
         </header>
