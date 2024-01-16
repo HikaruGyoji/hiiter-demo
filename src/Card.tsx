@@ -1,5 +1,4 @@
-import React from 'react';
-import './styles/Card.css';
+import styles from './styles/Card.module.css';
 
 function Card(props: {
   img: string;
@@ -13,11 +12,11 @@ function Card(props: {
 
   return (
     <div
-      className='card-wrapper'
+      className={styles['card-wrapper']}
       style={cardStyle}
       onClick={() => props.onClick(props.title)}
     >
-      <img src={props.img} alt='' className='card-img' />
+      <img src={props.img} alt='' className={styles['card-img']} />
       <p>{props.title}</p>
     </div>
   );
