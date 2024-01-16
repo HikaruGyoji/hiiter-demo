@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './styles/SignUp.css';
+import './styles/SignUp.module.scss';
 import Header from './Header';
 
 function SignUp() {
