@@ -1,8 +1,3 @@
-.card-img {
-  width: 100px;
-  height: 80px;
-}
-
 .card-wrapper {
   display: flex;
   width: 150px;
@@ -14,10 +9,15 @@
   border-radius: 5px;
   justify-content: center;
   align-items: center;
-}
 
-.card-wrapper p {
-  color: black;
-  margin: 3px;
-  font-size: 12px;
+  .card-img {
+    width: 100px;
+    height: 80px;
+  }
+
+  p {
+    color: black;
+    margin: 3px;
+    font-size: 12px;
+  }
 }

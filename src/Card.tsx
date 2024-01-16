@@ -1,4 +1,4 @@
-import styles from './styles/Card.module.css';
+import styles from './styles/Card.module.scss';
 
 function Card(props: {
   img: string;
