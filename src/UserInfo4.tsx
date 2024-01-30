@@ -11,6 +11,18 @@ function UserInfo4() {
   const [weight, setWeight] = useState('');
   const [work, setWork] = useState('');
 
+  // 身長の選択肢を生成
+  const heightOptions = [];
+  for (let i = 10; i <= 200; i++) {
+    heightOptions.push(<option key={i}>{i}cm</option>);
+  }
+
+  // 体重の選択肢を生成
+  const weightOptions = [];
+  for (let i = 10; i <= 150; i++) {
+    weightOptions.push(<option key={i}>{i}kg</option>);
+  }
+
   const allInputsFilled = username && sex && birth && height && weight && work;
 
   return (
@@ -64,9 +76,7 @@ function UserInfo4() {
                 onChange={(e) => setHeight(e.target.value)}
               >
                 <option>選択してください</option>
-                <option>150cm</option>
-                <option>160cm</option>
-                <option>170cm</option>
+                {heightOptions}
               </select>
             </div>
             <div className={styles['userinfo-group']}>
@@ -78,9 +88,7 @@ function UserInfo4() {
                 onChange={(e) => setWeight(e.target.value)}
               >
                 <option>選択してください</option>
-                <option>50kg</option>
-                <option>60kg</option>
-                <option>70kg</option>
+                {weightOptions}
               </select>
             </div>
             <div className={styles['userinfo-group']}>
