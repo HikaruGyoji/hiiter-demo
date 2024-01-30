@@ -53,7 +53,9 @@ function UserInfo4() {
                 value={sex}
                 onChange={(e) => setSex(e.target.value)}
               >
-                <option>選択してください</option>
+                <option value='' disabled selected>
+                  選択してください
+                </option>
                 <option>男</option>
                 <option>女</option>
                 <option>その他</option>
@@ -66,6 +68,7 @@ function UserInfo4() {
                 id='birth'
                 type='date'
                 value={birth}
+                placeholder='生年月日を選択してください'
                 onChange={(e) => setBirth(e.target.value)}
               />
               <label htmlFor='height'>身長</label>
@@ -75,7 +78,9 @@ function UserInfo4() {
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
               >
-                <option>選択してください</option>
+                <option value='' disabled selected>
+                  選択してください
+                </option>
                 {heightOptions}
               </select>
             </div>
@@ -87,7 +92,9 @@ function UserInfo4() {
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
               >
-                <option>選択してください</option>
+                <option value='' disabled selected>
+                  選択してください
+                </option>
                 {weightOptions}
               </select>
             </div>
@@ -99,7 +106,9 @@ function UserInfo4() {
                 value={work}
                 onChange={(e) => setWork(e.target.value)}
               >
-                <option>選択してください</option>
+                <option value='' disabled selected>
+                  選択してください
+                </option>
                 <option>会社員</option>
                 <option>主婦</option>
                 <option>学生</option>
