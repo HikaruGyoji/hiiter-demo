@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import './styles/UserInfo1.css';
 import Header from './Header';
 import Card from './Card';
 import muscle from './assets/img/muscle.png';
@@ -9,6 +8,7 @@ import physical from './assets/img/physical.png';
 import stress from './assets/img/stress.png';
 import custom from './assets/img/custom.png';
 import React, { useState } from 'react';
+import styles from './styles/UserInfo1.module.scss';
 
 function UserInfo1() {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
@@ -22,16 +22,18 @@ function UserInfo1() {
   };
 
   return (
-    <div className='userinfo1'>
+    <div className={styles['userinfo1']}>
       <Header name='ユーザー情報(1/4)' />
-      <div className='margin-area'>
-        <p className='userinfo-text'>運動の目的を一つ選んでください</p>
-        <span className='userinfo-span'>
+      <div className={styles['margin-area']}>
+        <p className={styles['userinfo-text']}>
+          運動の目的を一つ選んでください
+        </p>
+        <span className={styles['userinfo-span']}>
           最も重視する項目を1つ選んでください
         </span>
-        <header className='userinfo-header'>
-          <div className='userinfo1-wrapper'>
-            <div className='card-boxes'>
+        <header className={styles['userinfo-header']}>
+          <div className={styles['userinfo1-wrapper']}>
+            <div className={styles['card-boxes']}>
               <Card
                 img={diet}
                 title={'ダイエット'}
@@ -45,7 +47,7 @@ function UserInfo1() {
                 onClick={() => handleCardClick('筋力アップ')}
               />
             </div>
-            <div className='card-boxes'>
+            <div className={styles['card-boxes']}>
               <Card
                 img={physical}
                 title={'持久力（体力）をつけたい'}
@@ -59,7 +61,7 @@ function UserInfo1() {
                 onClick={() => handleCardClick('健康維持')}
               />
             </div>
-            <div className='card-boxes'>
+            <div className={styles['card-boxes']}>
               <Card
                 img={stress}
                 title={'ストレス解消'}
@@ -76,11 +78,17 @@ function UserInfo1() {
           </div>
 
           {selectedCard ? (
-            <Link to='/userinfo2' className='button -primary'>
+            <Link
+              to='/userinfo2'
+              className={`${styles.button} ${styles['-primary']}`}
+            >
               次へ
             </Link>
           ) : (
-            <button className='button -primary -disabled' disabled>
+            <button
+              className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
+              disabled
+            >
               次へ
             </button>
           )}

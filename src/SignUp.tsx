@@ -17,7 +17,7 @@ function SignUp() {
           <input
             className={styles['input-box']}
             type='password'
-            id='password'
+            id={styles['password']}
             placeholder='パスワード'
           />
 

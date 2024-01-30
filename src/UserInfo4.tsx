@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import './styles/UserInfo1.css';
 import Header from './Header';
 
 function UserInfo1() {

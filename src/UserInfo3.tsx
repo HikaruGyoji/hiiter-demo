@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import './styles/UserInfo1.css';
 import Header from './Header';
 import Card from './Card';
 import muscle from './assets/img/muscle.png';
@@ -8,6 +7,8 @@ import diet from './assets/img/diet.png';
 import physical from './assets/img/physical.png';
 import stress from './assets/img/stress.png';
 import custom from './assets/img/custom.png';
+import styles from './styles/UserInfo3.module.scss';
+
 import React, { useState } from 'react'; // React を追加
 
 function UserInfo3() {
@@ -22,14 +23,14 @@ function UserInfo3() {
   };
 
   return (
-    <div className='userinfo1'>
+    <div className={styles['userinfo1']}>
       <Header name='ユーザー情報(3/4)' />
-      <div className='margin-area'>
-        <p className='userinfo-text'>運動の悩みを選んでください</p>
-        <span className='userinfo-span'>複数選択可</span>
-        <header className='userinfo-header'>
-          <div className='userinfo1-wrapper'>
-            <div className='card-boxes'>
+      <div className={styles['margin-area']}>
+        <p className={styles['userinfo-text']}>運動の悩みを選んでください</p>
+        <span className={styles['userinfo-span']}>複数選択可</span>
+        <header className={styles['userinfo-header']}>
+          <div className={styles['userinfo1-wrapper']}>
+            <div className={styles['card-boxes']}>
               <Card
                 img={diet}
                 title={'ダイエット'}
@@ -43,7 +44,7 @@ function UserInfo3() {
                 onClick={handleCardClick}
               />
             </div>
-            <div className='card-boxes'>
+            <div className={styles['card-boxes']}>
               <Card
                 img={physical}
                 title={'持久力（体力）をつけたい'}
@@ -57,7 +58,7 @@ function UserInfo3() {
                 onClick={handleCardClick}
               />
             </div>
-            <div className='card-boxes'>
+            <div className={styles['card-boxes']}>
               <Card
                 img={stress}
                 title={'ストレス解消'}
@@ -74,11 +75,17 @@ function UserInfo3() {
           </div>
 
           {selectedCards.length > 0 ? (
-            <Link to='/userinfo4' className='button -primary'>
+            <Link
+              to='/userinfo4'
+              className={`${styles.button} ${styles['-primary']}`}
+            >
               次へ
             </Link>
           ) : (
-            <button className='button -primary -disabled' disabled>
+            <button
+              className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
+              disabled
+            >
               次へ
             </button>
           )}

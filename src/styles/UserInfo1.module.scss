@@ -1,3 +1,7 @@
+@use './component/button.scss';
+
+@include button.button;
+
 input,
 select {
   -webkit-appearance: none;
