@@ -13,13 +13,13 @@ function UserInfo4() {
 
   // 身長の選択肢を生成
   const heightOptions = [];
-  for (let i = 10; i <= 200; i++) {
+  for (let i = 130; i <= 200; i++) {
     heightOptions.push(<option key={i}>{i}cm</option>);
   }
 
   // 体重の選択肢を生成
   const weightOptions = [];
-  for (let i = 10; i <= 150; i++) {
+  for (let i = 30; i <= 150; i++) {
     weightOptions.push(<option key={i}>{i}kg</option>);
   }
 
