@@ -22,7 +22,7 @@ function UserInfo2() {
 
   return (
     <div className={styles['userinfo1']}>
-      <Header name='ユーザー情報(2/4)' />
+      <Header name='ユーザー情報(2/4)' backPath='/userinfo1' />
       <div className={styles['margin-area']}>
         <p className='userinfo-text'>運動レベルを選んでください</p>
         <br />

@@ -5,7 +5,7 @@ import Header from './Header';
 function Login() {
   return (
     <div className={styles['Login']}>
-      <Header name='ログイン' />
+      <Header name='ログイン' backPath='/' />
       <div className={styles['margin-area']}>
         <header className={styles['header']}>
           <input
