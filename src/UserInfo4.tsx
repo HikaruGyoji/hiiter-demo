@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import styles from './styles/UserInfo4.module.scss';
@@ -11,16 +11,81 @@ function UserInfo4() {
   const [weight, setWeight] = useState('');
   const [work, setWork] = useState('');
 
+  useEffect(() => {
+    const sexElement = document.getElementById(
+      'sex'
+    ) as HTMLSelectElement | null;
+    const heightElement = document.getElementById(
+      'height'
+    ) as HTMLSelectElement | null;
+    const weightElement = document.getElementById(
+      'weight'
+    ) as HTMLSelectElement | null;
+    const workElement = document.getElementById(
+      'work'
+    ) as HTMLSelectElement | null;
+
+    if (sexElement) {
+      changeColor(sexElement);
+    }
+    if (heightElement) {
+      changeColor(heightElement);
+    }
+    if (weightElement) {
+      changeColor(weightElement);
+    }
+    if (workElement) {
+      changeColor(workElement);
+    }
+  }, []);
+
+  const handleSexChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSex(e.target.value);
+    changeColor(e.target);
+  };
+  const handleHeightChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setHeight(e.target.value);
+    changeColor(e.target);
+  };
+  const handleWeightChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setWeight(e.target.value);
+    changeColor(e.target);
+  };
+  const handleWorkChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setWork(e.target.value);
+    changeColor(e.target);
+  };
+
+  const changeColor = (element: HTMLInputElement | HTMLSelectElement) => {
+    if (element !== null) {
+      if (element.value === '') {
+        element.style.color = '#8e8e8e';
+      } else {
+        element.style.color = 'black';
+      }
+    } else {
+      return;
+    }
+  };
+
   // 身長の選択肢を生成
   const heightOptions = [];
   for (let i = 130; i <= 200; i++) {
-    heightOptions.push(<option key={i}>{i}cm</option>);
+    heightOptions.push(
+      <option key={i} value={i}>
+        {i}cm
+      </option>
+    );
   }
 
   // 体重の選択肢を生成
   const weightOptions = [];
   for (let i = 30; i <= 150; i++) {
-    weightOptions.push(<option key={i}>{i}kg</option>);
+    weightOptions.push(
+      <option key={i} value={i}>
+        {i}kg
+      </option>
+    );
   }
 
   const allInputsFilled = username && sex && birth && height && weight && work;
@@ -51,14 +116,14 @@ function UserInfo4() {
                 className={styles['input-box']}
                 id='sex'
                 value={sex}
-                onChange={(e) => setSex(e.target.value)}
+                onChange={(e) => handleSexChange(e)}
               >
-                <option value='' disabled selected>
+                <option value='' disabled>
                   選択してください
                 </option>
-                <option>男</option>
-                <option>女</option>
-                <option>その他</option>
+                <option value='男'>男</option>
+                <option value='女'>女</option>
+                <option value='その他'>その他</option>
               </select>
             </div>
             <div className={styles['userinfo-group']}>
@@ -68,7 +133,6 @@ function UserInfo4() {
                 id='birth'
                 type='date'
                 value={birth}
-                placeholder='生年月日を選択してください'
                 onChange={(e) => setBirth(e.target.value)}
               />
               <label htmlFor='height'>身長</label>
@@ -76,9 +140,9 @@ function UserInfo4() {
                 className={styles['input-box']}
                 id='height'
                 value={height}
-                onChange={(e) => setHeight(e.target.value)}
+                onChange={(e) => handleHeightChange(e)}
               >
-                <option value='' disabled selected>
+                <option value='' disabled>
                   選択してください
                 </option>
                 {heightOptions}
@@ -90,9 +154,9 @@ function UserInfo4() {
                 className={styles['input-box']}
                 id='weight'
                 value={weight}
-                onChange={(e) => setWeight(e.target.value)}
+                onChange={(e) => handleWeightChange(e)}
               >
-                <option value='' disabled selected>
+                <option value='' disabled>
                   選択してください
                 </option>
                 {weightOptions}
@@ -104,15 +168,15 @@ function UserInfo4() {
                 className={styles['input-box']}
                 id='work'
                 value={work}
-                onChange={(e) => setWork(e.target.value)}
+                onChange={(e) => handleWorkChange(e)}
               >
-                <option value='' disabled selected>
+                <option value='' disabled>
                   選択してください
                 </option>
-                <option>会社員</option>
-                <option>主婦</option>
-                <option>学生</option>
-                <option>その他</option>
+                <option value='会社員'>会社員</option>
+                <option value='主婦'>主婦</option>
+                <option value='学生'>学生</option>
+                <option value='その他'>その他</option>
               </select>
             </div>
           </div>
