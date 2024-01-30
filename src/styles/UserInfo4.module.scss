@@ -83,6 +83,6 @@ select {
   width: 280px;
 }
 
-input[type='date'] {
+input[type='date']::-webkit-date-and-time-value {
   text-align: left;
 }
