@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Header from './Header';
-import React, { useState } from 'react';
 import styles from './styles/ExplainHiit.module.scss';
 
 function ExplainHiit() {
