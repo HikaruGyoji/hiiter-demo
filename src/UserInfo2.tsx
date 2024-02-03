@@ -24,7 +24,7 @@ function UserInfo2() {
     <div className={styles['userinfo1']}>
       <Header name='ユーザー情報(2/4)' backPath='/userinfo1' icons={false} />
       <div className={styles['margin-area']}>
-        <p className='userinfo-text'>運動レベルを選んでください</p>
+        <p className={styles['userinfo-text']}>運動レベルを選んでください</p>
         <br />
         <header className={styles['userinfo-header']}>
           <div className={styles['userinfo1-wrapper']}>
