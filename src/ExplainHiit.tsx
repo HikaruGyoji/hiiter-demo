@@ -8,7 +8,6 @@ function ExplainHiit() {
     <div className={styles['userinfo1']}>
       <Header name='Hiitって何' backPath='/userinfo4' icons={false} />
       <div className={styles['margin-area']}>
-        <p className={styles['userinfo-text']}>Hiitとは</p>
         <div className={styles['explain-box']}>
           <p>
             <span className={styles['title']}>Hiitとは？</span>
