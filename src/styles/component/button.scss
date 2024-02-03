@@ -20,8 +20,12 @@
       background-color: #ee817b;
     }
 
-    &.-secondary {
+    &.-disabled {
       background-color: #f6afaa;
+    }
+
+    &.-secondary {
+      background-color: #928484;
     }
 
     &.-google {

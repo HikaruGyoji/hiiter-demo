@@ -8,13 +8,13 @@ function Top() {
     <div className={styles['Top']}>
       <header className={styles['Top-header']}>
         <img src={logo} className={styles['logo-position']} alt='logo' />
-        <Link
-          to='/signup'
-          className={`${styles.button} ${styles['-secondary']}`}
-        >
+        <Link to='/signup' className={`${styles.button} ${styles['-primary']}`}>
           さぁ始めよう
         </Link>
-        <Link to='/login' className={`${styles.button} ${styles['-primary']}`}>
+        <Link
+          to='/login'
+          className={`${styles.button} ${styles['-secondary']}`}
+        >
           アカウントをお持ちの方
         </Link>
 
