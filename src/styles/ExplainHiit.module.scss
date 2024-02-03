@@ -74,3 +74,17 @@ select {
 .userinfo-wrapper {
   margin-bottom: 20px;
 }
+
+.explain-box {
+  margin: 15px;
+  padding: 25px;
+  background-color: white;
+  text-align: left;
+  padding-bottom: 0;
+  height: 500px;
+  overflow: scroll;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
