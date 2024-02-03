@@ -86,3 +86,7 @@ select {
 input[type='date']::-webkit-date-and-time-value {
   text-align: left;
 }
+
+input[type='time']::-webkit-date-and-time-value {
+  text-align: left;
+}
