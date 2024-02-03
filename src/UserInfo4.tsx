@@ -2,6 +2,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import styles from './styles/UserInfo4.module.scss';
+import Switch from './Switch';
 
 function UserInfo4() {
   const [username, setUsername] = useState('');
@@ -10,6 +11,7 @@ function UserInfo4() {
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
   const [work, setWork] = useState('');
+  const [time, setTime] = useState('');
 
   useEffect(() => {
     const sexElement = document.getElementById(
@@ -24,6 +26,9 @@ function UserInfo4() {
     const workElement = document.getElementById(
       'work'
     ) as HTMLSelectElement | null;
+    const timeElement = document.getElementById(
+      'time'
+    ) as HTMLSelectElement | null;
 
     if (sexElement) {
       changeColor(sexElement);
@@ -36,6 +41,9 @@ function UserInfo4() {
     }
     if (workElement) {
       changeColor(workElement);
+    }
+    if (timeElement) {
+      changeColor(timeElement);
     }
   }, []);
 
@@ -178,6 +186,17 @@ function UserInfo4() {
                 <option value='学生'>学生</option>
                 <option value='その他'>その他</option>
               </select>
+            </div>
+            <div className={styles['userinfo-group']}>
+              <label htmlFor='time'>通知時間</label>
+              <Switch isChecked={false} />
+              <input
+                className={styles['input-box']}
+                id='time'
+                type='time'
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+              />
             </div>
           </div>
 
