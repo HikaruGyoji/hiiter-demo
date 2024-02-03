@@ -202,7 +202,7 @@ function UserInfo4() {
 
           {allInputsFilled ? (
             <Link
-              to='/userinfo4'
+              to='/explainhiit'
               className={`${styles.button} ${styles['-primary']}`}
             >
               次へ
