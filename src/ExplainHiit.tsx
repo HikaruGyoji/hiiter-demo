@@ -6,11 +6,11 @@ import muscle from './assets/img/muscle.png';
 function ExplainHiit() {
   return (
     <div className={styles['userinfo1']}>
-      <Header name='Hiitって何' backPath='/userinfo4' icons={false} />
+      <Header name='HIITって何' backPath='/userinfo4' icons={false} />
       <div className={styles['margin-area']}>
         <div className={styles['explain-box']}>
           <p>
-            <span className={styles['title']}>Hiitとは？</span>
+            <span className={styles['title']}>HIITとは？</span>
             <br />
             HIIT（High Intensity Interval
             Training）は、短い時間の高強度な運動と、低強度運動または休息を交互に行うトレーニング方法です。
