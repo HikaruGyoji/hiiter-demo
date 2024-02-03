@@ -31,7 +31,7 @@ function ExplainHiit() {
           </p>
         </div>
         <header className={styles['userinfo-header']}>
-          <Link to='/' className={`${styles.button} ${styles['-primary']}`}>
+          <Link to='/home' className={`${styles.button} ${styles['-primary']}`}>
             次へ
           </Link>
         </header>

@@ -7,6 +7,7 @@ import UserInfo2 from './UserInfo2';
 import UserInfo3 from './UserInfo3';
 import UserInfo4 from './UserInfo4';
 import ExplainHiit from './ExplainHiit';
+import Home from './Home';
 
 const App = () => (
   <HashRouter>
@@ -19,6 +20,7 @@ const App = () => (
       <Route path='/userinfo3' element={<UserInfo3 />} />
       <Route path='/userinfo4' element={<UserInfo4 />} />
       <Route path='/explainhiit' element={<ExplainHiit />} />
+      <Route path='/home' element={<Home />} />
     </Routes>
   </HashRouter>
 );
