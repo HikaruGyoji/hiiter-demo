@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Header from './Header';
+import Footer from './Footer';
 import styles from './styles/Home.module.scss';
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
           </Link>
         </header>
       </div>
+      <Footer />
     </div>
   );
 }
