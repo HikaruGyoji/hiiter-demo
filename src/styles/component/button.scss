@@ -31,14 +31,32 @@
     &.-google {
       background-color: #fff;
       color: #000;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        padding-right: 15%;
+      }
     }
 
     &.-line {
       background-color: #00bc00;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        padding-right: 20%;
+      }
     }
 
     &.-x {
       background-color: #000;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        padding-right: 25%;
+      }
     }
   }
 }

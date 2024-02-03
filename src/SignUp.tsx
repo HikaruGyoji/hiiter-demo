@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './styles/SignUp.module.scss';
 import Header from './Header';
+import google from './assets/img/google.png';
+import line from './assets/img/line.png';
+import x from './assets/img/x.png';
 
 function SignUp() {
   return (
@@ -31,15 +34,18 @@ function SignUp() {
             to='/userinfo1'
             className={`${styles.button} ${styles['-google']}`}
           >
+            <img src={google} alt='google' />
             Googleでサインアップ
           </Link>
           <Link
             to='/userinfo1'
             className={`${styles.button} ${styles['-line']}`}
           >
+            <img src={line} alt='line' />
             Lineでサインアップ
           </Link>
           <Link to='/userinfo1' className={`${styles.button} ${styles['-x']}`}>
+            <img src={x} alt='x' />
             Xでサインアップ
           </Link>
         </header>
