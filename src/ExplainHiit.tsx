@@ -6,7 +6,7 @@ import styles from './styles/ExplainHiit.module.scss';
 function ExplainHiit() {
   return (
     <div className={styles['userinfo1']}>
-      <Header name='Hiitとは' backPath='/userinfo4' />
+      <Header name='Hiitとは' backPath='/userinfo4' icons={false} />
       <div className={styles['margin-area']}>
         <p className={styles['userinfo-text']}>Hiitとは</p>
         <span className={styles['userinfo-span']}>Hiitとは○○</span>

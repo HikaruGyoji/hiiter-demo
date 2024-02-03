@@ -23,7 +23,7 @@ function UserInfo1() {
 
   return (
     <div className={styles['userinfo1']}>
-      <Header name='ユーザー情報(1/4)' backPath='/signup' />
+      <Header name='ユーザー情報(1/4)' backPath='/signup' icons={false} />
       <div className={styles['margin-area']}>
         <p className={styles['userinfo-text']}>
           運動の目的を一つ選んでください

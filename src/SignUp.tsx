@@ -5,7 +5,7 @@ import Header from './Header';
 function SignUp() {
   return (
     <div className={styles['signup']}>
-      <Header name='新規登録' backPath='/' />
+      <Header name='新規登録' backPath='/' icons={false} />
       <div className={styles['margin-area']}>
         <header className={styles['header']}>
           <input

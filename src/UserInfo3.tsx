@@ -24,7 +24,7 @@ function UserInfo3() {
 
   return (
     <div className={styles['userinfo1']}>
-      <Header name='ユーザー情報(3/4)' backPath='/userinfo2' />
+      <Header name='ユーザー情報(3/4)' backPath='/userinfo2' icons={false} />
       <div className={styles['margin-area']}>
         <p className={styles['userinfo-text']}>運動の悩みを選んでください</p>
         <span className={styles['userinfo-span']}>複数選択可</span>

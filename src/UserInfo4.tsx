@@ -100,7 +100,7 @@ function UserInfo4() {
 
   return (
     <div className={styles['userinfo1']}>
-      <Header name='ユーザー情報(4/4)' backPath='/userinfo3' />
+      <Header name='ユーザー情報(4/4)' backPath='/userinfo3' icons={false} />
       <div className={styles['margin-area']}>
         <div className={styles['userinfo-message']}>
           <p>さぁまもなく運動開始です。</p>
