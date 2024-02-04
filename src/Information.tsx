@@ -6,7 +6,7 @@ import styles from './styles/Home.module.scss';
 function Information() {
   return (
     <div className={styles['userinfo1']}>
-      <Header name='お知らせ' backPath='/explainhiit' icons={true} />
+      <Header name='お知らせ' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
         <header className={styles['userinfo-header']}>
           <Link to='/' className={`${styles.button} ${styles['-primary']}`}>
