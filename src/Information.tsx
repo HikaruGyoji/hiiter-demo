@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import styles from './styles/Home.module.scss';
+import styles from './styles/Information.module.scss';
 
 function Information() {
   return (
@@ -9,9 +9,11 @@ function Information() {
       <Header name='お知らせ' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
         <header className={styles['userinfo-header']}>
-          <Link to='/' className={`${styles.button} ${styles['-primary']}`}>
-            次へ
-          </Link>
+          <ul className={styles['info-ul']}>
+            <li>アップデートのお知らせ</li>
+            <li>アップデートのお知らせ</li>
+            <li>アップデートのお知らせ</li>
+          </ul>
         </header>
       </div>
       <Footer />
