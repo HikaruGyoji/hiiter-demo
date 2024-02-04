@@ -1,0 +1,30 @@
+.menu-container {
+  position: absolute;
+  background-color: #fcecea;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -1px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-name {
+  background-color: #928484;
+  height: 150px;
+}
+
+.menu-title {
+  background-color: #ee817b;
+}
+
+.menu-container.open {
+  transform: translateX(0);
+}
+
+.menu-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}

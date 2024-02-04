@@ -1,9 +1,31 @@
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './styles/Header.module.scss';
 import { Link } from 'react-router-dom';
 import icon1 from './assets/img/icon1.png';
 import icon2 from './assets/img/icon2.png';
+import Hamburger from './Hamburger'; // Hamburgerコンポーネントのインポート
 
 function Header(props: { name: string; backPath: string; icons: boolean }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = (e: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', closeMenu);
+    return () => {
+      document.removeEventListener('mousedown', closeMenu);
+    };
+  }, []);
+
   return (
     <div className={styles['Header']}>
       <header className={styles['wrapper']}>
@@ -19,7 +41,10 @@ function Header(props: { name: string; backPath: string; icons: boolean }) {
                   className={styles['icon-margin']}
                 />
               </Link>
-              <img src={icon2} alt='icon2' />
+              <img src={icon2} alt='icon2' onClick={toggleMenu} />
+              <div ref={menuRef}>
+                <Hamburger toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />{' '}
+              </div>
             </div>
           ) : (
             <div>　　　</div>
