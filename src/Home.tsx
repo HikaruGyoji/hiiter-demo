@@ -27,9 +27,33 @@ function Home() {
           </div>
         </div>
         <p>2月の運動状況</p>
-        <div className={styles['active-info']}>test</div>
+        <div className={styles['active-info']}>
+          <div>
+            <p>連続回数</p>
+            <span>1200</span>
+          </div>
+          <div>
+            <p>回数/月</p>
+            <span>18</span>
+          </div>
+        </div>
         <p>運動設定</p>
-        <div className={styles['active-setting1']}>test</div>
+        <div className={styles['active-setting1']}>
+          <div>
+            <p>タイプ</p>
+            <span>ダイエット</span>
+            <button className={`${styles.button} ${styles['-primary']}`}>
+              変更はこちら
+            </button>
+          </div>
+          <div>
+            <p>運動レベル</p>
+            <span>オススメは Lv4</span>
+            <button className={`${styles.button} ${styles['-primary']}`}>
+              変更はこちら
+            </button>
+          </div>
+        </div>
         <div className={styles['active-setting2']}>test</div>
         <header className={styles['userinfo-header']}>
           <Link to='/' className={`${styles.button} ${styles['-primary']}`}>
