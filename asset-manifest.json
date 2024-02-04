@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hiiter-demo/static/css/main.8f4e7721.css",
-    "main.js": "/hiiter-demo/static/js/main.b6b4ef38.js",
+    "main.css": "/hiiter-demo/static/css/main.361c1765.css",
+    "main.js": "/hiiter-demo/static/js/main.aecee572.js",
     "static/js/787.89c1857e.chunk.js": "/hiiter-demo/static/js/787.89c1857e.chunk.js",
     "static/media/custom.png": "/hiiter-demo/static/media/custom.699b2d74d828cf2f0a23.png",
     "static/media/difficult.png": "/hiiter-demo/static/media/difficult.c9454f796801584da16a.png",
@@ -13,14 +13,17 @@
     "static/media/health.png": "/hiiter-demo/static/media/health.cf2247530372a9057acb.png",
     "static/media/physical.png": "/hiiter-demo/static/media/physical.bbe78d3252ff823dfb95.png",
     "static/media/diet.png": "/hiiter-demo/static/media/diet.a6d2eb175e02b8276a32.png",
+    "static/media/news3.png": "/hiiter-demo/static/media/news3.6998ae8eeae7ebcecc33.png",
     "service-worker.js": "/hiiter-demo/service-worker.js",
+    "static/media/news2.png": "/hiiter-demo/static/media/news2.c704ca44f4c15c738377.png",
+    "static/media/news1.png": "/hiiter-demo/static/media/news1.b994e209fc9ddc115f08.png",
     "index.html": "/hiiter-demo/index.html",
-    "main.8f4e7721.css.map": "/hiiter-demo/static/css/main.8f4e7721.css.map",
-    "main.b6b4ef38.js.map": "/hiiter-demo/static/js/main.b6b4ef38.js.map",
+    "main.361c1765.css.map": "/hiiter-demo/static/css/main.361c1765.css.map",
+    "main.aecee572.js.map": "/hiiter-demo/static/js/main.aecee572.js.map",
     "787.89c1857e.chunk.js.map": "/hiiter-demo/static/js/787.89c1857e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f4e7721.css",
-    "static/js/main.b6b4ef38.js"
+    "static/css/main.361c1765.css",
+    "static/js/main.aecee572.js"
   ]
 }
