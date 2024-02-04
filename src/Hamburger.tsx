@@ -1,5 +1,7 @@
 import React from 'react';
-import styles from './styles/Hamberger.module.scss'; // スタイルシートのインポート
+import styles from './styles/Hamberger.module.scss';
+import userImg from './assets/img/user-img.png';
+import badge from './assets/img/badge.png';
 
 interface Props {
   toggleMenu: () => void;
@@ -14,7 +16,16 @@ function Hamburger(props: Props) {
           props.isMenuOpen ? styles['open'] : ''
         }`}
       >
-        <div className={styles['user-name']}>test</div>
+        <div className={styles['user-name']}>
+          <img src={userImg} alt='userImg' />
+          <div className={styles['user-name-wrapper']}>
+            <div className={styles['user-name-box']}>
+              <p>ヒッティ</p>
+              <img src={badge} alt='badge' />
+            </div>
+            <p>無料プラン</p>
+          </div>
+        </div>
         <div className={styles['menu-title']}>メニュー</div>
         <ul className={styles['list-style']}>
           <li>レベル設定・変更</li>
