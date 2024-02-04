@@ -77,8 +77,11 @@
   padding: 0;
 
   li {
-    color: #ee817b;
     border-bottom: 1px solid #f6afaa;
     padding: 10px;
+    color: #ee817b;
+    a {
+      color: #ee817b;
+    }
   }
 }

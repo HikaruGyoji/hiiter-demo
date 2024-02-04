@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles/Hamberger.module.scss';
 import userImg from './assets/img/user-img.png';
 import badge from './assets/img/badge.png';
+import { Link } from 'react-router-dom';
 
 interface Props {
   toggleMenu: () => void;
@@ -29,7 +30,9 @@ function Hamburger(props: Props) {
         <div className={styles['menu-title']}>メニュー</div>
         <ul className={styles['list-style']}>
           <li>レベル設定・変更</li>
-          <li>HIITとは</li>
+          <li>
+            <Link to='/explainhiit'>HIITとは</Link>
+          </li>
           <li>進捗状況</li>
           <li>ガイドライン</li>
           <li>みんなの掲示板</li>
