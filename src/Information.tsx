@@ -3,10 +3,10 @@ import Header from './Header';
 import Footer from './Footer';
 import styles from './styles/Home.module.scss';
 
-function Home() {
+function Information() {
   return (
     <div className={styles['userinfo1']}>
-      <Header name='ホーム' backPath='/explainhiit' icons={true} />
+      <Header name='お知らせ' backPath='/explainhiit' icons={true} />
       <div className={styles['margin-area']}>
         <header className={styles['userinfo-header']}>
           <Link to='/' className={`${styles.button} ${styles['-primary']}`}>
@@ -19,4 +19,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Information;

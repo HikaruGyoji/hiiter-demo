@@ -10,19 +10,27 @@ function Footer() {
     <footer className={styles['footer-wrapper']}>
       <div className={styles['display-setting']}>
         <div className={styles['img-wrapper']}>
-          <img src={home} alt='home' />
+          <Link to='/home'>
+            <img src={home} alt='home' />
+          </Link>
           <span>ホーム</span>
         </div>
         <div className={styles['img-wrapper']}>
-          <img src={group} alt='group' />
+          <Link to='/home'>
+            <img src={group} alt='group' />
+          </Link>
           <span>グループ</span>
         </div>
         <div className={styles['img-wrapper']}>
-          <img src={analysis} alt='analysis' />
+          <Link to='/home'>
+            <img src={analysis} alt='analysis' />
+          </Link>
           <span>進捗状況</span>
         </div>
         <div className={styles['img-wrapper']}>
-          <img src={account} alt='account' />
+          <Link to='/home'>
+            <img src={account} alt='account' />
+          </Link>
           <span>アカウント</span>
         </div>
       </div>

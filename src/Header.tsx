@@ -12,7 +12,13 @@ function Header(props: { name: string; backPath: string; icons: boolean }) {
           <span>{props.name}</span>
           {props.icons ? (
             <div>
-              <img src={icon1} alt='icon1' className={styles['icon-margin']} />
+              <Link to='/information'>
+                <img
+                  src={icon1}
+                  alt='icon1'
+                  className={styles['icon-margin']}
+                />
+              </Link>
               <img src={icon2} alt='icon2' />
             </div>
           ) : (
