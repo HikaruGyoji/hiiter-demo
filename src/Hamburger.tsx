@@ -16,10 +16,14 @@ function Hamburger(props: Props) {
       >
         <div className={styles['user-name']}>test</div>
         <div className={styles['menu-title']}>メニュー</div>
-        <ul>
-          <li>メニューアイテム1</li>
-          <li>メニューアイテム2</li>
-          <li>メニューアイテム3</li>
+        <ul className={styles['list-style']}>
+          <li>レベル設定・変更</li>
+          <li>HIITとは</li>
+          <li>進捗状況</li>
+          <li>ガイドライン</li>
+          <li>みんなの掲示板</li>
+          <li>グループ</li>
+          <li>アカウント</li>
         </ul>
       </div>
     </div>

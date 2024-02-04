@@ -17,6 +17,9 @@
 
 .menu-title {
   background-color: #ee817b;
+  text-align: left;
+  padding: 5px;
+  padding-left: 20px;
 }
 
 .menu-container.open {
@@ -27,4 +30,16 @@
   position: fixed;
   top: 20px;
   right: 20px;
+}
+
+.list-style {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    color: #ee817b;
+    border-bottom: 1px solid #f6afaa;
+    padding: 10px;
+  }
 }
