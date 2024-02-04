@@ -24,21 +24,18 @@ function Login() {
             placeholder='パスワード'
           />
 
-          <Link
-            to='/signup'
-            className={`${styles.button} ${styles['-primary']}`}
-          >
+          <Link to='/home' className={`${styles.button} ${styles['-primary']}`}>
             メールアドレスでログイン
           </Link>
-          <Link to='/login' className={`${styles.button} ${styles['-google']}`}>
+          <Link to='/home' className={`${styles.button} ${styles['-google']}`}>
             <img src={google} alt='google' />
             Googleでログイン
           </Link>
-          <Link to='/signup' className={`${styles.button} ${styles['-line']}`}>
+          <Link to='/home' className={`${styles.button} ${styles['-line']}`}>
             <img src={line} alt='line' />
             Lineでログイン
           </Link>
-          <Link to='/login' className={`${styles.button} ${styles['-x']}`}>
+          <Link to='/home' className={`${styles.button} ${styles['-x']}`}>
             <img src={x} alt='x' />
             Xでログイン
           </Link>
