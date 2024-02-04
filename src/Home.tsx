@@ -27,7 +27,10 @@ function Home() {
           </div>
         </div>
         <p>2月の運動状況</p>
+        <div className={styles['active-info']}>test</div>
         <p>運動設定</p>
+        <div className={styles['active-setting1']}>test</div>
+        <div className={styles['active-setting2']}>test</div>
         <header className={styles['userinfo-header']}>
           <Link to='/' className={`${styles.button} ${styles['-primary']}`}>
             運動開始
