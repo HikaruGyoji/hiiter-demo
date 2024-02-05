@@ -25,6 +25,9 @@ function UserInfo2() {
       <Header name='ユーザー情報(2/4)' backPath='/userinfo1' icons={false} />
       <div className={styles['margin-area']}>
         <p className={styles['userinfo-text']}>運動レベルを選んでください</p>
+        <span className={styles['userinfo-span']}>
+          ユーザー情報は後からでも変更できます。
+        </span>
         <br />
         <header className={styles['userinfo-header']}>
           <div className={styles['userinfo1-wrapper']}>

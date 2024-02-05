@@ -29,7 +29,7 @@ function UserInfo1() {
           運動の目的を一つ選んでください
         </p>
         <span className={styles['userinfo-span']}>
-          最も重視する項目を1つ選んでください
+          ユーザー情報は後からでも変更できます。
         </span>
         <header className={styles['userinfo-header']}>
           <div className={styles['userinfo1-wrapper']}>

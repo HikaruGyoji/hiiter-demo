@@ -26,8 +26,12 @@ function UserInfo3() {
     <div className={styles['userinfo1']}>
       <Header name='ユーザー情報(3/4)' backPath='/userinfo2' icons={false} />
       <div className={styles['margin-area']}>
-        <p className={styles['userinfo-text']}>運動の悩みを選んでください</p>
-        <span className={styles['userinfo-span']}>複数選択可</span>
+        <p className={styles['userinfo-text']}>
+          運動の悩みを選んでください（複数選択可）
+        </p>
+        <span className={styles['userinfo-span']}>
+          ユーザー情報は後からでも変更できます。
+        </span>{' '}
         <header className={styles['userinfo-header']}>
           <div className={styles['userinfo1-wrapper']}>
             <div className={styles['card-boxes']}>

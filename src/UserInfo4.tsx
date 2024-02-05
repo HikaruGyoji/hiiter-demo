@@ -12,6 +12,7 @@ function UserInfo4() {
   const [weight, setWeight] = useState('');
   const [work, setWork] = useState('');
   const [time, setTime] = useState('');
+  const [goal, setGoal] = useState('');
 
   useEffect(() => {
     const sexElement = document.getElementById(
@@ -96,15 +97,22 @@ function UserInfo4() {
     );
   }
 
-  const allInputsFilled = username && sex && birth && height && weight && work;
+  const allInputsFilled =
+    username && sex && birth && height && weight && work && goal;
 
   return (
     <div className={styles['userinfo1']}>
       <Header name='ユーザー情報(4/4)' backPath='/userinfo3' icons={false} />
       <div className={styles['margin-area']}>
-        <div className={styles['userinfo-message']}>
-          <p>さぁまもなく運動開始です。</p>
-          <p>ニックネームと目標を記入しましょう！</p>
+        <div className={styles['margin-area-bottom']}>
+          <p className={styles['userinfo-text']}>
+            さぁまもなく運動開始です。
+            <br />
+            ニックネームと目標を記入しましょう！
+          </p>
+          <span className={styles['userinfo-span']}>
+            ユーザー情報は後からでも変更できます。
+          </span>
         </div>
         <header className={styles['userinfo-header']}>
           <div className={styles['userinfo-wrapper']}>
@@ -188,7 +196,9 @@ function UserInfo4() {
               </select>
             </div>
             <div className={styles['userinfo-group']}>
-              <label htmlFor='time'>通知時間</label>
+              <label htmlFor='time'>
+                通知時間<small>（ONを推奨）</small>
+              </label>
               <Switch isChecked={false} />
               <input
                 className={styles['input-box']}
@@ -196,6 +206,18 @@ function UserInfo4() {
                 type='time'
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
+              />
+            </div>
+            <div className={styles['userinfo-group']}>
+              <label htmlFor='goal'>目標</label>
+              <textarea
+                className={styles['textarea-box']}
+                id='goal'
+                rows={5}
+                cols={40}
+                placeholder='具体的、定量的で現実的な自分の悩みとの紐付け目標の締切を含めた例文'
+                value={goal}
+                onChange={(e) => setGoal(e.target.value)}
               />
             </div>
           </div>

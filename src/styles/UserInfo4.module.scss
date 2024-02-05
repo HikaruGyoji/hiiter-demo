@@ -3,7 +3,8 @@
 @include button.button;
 
 input,
-select {
+select,
+textarea {
   -webkit-appearance: none;
   color: black;
   background-color: white;
@@ -63,6 +64,10 @@ select {
   align-items: flex-start;
 }
 
+.margin-area-bottom {
+  margin-bottom: 20px;
+}
+
 .userinfo-message {
   margin: 20px 0;
   font-weight: bold;
@@ -79,6 +84,14 @@ select {
 .input-box {
   border: none;
   height: 35px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  width: 280px;
+}
+
+.textarea-box {
+  font-size: 16px;
+  border: none;
   margin-bottom: 10px;
   padding: 0 20px;
   width: 280px;
