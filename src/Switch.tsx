@@ -36,6 +36,7 @@ class Switch extends Component<SwitchProps, SwitchState> {
             type='checkbox'
           />
           <div className={styles['switch-box']}>
+            <small>{this.state.isChecked ? 'ON' : 'OFF'}</small>
             <div></div>
           </div>
         </label>

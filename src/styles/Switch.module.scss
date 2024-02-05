@@ -10,7 +10,7 @@ input[type='checkbox'].switch {
 
 input[type='checkbox'].switch + div {
   vertical-align: middle;
-  width: 40px;
+  width: 50px;
   height: 20px;
   border-radius: 999px;
   background-color: rgba(#ee817b, 0.5);
@@ -53,12 +53,69 @@ input[type='checkbox'].switch + div > div {
 }
 
 input[type='checkbox'].switch:checked + div > div {
-  transform: translate3d(20px, 0, 0);
+  transform: translate3d(31px, 0, 0);
   background-color: #ffffff;
+}
+
+input[type='checkbox'].switch + div > small {
+  transform: translateX(18px) translateY(-9px);
+}
+
+input[type='checkbox'].switch:checked + div > small {
+  transform: translateY(-9px);
 }
 
 input[type='checkbox'].bigswitch.switch + div > div {
   width: 44px;
   height: 44px;
   margin-top: 1px;
+}
+
+.switch-container {
+  position: relative;
+}
+
+.switch {
+  display: none;
+}
+
+.switch-box {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* 調整可能な幅 */
+  height: 34px; /* 調整可能な高さ */
+  background-color: #ccc;
+  border-radius: 17px; /* 高さの半分に設定 */
+  padding: 3px;
+}
+
+.switch-box small {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 6px; /* 調整可能な左のオフセット */
+  color: white;
+  font-weight: bold;
+}
+
+.switch-box div {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 28px; /* 調整可能なトグルの幅 */
+  height: 28px; /* 調整可能なトグルの高さ */
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.switch-box div::before {
+  content: '';
+  position: absolute;
+  width: 20px; /* 調整可能なトグルの丸の大きさ */
+  height: 20px; /* 調整可能なトグルの丸の大きさ */
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
