@@ -23,6 +23,13 @@ select {
 
 .margin-area {
   padding-top: 120px;
+  p {
+    margin: 0;
+    margin-left: 15px;
+    padding: 0;
+    text-align: left;
+    font-weight: bold;
+  }
 }
 
 .userinfo1-wrapper {
@@ -64,14 +71,6 @@ select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-p {
-  margin: 0;
-  margin-left: 15px;
-  padding: 0;
-  text-align: left;
-  font-weight: bold;
 }
 
 .news-wrapper {
