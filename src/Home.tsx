@@ -37,15 +37,15 @@ function Home() {
         <div className={styles['news-wrapper']}>
           <div>
             <img src={news1} alt='news1' />
-            <p>記事（イベント情報・豆知識）タイトルや概要などを載せる</p>
+            <p>新着記事</p>
           </div>
           <div>
             <img src={news2} alt='news2' />
-            <p>記事（イベント情報・豆知識）タイトルや概要などを載せる</p>
+            <p>新着イベント</p>
           </div>
           <div>
             <img src={news3} alt='news2' />
-            <p>記事（イベント情報・豆知識）タイトルや概要などを載せる</p>
+            <p>新着豆知識</p>
           </div>
         </div>
         <p>2月の運動状況</p>

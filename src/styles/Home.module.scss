@@ -82,7 +82,7 @@ select {
   padding: 10px;
   display: flex;
   p {
-    font-size: 8px;
+    font-size: 12px;
     color: white;
     font-weight: bold;
     margin: 0;
@@ -189,4 +189,45 @@ select {
       color: white;
     }
   }
+}
+.news-wrapper {
+  width: 100%; /* コンテナの幅を100%に設定 */
+  white-space: nowrap; /* テキストが要素の外側にはみ出さないように */
+  overflow: hidden; /* 要素からはみ出たコンテンツを非表示に */
+}
+
+.news-wrapper div {
+  display: inline-block; /* 要素を横に並べる */
+  padding: 0 10px; /* 要素間のスペース */
+  max-width: 200px; /* 画像とテキストの最大幅 */
+}
+
+.news-wrapper div img {
+  vertical-align: middle;
+  width: 150px; /* 画像の幅を調整 */
+  height: auto; /* 高さは自動調整 */
+}
+
+.news-wrapper div p {
+  vertical-align: middle;
+  margin-left: 10px;
+  overflow-wrap: break-word; /* 10文字ごとに折り返す */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* 初期位置 */
+  }
+  100% {
+    transform: translateX(-100%); /* 無限にスクロール */
+  }
+}
+
+.news-wrapper div {
+  animation: scroll 10s linear infinite;
+  display: flex;
+  padding: 0 10px;
+  max-width: 200px;
+  flex-direction: column;
+  align-items: center;
 }
