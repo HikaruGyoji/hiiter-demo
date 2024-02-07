@@ -50,25 +50,37 @@ const Popup: React.FC<PopupProps> = ({ type, onClose }) => {
       case 'HIIT':
         return (
           <div>
-            <h2>HIITメニュー</h2>
-            <ul>
+            <p>HIITメニュー</p>
+            <span>オススメ</span>
+            <ul className={styles['hiit-menu']}>
               <li
                 className={selectedSet === 'SetA' ? styles.checked : ''}
                 onClick={() => handleSetClick('SetA')}
               >
-                SetA
+                スクワット＆ジャンプ
+                <br />
+                ジャンピングジャック＆シザーズ
+                <br />
+                その場かけ足
               </li>
               <li
                 className={selectedSet === 'SetB' ? styles.checked : ''}
                 onClick={() => handleSetClick('SetB')}
               >
-                SetB
+                ジャンピングジャック＆シザーズ <br />
+                ジャンピングジャック＆シザーズ
+                <br />
+                ジャンピングジャック＆シザーズ{' '}
               </li>
               <li
                 className={selectedSet === 'SetC' ? styles.checked : ''}
                 onClick={() => handleSetClick('SetC')}
               >
-                SetC
+                スクワット＆ジャンプ
+                <br />
+                ジャンピングジャック＆シザーズ
+                <br />
+                その場かけ足
               </li>
             </ul>
           </div>
@@ -76,13 +88,16 @@ const Popup: React.FC<PopupProps> = ({ type, onClose }) => {
       case '低強度':
         return (
           <div>
-            <h2>低強度メニュー</h2>
-            <ul>
+            <p>低強度メニュー</p>
+            <ul className={styles['low-strength-menu']}>
               <li
                 className={selectedSet === 'SetA' ? styles.checked : ''}
                 onClick={() => handleSetClick('SetA')}
               >
-                SetA
+                腕立て
+                <br />
+                腹筋 <br />
+                背筋
               </li>
             </ul>
           </div>

@@ -15,9 +15,11 @@
     border: 1px solid #ccc;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    height: 250px;
-    width: 250px;
+
     flex-direction: column;
+    p {
+      font-weight: bold;
+    }
     ul {
       display: flex;
       flex-direction: column;
@@ -26,12 +28,22 @@
       margin: 0;
       padding: 0;
       li {
+        color: black;
         padding: 15px 0;
         background-color: rgba(188, 188, 188, 0.3);
       }
       .checked {
-        background-color: #ee817b;
+        color: white;
+        background-color: #928484;
       }
+    }
+    .hiit-menu {
+      height: 400px;
+      width: 300px;
+    }
+    .low-strength-menu {
+      height: 300px;
+      width: 300px;
     }
   }
 }
