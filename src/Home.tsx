@@ -102,7 +102,10 @@ function Home() {
           </div>
         </div>
         <header className={styles['userinfo-header']}>
-          <Link to='/' className={`${styles.button} ${styles['-primary']}`}>
+          <Link
+            to='/warmingup'
+            className={`${styles.button} ${styles['-primary']}`}
+          >
             運動開始
           </Link>
         </header>
