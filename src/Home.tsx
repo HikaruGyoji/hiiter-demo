@@ -6,19 +6,27 @@ import news1 from './assets/img/news1.png';
 import news2 from './assets/img/news2.png';
 import news3 from './assets/img/news3.png';
 import { useState } from 'react';
+import Popup from './Popup';
 
 function Home() {
   const [hiitClicked, setHiitClicked] = useState(true);
   const [lowStrengthClicked, setLowStrengthClicked] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const handleHiitClick = () => {
     setHiitClicked(true);
     setLowStrengthClicked(false);
+    setIsPopupOpen(true);
   };
 
   const handleLowStrengthClick = () => {
     setHiitClicked(false);
     setLowStrengthClicked(true);
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
   };
 
   return (
@@ -74,7 +82,7 @@ function Home() {
           <p>運動タイプ</p>
           <div>
             <div
-              className={`${styles.hittbutton} ${
+              className={`${styles.setbutton} ${
                 hiitClicked ? styles['clicked'] : ''
               }`}
               onClick={handleHiitClick}
@@ -83,7 +91,7 @@ function Home() {
               <span>いつものトレーニング</span>
             </div>
             <div
-              className={`${styles.lowstrength} ${
+              className={`${styles.setbutton} ${
                 lowStrengthClicked ? styles['clicked'] : ''
               }`}
               onClick={handleLowStrengthClick}
@@ -100,6 +108,12 @@ function Home() {
         </header>
       </div>
       <Footer />
+      {isPopupOpen && (
+        <Popup
+          type={hiitClicked ? 'HIIT' : '低強度'}
+          onClose={handleClosePopup}
+        />
+      )}
     </div>
   );
 }

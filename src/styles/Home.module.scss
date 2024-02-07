@@ -166,7 +166,7 @@ select {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    div {
+    .setbutton {
       display: flex;
       flex-direction: column;
       gap: 0;
