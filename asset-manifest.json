@@ -1,7 +1,20 @@
 {
   "files": {
-    "main.css": "/hiiter-demo/static/css/main.c8bcdf18.css",
-    "main.js": "/hiiter-demo/static/js/main.06d1e0b9.js",
+    "main.css": "/hiiter-demo/static/css/main.46989219.css",
+    "main.js": "/hiiter-demo/static/js/main.a519b9e2.js",
+    "reactPlayerYouTube.js": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js",
+    "reactPlayerSoundCloud.js": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js",
+    "reactPlayerVimeo.js": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js",
+    "reactPlayerFacebook.js": "/hiiter-demo/static/js/reactPlayerFacebook.185be99f.chunk.js",
+    "reactPlayerStreamable.js": "/hiiter-demo/static/js/reactPlayerStreamable.0b49d93e.chunk.js",
+    "reactPlayerWistia.js": "/hiiter-demo/static/js/reactPlayerWistia.0785401f.chunk.js",
+    "reactPlayerTwitch.js": "/hiiter-demo/static/js/reactPlayerTwitch.13e887ae.chunk.js",
+    "reactPlayerDailyMotion.js": "/hiiter-demo/static/js/reactPlayerDailyMotion.4769a029.chunk.js",
+    "reactPlayerMixcloud.js": "/hiiter-demo/static/js/reactPlayerMixcloud.ca25dd51.chunk.js",
+    "reactPlayerVidyard.js": "/hiiter-demo/static/js/reactPlayerVidyard.5f200955.chunk.js",
+    "reactPlayerKaltura.js": "/hiiter-demo/static/js/reactPlayerKaltura.1d654c00.chunk.js",
+    "reactPlayerFilePlayer.js": "/hiiter-demo/static/js/reactPlayerFilePlayer.13238b00.chunk.js",
+    "reactPlayerPreview.js": "/hiiter-demo/static/js/reactPlayerPreview.b83b93fd.chunk.js",
     "static/js/787.89c1857e.chunk.js": "/hiiter-demo/static/js/787.89c1857e.chunk.js",
     "static/media/test.mp4": "/hiiter-demo/static/media/test.4a7c872a111e0cba24af.mp4",
     "static/media/custom.png": "/hiiter-demo/static/media/custom.699b2d74d828cf2f0a23.png",
@@ -19,12 +32,25 @@
     "static/media/news2.png": "/hiiter-demo/static/media/news2.c704ca44f4c15c738377.png",
     "static/media/news1.png": "/hiiter-demo/static/media/news1.b994e209fc9ddc115f08.png",
     "index.html": "/hiiter-demo/index.html",
-    "main.c8bcdf18.css.map": "/hiiter-demo/static/css/main.c8bcdf18.css.map",
-    "main.06d1e0b9.js.map": "/hiiter-demo/static/js/main.06d1e0b9.js.map",
+    "main.46989219.css.map": "/hiiter-demo/static/css/main.46989219.css.map",
+    "main.a519b9e2.js.map": "/hiiter-demo/static/js/main.a519b9e2.js.map",
+    "reactPlayerYouTube.dfccad8e.chunk.js.map": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js.map",
+    "reactPlayerSoundCloud.344eba33.chunk.js.map": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js.map",
+    "reactPlayerVimeo.ddb368ec.chunk.js.map": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js.map",
+    "reactPlayerFacebook.185be99f.chunk.js.map": "/hiiter-demo/static/js/reactPlayerFacebook.185be99f.chunk.js.map",
+    "reactPlayerStreamable.0b49d93e.chunk.js.map": "/hiiter-demo/static/js/reactPlayerStreamable.0b49d93e.chunk.js.map",
+    "reactPlayerWistia.0785401f.chunk.js.map": "/hiiter-demo/static/js/reactPlayerWistia.0785401f.chunk.js.map",
+    "reactPlayerTwitch.13e887ae.chunk.js.map": "/hiiter-demo/static/js/reactPlayerTwitch.13e887ae.chunk.js.map",
+    "reactPlayerDailyMotion.4769a029.chunk.js.map": "/hiiter-demo/static/js/reactPlayerDailyMotion.4769a029.chunk.js.map",
+    "reactPlayerMixcloud.ca25dd51.chunk.js.map": "/hiiter-demo/static/js/reactPlayerMixcloud.ca25dd51.chunk.js.map",
+    "reactPlayerVidyard.5f200955.chunk.js.map": "/hiiter-demo/static/js/reactPlayerVidyard.5f200955.chunk.js.map",
+    "reactPlayerKaltura.1d654c00.chunk.js.map": "/hiiter-demo/static/js/reactPlayerKaltura.1d654c00.chunk.js.map",
+    "reactPlayerFilePlayer.13238b00.chunk.js.map": "/hiiter-demo/static/js/reactPlayerFilePlayer.13238b00.chunk.js.map",
+    "reactPlayerPreview.b83b93fd.chunk.js.map": "/hiiter-demo/static/js/reactPlayerPreview.b83b93fd.chunk.js.map",
     "787.89c1857e.chunk.js.map": "/hiiter-demo/static/js/787.89c1857e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c8bcdf18.css",
-    "static/js/main.06d1e0b9.js"
+    "static/css/main.46989219.css",
+    "static/js/main.a519b9e2.js"
   ]
 }
