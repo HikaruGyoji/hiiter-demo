@@ -43,8 +43,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
         url={src}
         id='MainPlay'
         playing={isPlaying} // 再生を制御する
-        loop
-        controls={true}
+        loop={false}
+        controls={false}
         width='300px'
         height='200px'
         onProgress={handleProgress}
