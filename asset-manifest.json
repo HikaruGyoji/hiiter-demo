@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hiiter-demo/static/css/main.2d106ce1.css",
-    "main.js": "/hiiter-demo/static/js/main.c53e9b99.js",
+    "main.css": "/hiiter-demo/static/css/main.4a252250.css",
+    "main.js": "/hiiter-demo/static/js/main.3c960598.js",
     "static/js/787.89c1857e.chunk.js": "/hiiter-demo/static/js/787.89c1857e.chunk.js",
     "static/media/custom.png": "/hiiter-demo/static/media/custom.699b2d74d828cf2f0a23.png",
     "static/media/difficult.png": "/hiiter-demo/static/media/difficult.c9454f796801584da16a.png",
@@ -18,12 +18,12 @@
     "static/media/news2.png": "/hiiter-demo/static/media/news2.c704ca44f4c15c738377.png",
     "static/media/news1.png": "/hiiter-demo/static/media/news1.b994e209fc9ddc115f08.png",
     "index.html": "/hiiter-demo/index.html",
-    "main.2d106ce1.css.map": "/hiiter-demo/static/css/main.2d106ce1.css.map",
-    "main.c53e9b99.js.map": "/hiiter-demo/static/js/main.c53e9b99.js.map",
+    "main.4a252250.css.map": "/hiiter-demo/static/css/main.4a252250.css.map",
+    "main.3c960598.js.map": "/hiiter-demo/static/js/main.3c960598.js.map",
     "787.89c1857e.chunk.js.map": "/hiiter-demo/static/js/787.89c1857e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d106ce1.css",
-    "static/js/main.c53e9b99.js"
+    "static/css/main.4a252250.css",
+    "static/js/main.3c960598.js"
   ]
 }
