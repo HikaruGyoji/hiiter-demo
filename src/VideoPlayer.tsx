@@ -59,8 +59,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
         playing={isPlaying} // 再生を制御する
         loop={false}
         controls={false}
-        width='300px'
-        height='200px'
+        width='350px'
+        height='250px'
         onProgress={handleProgress}
         onDuration={handleDuration}
         playsinline
@@ -69,6 +69,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
         <p className={styles['time-text']}>
           {formatTime(duration - playedSeconds)}
         </p>
+
         <div className={styles['icons']}>
           <FontAwesomeIcon
             icon={faBackwardStep}

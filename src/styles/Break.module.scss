@@ -43,6 +43,10 @@ select {
   font-size: calc(10px + 2vmin);
   color: white;
   background-color: #fcecea;
+  a {
+    bottom: 5%;
+    position: absolute;
+  }
 }
 
 .userinfo-text {
@@ -67,4 +71,20 @@ select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.container {
+  ul {
+    list-style-type: none;
+    margin: 0px 40px;
+    padding: 10px;
+    height: 180px;
+    background-color: rgba(#928484, 0.3);
+    overflow-y: scroll;
+    color: white;
+    .selected {
+      color: black;
+      font-weight: bold;
+    }
+  }
 }
