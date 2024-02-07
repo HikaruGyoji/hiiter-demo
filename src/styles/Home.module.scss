@@ -25,10 +25,14 @@ select {
   padding-top: 120px;
   p {
     margin: 0;
+    margin-top: 10px;
     margin-left: 15px;
     padding: 0;
     text-align: left;
     font-weight: bold;
+  }
+  .hello-message {
+    margin-top: 0;
   }
 }
 
@@ -97,6 +101,7 @@ select {
   div {
     background-color: white;
     padding: 10px 60px;
+    width: 50px;
     p {
       text-align: center;
       font-size: 12px;
@@ -121,6 +126,7 @@ select {
   div {
     background-color: white;
     padding: 10px 30px;
+    width: 120px;
     p {
       text-align: center;
       font-size: 12px;
@@ -158,6 +164,9 @@ select {
       flex-direction: column;
       gap: 0;
       padding: 10px 15px;
+      background-color: rgba(#bcbcbc, 0.3);
+      color: black;
+      height: 47px;
       p {
         font-size: 16px;
       }
@@ -166,13 +175,9 @@ select {
         font-weight: bold;
       }
     }
-    .hittbutton {
+    .clicked {
       background-color: #ee817b;
       color: white;
-    }
-    .lowstrength {
-      background-color: rgba(#bcbcbc, 0.3);
-      color: black;
     }
   }
 }

@@ -5,13 +5,27 @@ import styles from './styles/Home.module.scss';
 import news1 from './assets/img/news1.png';
 import news2 from './assets/img/news2.png';
 import news3 from './assets/img/news3.png';
+import { useState } from 'react';
 
 function Home() {
+  const [hiitClicked, setHiitClicked] = useState(true);
+  const [lowStrengthClicked, setLowStrengthClicked] = useState(false);
+
+  const handleHiitClick = () => {
+    setHiitClicked(true);
+    setLowStrengthClicked(false);
+  };
+
+  const handleLowStrengthClick = () => {
+    setHiitClicked(false);
+    setLowStrengthClicked(true);
+  };
+
   return (
     <div className={styles['userinfo1']}>
       <Header name='ホーム' backPath='/explainhiit' icons={true} />
       <div className={styles['margin-area']}>
-        <p>こんにちはヒッティさん</p>
+        <p className={styles['hello-message']}>こんにちはヒッティさん</p>
         <div className={styles['news-wrapper']}>
           <div>
             <img src={news1} alt='news1' />
@@ -57,11 +71,21 @@ function Home() {
         <div className={styles['active-setting2']}>
           <p>運動タイプ</p>
           <div>
-            <div className={`${styles.hittbutton}`}>
+            <div
+              className={`${styles.hittbutton} ${
+                hiitClicked ? styles['clicked'] : ''
+              }`}
+              onClick={handleHiitClick}
+            >
               <p>HIIT</p>
               <span>いつものトレーニング</span>
             </div>
-            <div className={`${styles.lowstrength}`}>
+            <div
+              className={`${styles.lowstrength} ${
+                lowStrengthClicked ? styles['clicked'] : ''
+              }`}
+              onClick={handleLowStrengthClick}
+            >
               <p>低強度</p>
               <span>やる気がない時はこちら</span>
             </div>
