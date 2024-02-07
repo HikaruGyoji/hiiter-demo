@@ -35,6 +35,9 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
 
   const handleProgress = (progress: { playedSeconds: number }) => {
     setPlayedSeconds(progress.playedSeconds);
+    if (progress.playedSeconds >= duration) {
+      setIsPlaying(false);
+    }
   };
 
   const handleDuration = (duration: number) => {
@@ -74,7 +77,11 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
           />
           <FontAwesomeIcon
             icon={isPlaying ? faPause : faPlay}
-            className={styles['control-button-pause']}
+            className={`${styles['control-button']} ${
+              isPlaying
+                ? styles['control-button-pause']
+                : styles['control-button-play']
+            }`}
             onClick={handlePlayPause}
           />
           <span className={styles['control-button-background']}></span>
