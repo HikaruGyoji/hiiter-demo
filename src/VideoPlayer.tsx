@@ -77,6 +77,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
             className={styles['control-button-pause']}
             onClick={handlePlayPause}
           />
+          <span className={styles['control-button-background']}></span>
           <FontAwesomeIcon
             icon={faForwardStep}
             className={styles['control-button']}

@@ -11,9 +11,15 @@
 }
 .control-button-pause {
   font-size: 36px;
-  background-color: #ee817b;
   padding: 5px 15px;
   color: white;
+  z-index: 2;
+}
+.control-button-background {
+  position: absolute;
+  background-color: #ee817b;
+  padding: 24px;
+  z-index: 1;
   border-radius: 50%;
 }
 
