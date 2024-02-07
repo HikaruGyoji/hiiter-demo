@@ -15,12 +15,14 @@ function WarmingUp() {
           <VideoPlayer src={testVideo} />
         </div>
       </div>
-      <Link
-        to='/warmingup'
-        className={`${styles.button} ${styles['-primary']}`}
-      >
-        次へ
-      </Link>
+      <div className={styles['userinfo-header']}>
+        <Link
+          to='/warmingup'
+          className={`${styles.button} ${styles['-primary']}`}
+        >
+          次へ
+        </Link>
+      </div>
       <Footer />
     </div>
   );

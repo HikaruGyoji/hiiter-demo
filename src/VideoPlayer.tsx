@@ -1,6 +1,11 @@
 import React, { useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
 import styles from './styles/VideoPlayer.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBackwardStep } from '@fortawesome/free-solid-svg-icons';
+import { faForwardStep } from '@fortawesome/free-solid-svg-icons';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPause } from '@fortawesome/free-solid-svg-icons';
 
 interface VideoPlayerProps {
   src: string;
@@ -36,8 +41,14 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
     setDuration(duration);
   };
 
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
+
   return (
-    <div>
+    <div className={styles['vide-padding']}>
       <ReactPlayer
         ref={playerRef}
         url={src}
@@ -52,14 +63,26 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
         playsinline
       />
       <div>
-        <button onClick={handlePlayPause}>
-          {isPlaying ? '一時停止' : '再生'}
-        </button>
-        <button onClick={handleFastForward}>早送り</button>
-        <button onClick={handleRewind}>速戻し</button>
         <p className={styles['time-text']}>
-          残りの再生時間: {Math.ceil(duration - playedSeconds)} 秒
+          {formatTime(duration - playedSeconds)}
         </p>
+        <div className={styles['icons']}>
+          <FontAwesomeIcon
+            icon={faBackwardStep}
+            className={styles['control-button']}
+            onClick={handleRewind}
+          />
+          <FontAwesomeIcon
+            icon={isPlaying ? faPause : faPlay}
+            className={styles['control-button-pause']}
+            onClick={handlePlayPause}
+          />
+          <FontAwesomeIcon
+            icon={faForwardStep}
+            className={styles['control-button']}
+            onClick={handleFastForward}
+          />
+        </div>
       </div>
     </div>
   );
