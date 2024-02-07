@@ -12,7 +12,7 @@ function WarmingUp() {
       <Header name='ウォーミングアップ' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
         <header className={styles['userinfo-header']}>
-          <VideoPlayer src={testVideo} />
+          <VideoPlayer src={testVideo} width='350px' height='250px' />
         </header>
       </div>
       <Footer />
