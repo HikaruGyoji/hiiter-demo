@@ -54,7 +54,10 @@ function CoolDown() {
         </ul>
       </div>
       <div className={styles['userinfo-header']}>
-        <Link to='/home' className={`${styles.button} ${styles['-primary']}`}>
+        <Link
+          to='/complete'
+          className={`${styles.button} ${styles['-primary']}`}
+        >
           次へ
         </Link>
       </div>
