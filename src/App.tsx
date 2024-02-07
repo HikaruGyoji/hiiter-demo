@@ -10,6 +10,9 @@ import ExplainHiit from './ExplainHiit';
 import Home from './Home';
 import Information from './Information';
 import WarmingUp from './WarmingUp';
+import Break from './Break';
+import CoolDown from './CoolDown';
+import Exercise from './Exercise';
 
 const App = () => (
   <HashRouter>
@@ -25,6 +28,9 @@ const App = () => (
       <Route path='/home' element={<Home />} />
       <Route path='/information' element={<Information />} />
       <Route path='/warmingup' element={<WarmingUp />} />
+      <Route path='/exercise' element={<Exercise />} />
+      <Route path='/break' element={<Break />} />
+      <Route path='/cooldown' element={<CoolDown />} />
     </Routes>
   </HashRouter>
 );
