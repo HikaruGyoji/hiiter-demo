@@ -62,7 +62,9 @@ function Home() {
           </div>
           <div>
             <p>運動レベル</p>
-            <span>オススメは Lv4</span>
+            <span>
+              Lv4<small>（オススメ）</small>
+            </span>
             <button className={`${styles.button} ${styles['-secondary']}`}>
               変更はこちら
             </button>
