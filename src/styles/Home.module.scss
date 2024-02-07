@@ -143,6 +143,36 @@ select {
 .active-setting2 {
   background-color: white;
   margin: 0 15px;
-  padding: 30px;
+  padding: 10px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 10px 15px;
+      p {
+        font-size: 16px;
+      }
+      span {
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+    .hittbutton {
+      background-color: #ee817b;
+      color: white;
+    }
+    .lowstrength {
+      background-color: rgba(#bcbcbc, 0.3);
+      color: black;
+    }
+  }
 }

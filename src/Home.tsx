@@ -54,7 +54,19 @@ function Home() {
             </button>
           </div>
         </div>
-        <div className={styles['active-setting2']}>test</div>
+        <div className={styles['active-setting2']}>
+          <p>運動タイプ</p>
+          <div>
+            <div className={`${styles.hittbutton}`}>
+              <p>HIIT</p>
+              <span>いつものトレーニング</span>
+            </div>
+            <div className={`${styles.lowstrength}`}>
+              <p>低強度</p>
+              <span>やる気がない時はこちら</span>
+            </div>
+          </div>
+        </div>
         <header className={styles['userinfo-header']}>
           <Link to='/' className={`${styles.button} ${styles['-primary']}`}>
             運動開始
