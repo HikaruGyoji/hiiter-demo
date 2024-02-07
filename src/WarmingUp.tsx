@@ -11,10 +11,16 @@ function WarmingUp() {
     <div className={styles['userinfo1']}>
       <Header name='ウォーミングアップ' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
-        <header className={styles['userinfo-header']}>
-          <VideoPlayer src={testVideo} width='350px' height='250px' />
-        </header>
+        <div className={styles['userinfo-header']}>
+          <VideoPlayer src={testVideo} />
+        </div>
       </div>
+      <Link
+        to='/warmingup'
+        className={`${styles.button} ${styles['-primary']}`}
+      >
+        次へ
+      </Link>
       <Footer />
     </div>
   );
