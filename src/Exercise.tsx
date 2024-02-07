@@ -7,7 +7,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import testVideo from './assets/video/test.mp4';
 
 function Exercise() {
-  const [selectedIndex, setSelectedIndex] = useState<number>(-1); // 初期値を-1に設定する
+  const [selectedIndex, setSelectedIndex] = useState<number>(0); // 初期値を-1に設定する
 
   useEffect(() => {
     const intervalId = setInterval(() => {

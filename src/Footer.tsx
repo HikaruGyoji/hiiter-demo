@@ -22,7 +22,7 @@ function Footer() {
           <span>グループ</span>
         </div>
         <div className={styles['img-wrapper']}>
-          <Link to='/home'>
+          <Link to='/progress'>
             <img src={analysis} alt='analysis' />
           </Link>
           <span>進捗状況</span>

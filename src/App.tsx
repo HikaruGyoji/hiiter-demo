@@ -14,6 +14,7 @@ import Break from './Break';
 import CoolDown from './CoolDown';
 import Exercise from './Exercise';
 import Complete from './Complete';
+import Progress from './Progress';
 
 const App = () => (
   <HashRouter>
@@ -33,6 +34,7 @@ const App = () => (
       <Route path='/break' element={<Break />} />
       <Route path='/cooldown' element={<CoolDown />} />
       <Route path='/complete' element={<Complete />} />
+      <Route path='/progress' element={<Progress />} />
     </Routes>
   </HashRouter>
 );
