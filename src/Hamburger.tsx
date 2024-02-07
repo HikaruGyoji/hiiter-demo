@@ -29,7 +29,9 @@ function Hamburger(props: Props) {
         </div>
         <div className={styles['menu-title']}>メニュー</div>
         <ul className={styles['list-style']}>
-          <li>レベル設定・変更</li>
+          <li>
+            <Link to='/levelsetting'>レベル設定・変更</Link>
+          </li>
           <li>
             <Link to='/explainhiit'>HIITとは</Link>
           </li>

@@ -15,6 +15,7 @@ import CoolDown from './CoolDown';
 import Exercise from './Exercise';
 import Complete from './Complete';
 import Progress from './Progress';
+import LevelSetting from './LevelSetting';
 
 const App = () => (
   <HashRouter>
@@ -35,6 +36,7 @@ const App = () => (
       <Route path='/cooldown' element={<CoolDown />} />
       <Route path='/complete' element={<Complete />} />
       <Route path='/progress' element={<Progress />} />
+      <Route path='/levelsetting' element={<LevelSetting />} />
     </Routes>
   </HashRouter>
 );

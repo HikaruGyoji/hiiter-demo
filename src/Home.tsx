@@ -76,18 +76,24 @@ function Home() {
           <div>
             <p>タイプ</p>
             <span>ダイエット</span>
-            <button className={`${styles.button} ${styles['-secondary']}`}>
+            <Link
+              to='/levelsetting'
+              className={`${styles.button} ${styles['-secondary']}`}
+            >
               変更はこちら
-            </button>
+            </Link>
           </div>
           <div>
             <p>運動レベル</p>
             <span>
               Lv4<small>（オススメ）</small>
             </span>
-            <button className={`${styles.button} ${styles['-secondary']}`}>
+            <Link
+              to='/levelsetting'
+              className={`${styles.button} ${styles['-secondary']}`}
+            >
               変更はこちら
-            </button>
+            </Link>
           </div>
         </div>
         <div className={styles['active-setting2']}>
