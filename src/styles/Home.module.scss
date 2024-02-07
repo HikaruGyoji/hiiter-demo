@@ -196,19 +196,19 @@ select {
   overflow: hidden; /* 要素からはみ出たコンテンツを非表示に */
 }
 
-.news-wrapper div {
+.news-wrapper a {
   display: inline-block; /* 要素を横に並べる */
   padding: 0 10px; /* 要素間のスペース */
   max-width: 200px; /* 画像とテキストの最大幅 */
 }
 
-.news-wrapper div img {
+.news-wrapper a img {
   vertical-align: middle;
   width: 150px; /* 画像の幅を調整 */
   height: auto; /* 高さは自動調整 */
 }
 
-.news-wrapper div p {
+.news-wrapper a p {
   vertical-align: middle;
   margin-left: 10px;
   overflow-wrap: break-word; /* 10文字ごとに折り返す */
@@ -223,11 +223,12 @@ select {
   }
 }
 
-.news-wrapper div {
+.news-wrapper a {
   animation: scroll 10s linear infinite;
   display: flex;
   padding: 0 10px;
   max-width: 200px;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
 }

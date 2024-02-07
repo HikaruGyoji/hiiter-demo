@@ -35,18 +35,18 @@ function Home() {
       <div className={styles['margin-area']}>
         <p className={styles['hello-message']}>こんにちはヒッティさん</p>
         <div className={styles['news-wrapper']}>
-          <div>
+          <a href='https://www.nikkei.com/article/DGXMZO11481080Q7A110C1000000/'>
             <img src={news1} alt='news1' />
             <p>新着記事</p>
-          </div>
-          <div>
+          </a>
+          <a href='https://www.nikkei.com/article/DGXMZO11481080Q7A110C1000000/'>
             <img src={news2} alt='news2' />
             <p>新着イベント</p>
-          </div>
-          <div>
+          </a>
+          <a href='https://www.nikkei.com/article/DGXMZO11481080Q7A110C1000000/'>
             <img src={news3} alt='news2' />
             <p>新着豆知識</p>
-          </div>
+          </a>
         </div>
         <p>2月の運動状況</p>
         <div className={styles['active-info']}>
