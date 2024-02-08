@@ -38,7 +38,9 @@ function Hamburger(props: Props) {
           <li>
             <Link to='/progress'>進捗状況</Link>
           </li>
-          <li>ガイドライン</li>
+          <li>
+            <Link to='/guildline'>ガイドライン</Link>
+          </li>
           <li>みんなの掲示板</li>
           <li>グループ</li>
           <li>アカウント</li>

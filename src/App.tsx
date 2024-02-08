@@ -16,6 +16,7 @@ import Exercise from './Exercise';
 import Complete from './Complete';
 import Progress from './Progress';
 import LevelSetting from './LevelSetting';
+import Guidline from './Guidline';
 
 const App = () => (
   <HashRouter>
@@ -37,6 +38,7 @@ const App = () => (
       <Route path='/complete' element={<Complete />} />
       <Route path='/progress' element={<Progress />} />
       <Route path='/levelsetting' element={<LevelSetting />} />
+      <Route path='/guildline' element={<Guidline />} />
     </Routes>
   </HashRouter>
 );
