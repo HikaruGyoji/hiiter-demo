@@ -47,11 +47,6 @@ function Guidline() {
             <br />
           </p>
         </div>
-        <header className={styles['userinfo-header']}>
-          <Link to='/home' className={`${styles.button} ${styles['-primary']}`}>
-            ホームへ
-          </Link>
-        </header>
       </div>
       <Footer />
     </div>
