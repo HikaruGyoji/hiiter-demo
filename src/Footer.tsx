@@ -16,7 +16,7 @@ function Footer() {
           <span>ホーム</span>
         </div>
         <div className={styles['img-wrapper']}>
-          <Link to='/home'>
+          <Link to='/group'>
             <img src={group} alt='group' />
           </Link>
           <span>グループ</span>
@@ -28,7 +28,7 @@ function Footer() {
           <span>進捗状況</span>
         </div>
         <div className={styles['img-wrapper']}>
-          <Link to='/home'>
+          <Link to='/account'>
             <img src={account} alt='account' />
           </Link>
           <span>アカウント</span>

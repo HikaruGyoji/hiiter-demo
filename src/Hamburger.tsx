@@ -41,9 +41,17 @@ function Hamburger(props: Props) {
           <li>
             <Link to='/guildline'>ガイドライン</Link>
           </li>
-          <li>みんなの掲示板</li>
-          <li>グループ</li>
-          <li>アカウント</li>
+          <li>
+            {' '}
+            <Link to='/bulletinboard'>みんなの掲示板</Link>
+          </li>
+
+          <li>
+            <Link to='/group'>グループ</Link>
+          </li>
+          <li>
+            <Link to='/account'>アカウント</Link>
+          </li>
         </ul>
       </div>
     </div>

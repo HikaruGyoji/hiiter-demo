@@ -6,7 +6,7 @@ import styles from './styles/Guidline.module.scss';
 function Guidline() {
   return (
     <div className={styles['userinfo1']}>
-      <Header name='ガイドライン' backPath='/home' icons={false} />
+      <Header name='ガイドライン' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
         <div className={styles['explain-box']}>
           <p>
