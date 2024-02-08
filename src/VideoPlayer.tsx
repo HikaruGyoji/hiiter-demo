@@ -1,3 +1,4 @@
+// VideoPlayer.jsx
 import React, { useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
 import styles from './styles/VideoPlayer.module.scss';
@@ -7,15 +8,22 @@ import { faForwardStep } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faPause } from '@fortawesome/free-solid-svg-icons';
 
-interface VideoPlayerProps {
-  src: string;
+interface Exercise {
+  time: number;
+  exercise: string;
 }
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
+interface VideoPlayerProps {
+  src: string;
+  trainingMenu: Exercise[];
+}
+
+const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, trainingMenu }) => {
   const playerRef = useRef<ReactPlayer>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [playedSeconds, setPlayedSeconds] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
+  const [selectedExerciseIndex, setSelectedExerciseIndex] = useState<number>(0);
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -35,13 +43,33 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
 
   const handleProgress = (progress: { playedSeconds: number }) => {
     setPlayedSeconds(progress.playedSeconds);
-    if (progress.playedSeconds >= duration) {
-      setIsPlaying(false);
+    updateSelectedExerciseIndex(progress.playedSeconds);
+  };
+
+  const updateSelectedExerciseIndex = (currentTime: number) => {
+    for (let i = 0; i < trainingMenu.length; i++) {
+      if (currentTime >= trainingMenu[i].time) {
+        if (
+          i === trainingMenu.length - 1 ||
+          currentTime < trainingMenu[i + 1].time
+        ) {
+          setSelectedExerciseIndex(i);
+          return;
+        }
+      }
     }
+    setSelectedExerciseIndex(0);
   };
 
   const handleDuration = (duration: number) => {
     setDuration(duration);
+  };
+
+  const handleExerciseItemClick = (index: number) => {
+    const selectedExercise = trainingMenu[index];
+    if (selectedExercise) {
+      playerRef.current?.seekTo(selectedExercise.time);
+    }
   };
 
   const formatTime = (time: number) => {
@@ -56,7 +84,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
         ref={playerRef}
         url={src}
         id='MainPlay'
-        playing={isPlaying} // 再生を制御する
+        playing={isPlaying}
         loop={false}
         controls={false}
         width='350px'
@@ -69,7 +97,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
         <p className={styles['time-text']}>
           {formatTime(duration - playedSeconds)}
         </p>
-
         <div className={styles['icons']}>
           <FontAwesomeIcon
             icon={faBackwardStep}
@@ -92,6 +119,21 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
             onClick={handleFastForward}
           />
         </div>
+      </div>
+      <div className={styles['container']}>
+        <ul>
+          {trainingMenu.map((exercise, index) => (
+            <li
+              key={index}
+              className={
+                index === selectedExerciseIndex ? styles['selected'] : ''
+              }
+              onClick={() => handleExerciseItemClick(index)}
+            >
+              {exercise.exercise}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
