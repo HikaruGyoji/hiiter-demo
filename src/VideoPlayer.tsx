@@ -1,5 +1,5 @@
 // VideoPlayer.jsx
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
 import styles from './styles/VideoPlayer.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,6 +24,15 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, trainingMenu }) => {
   const [playedSeconds, setPlayedSeconds] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
   const [selectedExerciseIndex, setSelectedExerciseIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const selectedLi = document.getElementById(
+      `exercise-${selectedExerciseIndex}`
+    );
+    if (selectedLi) {
+      selectedLi.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [selectedExerciseIndex]);
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -125,6 +134,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, trainingMenu }) => {
           {trainingMenu.map((exercise, index) => (
             <li
               key={index}
+              id={`exercise-${index}`}
               className={
                 index === selectedExerciseIndex ? styles['selected'] : ''
               }

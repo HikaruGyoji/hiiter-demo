@@ -5,6 +5,12 @@
     { "time": 5, "exercise": "Exercise 2" },
     { "time": 10, "exercise": "Exercise 3" },
     { "time": 15, "exercise": "Exercise 4" },
+    { "time": 10, "exercise": "Exercise 3" },
+    { "time": 15, "exercise": "Exercise 4" },
+    { "time": 10, "exercise": "Exercise 3" },
+    { "time": 15, "exercise": "Exercise 4" },
+    { "time": 10, "exercise": "Exercise 3" },
+    { "time": 15, "exercise": "Exercise 4" },
     { "time": 20, "exercise": "Exercise 5" }
   ]
 }
