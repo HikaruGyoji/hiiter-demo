@@ -73,6 +73,12 @@ select {
   p {
     margin: 0;
     padding: 0;
+    text-align: justify;
+    span {
+      margin-top: 4px;
+      font-weight: bold;
+      display: block;
+    }
   }
 }
 
