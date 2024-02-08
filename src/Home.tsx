@@ -29,6 +29,8 @@ function Home() {
     setIsPopupOpen(false);
   };
 
+  const linkTo = hiitClicked ? '/warmingup' : '/training';
+
   return (
     <div className={styles['userinfo1']}>
       <Header name='ホーム' backPath='/explainhiit' icons={true} />
@@ -121,7 +123,7 @@ function Home() {
         </div>
         <header className={styles['userinfo-header']}>
           <Link
-            to='/warmingup'
+            to={linkTo}
             className={`${styles.button} ${styles['-primary']}`}
           >
             運動開始
