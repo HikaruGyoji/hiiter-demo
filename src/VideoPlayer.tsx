@@ -55,6 +55,10 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, trainingMenu }) => {
     updateSelectedExerciseIndex(progress.playedSeconds);
   };
 
+  const handleVideoEnded = () => {
+    setIsPlaying(false);
+  };
+
   const updateSelectedExerciseIndex = (currentTime: number) => {
     for (let i = 0; i < trainingMenu.length; i++) {
       if (currentTime >= trainingMenu[i].time) {
@@ -100,6 +104,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, trainingMenu }) => {
         height='250px'
         onProgress={handleProgress}
         onDuration={handleDuration}
+        onEnded={handleVideoEnded}
         playsinline
       />
       <div>
