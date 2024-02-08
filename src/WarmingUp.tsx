@@ -5,6 +5,9 @@ import VideoPlayer from './VideoPlayer';
 import trainingMenuData from './menu/trainingMenu.json';
 import testVideo from './assets/video/test.mp4';
 
+console.log(trainingMenuData.src);
+console.log(testVideo);
+
 function WarmingUp() {
   return (
     <div className={styles['userinfo1']}>
