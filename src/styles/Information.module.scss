@@ -15,6 +15,29 @@ select {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  color: black;
+  li {
+    background-color: white;
+    padding: 10px;
+    padding-right: 100px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .control-button {
+      position: absolute;
+      right: 20px;
+    }
+
+    span {
+      font-weight: bold;
+    }
+    p {
+      margin: 0;
+    }
+  }
 }
 
 .userinfo1 {
