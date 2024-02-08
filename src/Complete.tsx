@@ -14,7 +14,10 @@ function Complete() {
             お疲れ様でした。
           </p>
         </div>
-        <Link to='/home' className={`${styles.button} ${styles['-secondary']}`}>
+        <Link
+          to='/progress'
+          className={`${styles.button} ${styles['-secondary']}`}
+        >
           進捗確認
         </Link>
         <Link to='/home' className={`${styles.button} ${styles['-primary']}`}>

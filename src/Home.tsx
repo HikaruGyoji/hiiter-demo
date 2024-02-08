@@ -29,6 +29,12 @@ function Home() {
     setIsPopupOpen(false);
   };
 
+  const randomNum = Math.floor(Math.random() * 32);
+
+  const randomNum2 = Math.floor(Math.random() * 1200) + randomNum;
+
+  // 0から30までのランダムな整数を生成
+
   const linkTo = hiitClicked ? '/warmingup' : '/training';
 
   return (
@@ -66,11 +72,11 @@ function Home() {
         <div className={styles['active-info']}>
           <div>
             <p>連続回数</p>
-            <span>1200</span>
+            <span>{randomNum2}</span>
           </div>
           <div>
             <p>回数/月</p>
-            <span>18</span>
+            <span>{randomNum}</span>
           </div>
         </div>
         <p>運動設定</p>
