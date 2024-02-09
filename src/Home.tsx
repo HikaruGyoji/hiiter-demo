@@ -85,7 +85,7 @@ function Home() {
             <p>タイプ</p>
             <span>ダイエット</span>
             <Link
-              to='/levelsetting'
+              to='/typesetting'
               className={`${styles.button} ${styles['-secondary']}`}
             >
               変更はこちら
