@@ -87,7 +87,7 @@ function TypeSetting() {
               className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
               disabled
             >
-              次へ
+              決定
             </button>
           )}
         </header>

@@ -1,0 +1,51 @@
+/* table.module.scss */
+
+.tableContainer {
+  margin: 10px 20px;
+  background-color: white;
+  color: black;
+  max-height: 400px; /* スクロール可能な高さ */
+  overflow-y: auto; /* 垂直スクロールを有効にする */
+}
+
+.scrollableTable {
+  width: 100%; /* テーブルの幅を親要素に合わせる */
+  border-collapse: collapse; /* セルの境界線を表示 */
+
+  border-spacing: 0;
+  width: 100%;
+
+  thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #928484;
+    color: white;
+  }
+
+  tr {
+    border-bottom: solid 1px #eee;
+    cursor: pointer;
+  }
+
+  th,
+  td {
+    text-align: center;
+    width: 30%;
+    padding: 15px 0;
+    border-bottom: solid 1px #928484; /* 透明な境界線を追加 */
+  }
+
+  th:first-child,
+  td:first-child {
+    text-align: center;
+    width: 10%;
+    padding: 15px 0;
+    border-bottom: solid 1px #928484; /* 透明な境界線を追加 */
+  }
+}
+
+.selectedRow {
+  background-color: #ee817b; // 選択された行の背景色
+  color: white;
+}
