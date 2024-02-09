@@ -39,9 +39,9 @@ function LevelSetting() {
     <div className={styles['userinfo1']}>
       <Header name='レベル設定・変更' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
-        <p className={styles['userinfo-text']}>レベルを選んでください</p>
+        <p className={styles['userinfo-text']}>運動レベルを選んでください</p>
         <span className={styles['userinfo-span']}>
-          レベルはいつでも変更できます。
+          運動レベルはいつでも変更できます。
         </span>
         <ScrollableTable data={data} onSelectLevel={handleSelectLevel} />
         <div className={styles['userinfo-header']}>
