@@ -11,7 +11,7 @@ import React, { useState } from 'react';
 import styles from './styles/TypeSetting.module.scss';
 
 function TypeSetting() {
-  const [selectedCard, setSelectedCard] = useState<string | null>(null);
+  const [selectedCard, setSelectedCard] = useState<string | null>('ダイエット');
 
   const handleCardClick = (title: string) => {
     if (selectedCard === title) {
