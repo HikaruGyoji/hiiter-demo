@@ -238,7 +238,7 @@ select {
 }
 
 // アンドロイド対応
-@media (max-width: 370px) {
+@media (max-height: 760px) {
   .news-wrapper a img {
     width: 130px;
   }
