@@ -239,16 +239,25 @@ select {
 
 // アンドロイド対応
 @media (max-height: 760px) {
+  .margin-area p {
+    margin-top: 0;
+  }
   .news-wrapper a img {
     width: 130px;
   }
-  .active-info div {
-    padding: 5px 50px;
+  .active-info {
+    margin-bottom: 5px;
+    div {
+      padding: 5px 50px;
+    }
   }
-  .active-setting1 div {
-    padding: 5px 20px;
-    a {
-      padding: 5px 5px;
+  .active-setting1 {
+    margin-bottom: 5px;
+    div {
+      padding: 5px 20px;
+      a {
+        padding: 5px 5px;
+      }
     }
   }
   .active-setting2 {

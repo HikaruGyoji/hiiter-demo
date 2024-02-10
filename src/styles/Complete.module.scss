@@ -77,3 +77,10 @@ select {
   color: black;
   margin-bottom: 50%;
 }
+
+// アンドロイド対応
+@media (max-height: 760px) {
+  .container {
+    margin: 55% 0;
+  }
+}
