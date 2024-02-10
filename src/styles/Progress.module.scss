@@ -36,16 +36,23 @@ select {
 }
 
 .userinfo-header {
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: white;
   background-color: #fcecea;
+  height: 1400px;
+  padding-top: 20px;
   a {
     bottom: 10%;
     position: absolute;
+  }
+  p {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 16px;
   }
 }
 
@@ -71,4 +78,51 @@ select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.calender {
+  background-color: white;
+  color: black;
+}
+
+.active-info {
+  color: black;
+  margin: 0 15px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  div {
+    background-color: white;
+    padding: 10px 50px;
+    width: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      text-align: center;
+      font-size: 12px;
+      margin: 0;
+      padding: 0;
+    }
+    span {
+      font-weight: bold;
+      font-size: 28px;
+    }
+  }
+}
+
+.graph {
+  background-color: white;
+  padding: 20px;
+}
+
+.input-box {
+  border: none;
+  height: 35px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  width: 280px;
 }

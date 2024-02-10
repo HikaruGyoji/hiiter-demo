@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://hikarugyoji.github.io/hiiter-demo/",
   "dependencies": {
+    "@date-io/date-fns": "^3.0.0",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
@@ -12,7 +13,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.15.9",
+    "@mui/lab": "^5.0.0-alpha.165",
     "@mui/material": "^5.15.9",
+    "@mui/x-date-pickers": "^6.19.4",
     "@radix-ui/react-switch": "^1.0.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -21,8 +24,13 @@
     "@types/node": "^17.0.45",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
+    "chart.js": "^4.1.1",
+    "date-fns": "^3.3.1",
+    "dayjs": "^1.11.10",
     "gh-pages": "^6.1.0",
+    "moment": "^2.30.1",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-player": "^2.14.1",
     "react-router-dom": "^6.21.2",
@@ -67,5 +75,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/chart.js": "^2.9.41"
   }
 }
