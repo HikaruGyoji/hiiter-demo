@@ -236,3 +236,23 @@ select {
   align-items: center;
   text-decoration: none;
 }
+
+// アンドロイド対応
+@media (max-width: 370px) {
+  .news-wrapper a img {
+    width: 130px;
+  }
+  .active-info div {
+    padding: 5px 50px;
+  }
+  .active-setting1 div {
+    padding: 5px 20px;
+    a {
+      padding: 5px 5px;
+    }
+  }
+  .active-setting2 {
+    padding: 5px;
+    margin-bottom: 6px;
+  }
+}
