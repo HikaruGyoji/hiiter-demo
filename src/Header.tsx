@@ -3,7 +3,9 @@ import styles from './styles/Header.module.scss';
 import { Link } from 'react-router-dom';
 import icon1 from './assets/img/icon1.png';
 import icon2 from './assets/img/icon2.png';
-import Hamburger from './Hamburger'; // Hamburgerコンポーネントのインポート
+import Hamburger from './Hamburger';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 function Header(props: { name: string; backPath: string; icons: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +32,10 @@ function Header(props: { name: string; backPath: string; icons: boolean }) {
     <div className={styles['Header']}>
       <header className={styles['wrapper']}>
         <div className={styles['header-wrapper']}>
-          <Link to={props.backPath}>＜ 戻る</Link>
+          <Link to={props.backPath}>
+            {' '}
+            <FontAwesomeIcon icon={faAngleLeft} /> 戻る
+          </Link>
           <span>{props.name}</span>
           {props.icons ? (
             <div>
