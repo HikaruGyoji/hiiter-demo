@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 interface RowData {
   Lv: number;
-  A: string;
-  B: string;
-  C: string;
+  A: string[];
+  B: string[];
+  C: string[];
 }
 
 interface ScrollableTableProps {
@@ -44,9 +44,21 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
               className={selectedRow === row.Lv ? styles['selectedRow'] : ''}
             >
               <td>{row.Lv}</td>
-              <td>{row.A}</td>
-              <td>{row.B}</td>
-              <td>{row.C}</td>
+              <td>
+                {row.A.map((exercise, index) => (
+                  <div key={index}>{exercise}</div>
+                ))}
+              </td>
+              <td>
+                {row.B.map((exercise, index) => (
+                  <div key={index}>{exercise}</div>
+                ))}
+              </td>
+              <td>
+                {row.C.map((exercise, index) => (
+                  <div key={index}>{exercise}</div>
+                ))}
+              </td>
             </tr>
           ))}
         </tbody>

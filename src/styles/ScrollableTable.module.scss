@@ -26,14 +26,20 @@
   tr {
     border-bottom: solid 1px #eee;
     cursor: pointer;
+    font-size: 12px;
   }
 
   th,
   td {
     text-align: center;
     width: 30%;
-    padding: 15px 0;
+    padding: 15px 5px;
     border-bottom: solid 1px #928484;
+    div {
+      border: solid 1px #928484;
+      border-radius: 10px;
+      margin-bottom: 2px;
+    }
   }
 
   th:first-child,
@@ -48,6 +54,11 @@
 .selectedRow {
   background-color: #ee817b;
   color: white;
+  td {
+    div {
+      border: 1px solid white;
+    }
+  }
 }
 
 // アンドロイド対応
