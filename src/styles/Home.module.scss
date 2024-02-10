@@ -242,8 +242,12 @@ select {
   .margin-area p {
     margin-top: 0;
   }
+  .userinfo-header a {
+    padding: 13px;
+    font-size: 22px;
+  }
   .news-wrapper a img {
-    width: 130px;
+    width: 100px;
   }
   .active-info {
     margin-bottom: 5px;

@@ -21,3 +21,11 @@
     font-size: 12px;
   }
 }
+
+// アンドロイド対応
+@media (max-height: 760px) {
+  .card-wrapper {
+    height: 135px;
+    width: 135px;
+  }
+}

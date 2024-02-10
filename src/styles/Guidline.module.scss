@@ -94,3 +94,10 @@ select {
 .title {
   font-weight: bold;
 }
+
+// アンドロイド対応
+@media (max-height: 760px) {
+  .explain-box {
+    height: 400px;
+  }
+}

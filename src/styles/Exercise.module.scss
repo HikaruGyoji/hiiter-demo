@@ -88,3 +88,10 @@ select {
     }
   }
 }
+
+// アンドロイド対応
+@media (max-height: 760px) {
+  .userinfo-header a {
+    bottom: 0;
+  }
+}

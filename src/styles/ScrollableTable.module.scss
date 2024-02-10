@@ -4,13 +4,13 @@
   margin: 10px 20px;
   background-color: white;
   color: black;
-  max-height: 400px; /* スクロール可能な高さ */
-  overflow-y: auto; /* 垂直スクロールを有効にする */
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .scrollableTable {
-  width: 100%; /* テーブルの幅を親要素に合わせる */
-  border-collapse: collapse; /* セルの境界線を表示 */
+  width: 100%;
+  border-collapse: collapse;
 
   border-spacing: 0;
   width: 100%;
@@ -33,7 +33,7 @@
     text-align: center;
     width: 30%;
     padding: 15px 0;
-    border-bottom: solid 1px #928484; /* 透明な境界線を追加 */
+    border-bottom: solid 1px #928484;
   }
 
   th:first-child,
@@ -41,11 +41,18 @@
     text-align: center;
     width: 10%;
     padding: 15px 0;
-    border-bottom: solid 1px #928484; /* 透明な境界線を追加 */
+    border-bottom: solid 1px #928484;
   }
 }
 
 .selectedRow {
-  background-color: #ee817b; // 選択された行の背景色
+  background-color: #ee817b;
   color: white;
+}
+
+// アンドロイド対応
+@media (max-height: 760px) {
+  .tableContainer {
+    height: 350px;
+  }
 }
