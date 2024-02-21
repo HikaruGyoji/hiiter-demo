@@ -215,7 +215,7 @@ function UserInfo4() {
                 id='goal'
                 rows={5}
                 cols={40}
-                placeholder='具体的、定量的で現実的な自分の悩みとの紐付け目標の締切を含めた例文'
+                placeholder='例）好きな服を着るために、3ヶ月後までに体重を3kg落とす。'
                 value={goal}
                 onChange={(e) => setGoal(e.target.value)}
               />
