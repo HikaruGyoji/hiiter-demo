@@ -46,7 +46,6 @@
   .rounded {
     border: solid 1px #928484;
     border-radius: 10px;
-    margin-bottom: 2px;
     padding: 0 6px;
     width: fit-content;
     white-space: nowrap;
@@ -56,6 +55,7 @@
   .flex-box {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 2px;
     padding: 5px 15px;
   }
