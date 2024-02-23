@@ -35,8 +35,8 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
             <th>Lv</th>
             <th className={styles['second-th']}>運動種目</th>
             <th>選択種目数</th>
-            <th>回数</th>
-            <th>セット数</th>
+            {data[0].count === -1 ? null : <th>回数</th>}
+            {data[0].set === -1 ? null : <th>セット数</th>}
           </tr>
         </thead>
         <tbody>
@@ -65,12 +65,16 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
               <td>
                 <div key={index}>{row.maxSelected}</div>
               </td>
-              <td>
-                <div key={index}>{row.count === -1 ? '-' : row.count}</div>
-              </td>
-              <td>
-                <div key={index}>{row.set === -1 ? '-' : row.set}</div>
-              </td>
+              {row.count === -1 ? null : (
+                <td>
+                  <div key={index}>{row.count}</div>
+                </td>
+              )}
+              {row.set === -1 ? null : (
+                <td>
+                  <div key={index}>{row.set}</div>
+                </td>
+              )}
             </tr>
           ))}
         </tbody>
