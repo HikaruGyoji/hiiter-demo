@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 interface RowData {
   Lv: number;
-  A: string[];
-  B: string[];
-  C: string[];
+  type: string[];
+  count: number;
+  recommend: boolean;
 }
 
 interface ScrollableTableProps {
@@ -31,9 +31,8 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
         <thead>
           <tr>
             <th>Lv</th>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
+            <th className={styles['second-th']}>運動種目</th>
+            <th>選択種目数</th>
           </tr>
         </thead>
         <tbody>
@@ -43,21 +42,24 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
               onClick={() => handleRowClick(row.Lv)}
               className={selectedRow === row.Lv ? styles['selectedRow'] : ''}
             >
-              <td>{row.Lv}</td>
-              <td>
-                {row.A.map((exercise, index) => (
-                  <div key={index}>{exercise}</div>
+              {row.recommend ? (
+                <td>
+                  <small className={styles['recommend-text']}>オススメ</small>
+                  {row.Lv}
+                </td>
+              ) : (
+                <td>{row.Lv}</td>
+              )}
+
+              <td className={styles['flex-box']}>
+                {row.type.map((exercise, index) => (
+                  <div className={styles['rounded']} key={index}>
+                    {exercise}
+                  </div>
                 ))}
               </td>
               <td>
-                {row.B.map((exercise, index) => (
-                  <div key={index}>{exercise}</div>
-                ))}
-              </td>
-              <td>
-                {row.C.map((exercise, index) => (
-                  <div key={index}>{exercise}</div>
-                ))}
+                <div key={index}>{row.count}</div>
               </td>
             </tr>
           ))}

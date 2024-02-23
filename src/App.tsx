@@ -9,9 +9,7 @@ import UserInfo4 from './UserInfo4';
 import ExplainHiit from './ExplainHiit';
 import Home from './Home';
 import Information from './Information';
-import WarmingUp from './WarmingUp';
 import Break from './Break';
-import CoolDown from './CoolDown';
 import Exercise from './Exercise';
 import Complete from './Complete';
 import Progress from './Progress';
@@ -36,10 +34,8 @@ const App = () => (
       <Route path='/explainhiit' element={<ExplainHiit />} />
       <Route path='/home' element={<Home />} />
       <Route path='/information' element={<Information />} />
-      <Route path='/warmingup' element={<WarmingUp />} />
       <Route path='/exercise' element={<Exercise />} />
       <Route path='/break' element={<Break />} />
-      <Route path='/cooldown' element={<CoolDown />} />
       <Route path='/complete' element={<Complete />} />
       <Route path='/progress' element={<Progress />} />
       <Route path='/levelsetting' element={<LevelSetting />} />

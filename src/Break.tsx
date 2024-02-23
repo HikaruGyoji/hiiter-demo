@@ -16,7 +16,7 @@ function Break() {
       </div>
       <div className={styles['userinfo-header']}>
         <Link
-          to='/cooldown'
+          to='/complete'
           className={`${styles.button} ${styles['-primary']}`}
         >
           次へ

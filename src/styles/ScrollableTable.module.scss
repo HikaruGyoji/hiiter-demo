@@ -4,16 +4,15 @@
   margin: 10px 20px;
   background-color: white;
   color: black;
-  max-height: 400px;
+  max-height: 500px;
   overflow-y: auto;
+  overflow-x: hidden; /* テーブルの横スクロールを禁止 */
 }
 
 .scrollableTable {
   width: 100%;
   border-collapse: collapse;
-
   border-spacing: 0;
-  width: 100%;
 
   thead {
     position: sticky;
@@ -24,41 +23,58 @@
   }
 
   tr {
-    border-bottom: solid 1px #eee;
+    border-bottom: solid 1px #928484;
     cursor: pointer;
     font-size: 12px;
+  }
+
+  .second-th {
+    width: 60%;
+    border-right: solid 1px #928484;
   }
 
   th,
   td {
     text-align: center;
-    width: 30%;
     padding: 15px 5px;
-    border-bottom: solid 1px #928484;
-    div {
-      border: solid 1px #928484;
-      border-radius: 10px;
-      margin-bottom: 2px;
-    }
+    border-right: solid 1px #928484;
+  }
+  td:first-child {
+    width: 15%;
   }
 
-  th:first-child,
-  td:first-child {
-    text-align: center;
-    width: 10%;
-    padding: 15px 0;
-    border-bottom: solid 1px #928484;
+  .rounded {
+    border: solid 1px #928484;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    padding: 0 6px;
+    width: fit-content;
+    white-space: nowrap;
+    word-wrap: break-word; /* 追加 */
+  }
+
+  .flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 5px 15px;
   }
 }
 
 .selectedRow {
-  background-color: #ee817b;
+  background-color: rgb(246, 175, 170);
+  font-weight: bold;
   color: white;
   td {
-    div {
+    .rounded {
       border: 1px solid white;
     }
   }
+}
+
+.recommend-text {
+  color: red;
+  font-weight: bold;
 }
 
 // アンドロイド対応

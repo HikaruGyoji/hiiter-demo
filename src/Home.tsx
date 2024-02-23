@@ -35,7 +35,7 @@ function Home() {
 
   // 0から30までのランダムな整数を生成
 
-  const linkTo = hiitClicked ? '/warmingup' : '/training';
+  const linkTo = hiitClicked ? '/exercise' : '/training';
 
   return (
     <div className={styles['userinfo1']}>
