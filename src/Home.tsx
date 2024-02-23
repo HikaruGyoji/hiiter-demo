@@ -12,6 +12,7 @@ function Home() {
   const [hiitClicked, setHiitClicked] = useState(true);
   const [lowStrengthClicked, setLowStrengthClicked] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedLevel, setSelectedLevel] = useState('');
 
   useEffect(() => {
@@ -21,6 +22,13 @@ function Home() {
       setSelectedLevel(level);
     }
   }, []); // コンポーネントがマウントされた時のみ実行する
+
+  useEffect(() => {
+    const course = localStorage.getItem('selectedCourse');
+    if (course) {
+      setSelectedCourse(course);
+    }
+  }, []);
 
   const handleHiitClick = () => {
     setHiitClicked(true);
@@ -103,7 +111,7 @@ function Home() {
           <div>
             <p>運動レベル</p>
             <span>
-              Lv{selectedLevel || 4}
+              {selectedCourse} Lv{selectedLevel || 4}
               {selectedLevel === '4' ? <small>（オススメ）</small> : null}
             </span>
             <Link
