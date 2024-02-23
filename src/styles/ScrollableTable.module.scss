@@ -62,7 +62,7 @@
 }
 
 .selectedRow {
-  background-color: rgb(246, 175, 170);
+  background-color: #ee817b;
   font-weight: bold;
   color: white;
   td {
@@ -70,10 +70,14 @@
       border: 1px solid white;
     }
   }
+  .recommend-text {
+    color: white;
+    font-weight: bold;
+  }
 }
 
 .recommend-text {
-  color: red;
+  color: #ee817b;
   font-weight: bold;
 }
 
