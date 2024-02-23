@@ -112,7 +112,6 @@ function Home() {
             <p>運動レベル</p>
             <span>
               {selectedCourse} Lv{selectedLevel || 4}
-              {selectedLevel === '4' ? <small>（オススメ）</small> : null}
             </span>
             <Link
               to='/levelsetting'
