@@ -1,0 +1,40 @@
+.todoList {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 150px;
+  margin-right: 20px;
+}
+
+.todo {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+.itemList {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 150px;
+}
+
+.item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.dragdrop-wrapper {
+  display: flex;
+  font-size: 12px;
+}

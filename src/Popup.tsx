@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
-import styles from './styles/Popup.module.scss'; // ポップアップのスタイリングを定義したファイル
+import styles from './styles/Popup.module.scss';
+import DragAndDropContainer from './DragDrop';
+import DragDrop from './DragDrop';
 
 interface PopupProps {
   type: string;
@@ -51,38 +53,7 @@ const Popup: React.FC<PopupProps> = ({ type, onClose }) => {
         return (
           <div>
             <p>HIITメニュー</p>
-            <span>オススメ</span>
-            <ul className={styles['hiit-menu']}>
-              <li
-                className={selectedSet === 'SetA' ? styles.checked : ''}
-                onClick={() => handleSetClick('SetA')}
-              >
-                スクワット＆ジャンプ
-                <br />
-                ジャンピングジャック＆シザーズ
-                <br />
-                その場かけ足
-              </li>
-              <li
-                className={selectedSet === 'SetB' ? styles.checked : ''}
-                onClick={() => handleSetClick('SetB')}
-              >
-                ジャンピングジャック＆シザーズ <br />
-                ジャンピングジャック＆シザーズ
-                <br />
-                ジャンピングジャック＆シザーズ{' '}
-              </li>
-              <li
-                className={selectedSet === 'SetC' ? styles.checked : ''}
-                onClick={() => handleSetClick('SetC')}
-              >
-                スクワット＆ジャンプ
-                <br />
-                ジャンピングジャック＆シザーズ
-                <br />
-                その場かけ足
-              </li>
-            </ul>
+            <DragDrop />
           </div>
         );
       case '低強度':
