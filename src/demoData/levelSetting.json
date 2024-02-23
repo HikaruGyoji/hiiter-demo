@@ -108,25 +108,291 @@
     ],
     "中級": [
       {
+        "Lv": 1,
+        "type": [
+          "スクワット＆ジャンプ",
+          "ジャンピングジャック＆シザーズ",
+          "その場かけ足"
+        ],
+        "maxSelected": 1,
+        "set": 1,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 2,
+        "type": [
+          "サイドステップ＆もも上げその場かけ足",
+          "スケーターズランジ",
+          "マウンテンクライマー"
+        ],
+        "maxSelected": 1,
+        "set": 1,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 3,
+        "type": [
+          "ギャロップ＆フロアタッチ",
+          "バーピージャンプ",
+          "スクワット＆フロントキック"
+        ],
+        "maxSelected": 1,
+        "set": 1,
+        "count": -1,
+        "recommend": false
+      },
+      {
         "Lv": 4,
         "type": [
-          "スクワット",
-          "プッシュアップ",
-          "シットアップ",
-          "バックエクステンション"
+          "スクワット＆ジャンプ",
+          "ジャンピングジャック＆シザーズ",
+          "その場かけ足"
         ],
-        "maxSelected": 4,
-        "recommend": true
+        "maxSelected": 2,
+        "set": 2,
+        "count": -1,
+        "recommend": false
       },
       {
         "Lv": 5,
         "type": [
-          "スクワット",
-          "プッシュアップ",
-          "シットアップ",
-          "バックエクステンション"
+          "サイドステップ＆もも上げその場かけ足",
+          "スケーターズランジ",
+          "マウンテンクライマー"
         ],
-        "maxSelected": 4,
+        "maxSelected": 2,
+        "set": 2,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 6,
+        "type": [
+          "ギャロップ＆フロアタッチ",
+          "バーピージャンプ",
+          "スクワット＆フロントキック"
+        ],
+        "maxSelected": 2,
+        "set": 2,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 7,
+        "type": [
+          "スクワット＆ジャンプ",
+          "ジャンピングジャック＆シザーズ",
+          "その場かけ足"
+        ],
+        "maxSelected": 3,
+        "set": 3,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 8,
+        "type": [
+          "サイドステップ＆もも上げその場かけ足",
+          "スケーターズランジ",
+          "マウンテンクライマー"
+        ],
+        "maxSelected": 3,
+        "set": 3,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 9,
+        "type": [
+          "ギャロップ＆フロアタッチ",
+          "バーピージャンプ",
+          "スクワット＆フロントキック"
+        ],
+        "maxSelected": 3,
+        "set": 3,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 10,
+        "type": [
+          "スクワット＆ジャンプ",
+          "ジャンピングジャック＆シザーズ",
+          "その場かけ足"
+        ],
+        "maxSelected": 3,
+        "set": 4,
+        "count": -1,
+        "recommend": true
+      },
+      {
+        "Lv": 11,
+        "type": [
+          "サイドステップ＆もも上げその場かけ足",
+          "スケーターズランジ",
+          "マウンテンクライマー"
+        ],
+        "maxSelected": 3,
+        "set": 4,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 12,
+        "type": [
+          "ギャロップ＆フロアタッチ",
+          "バーピージャンプ",
+          "スクワット＆フロントキック"
+        ],
+        "maxSelected": 3,
+        "set": 4,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 13,
+        "type": [
+          "スクワット＆ジャンプ",
+          "ジャンピングジャック＆シザーズ",
+          "その場かけ足"
+        ],
+        "maxSelected": 3,
+        "set": 5,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 14,
+        "type": [
+          "サイドステップ＆もも上げその場かけ足",
+          "スケーターズランジ",
+          "マウンテンクライマー"
+        ],
+        "maxSelected": 3,
+        "set": 5,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 15,
+        "type": [
+          "ギャロップ＆フロアタッチ",
+          "バーピージャンプ",
+          "スクワット＆フロントキック"
+        ],
+        "maxSelected": 3,
+        "set": 5,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 16,
+        "type": [
+          "スクワット＆ジャンプ",
+          "ジャンピングジャック＆シザーズ",
+          "その場かけ足"
+        ],
+        "maxSelected": 3,
+        "set": 6,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 17,
+        "type": [
+          "サイドステップ＆もも上げその場かけ足",
+          "スケーターズランジ",
+          "マウンテンクライマー"
+        ],
+        "maxSelected": 3,
+        "set": 6,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 18,
+        "type": [
+          "ギャロップ＆フロアタッチ",
+          "バーピージャンプ",
+          "スクワット＆フロントキック"
+        ],
+        "maxSelected": 3,
+        "set": 6,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 19,
+        "type": [
+          "スクワット＆ジャンプ",
+          "ジャンピングジャック＆シザーズ",
+          "その場かけ足"
+        ],
+        "maxSelected": 3,
+        "set": 7,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 20,
+        "type": [
+          "サイドステップ＆もも上げその場かけ足",
+          "スケーターズランジ",
+          "マウンテンクライマー"
+        ],
+        "maxSelected": 3,
+        "set": 7,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 21,
+        "type": [
+          "ギャロップ＆フロアタッチ",
+          "バーピージャンプ",
+          "スクワット＆フロントキック"
+        ],
+        "maxSelected": 3,
+        "set": 7,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 22,
+        "type": [
+          "スクワット＆ジャンプ",
+          "ジャンピングジャック＆シザーズ",
+          "その場かけ足"
+        ],
+        "maxSelected": 3,
+        "set": 8,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 23,
+        "type": [
+          "サイドステップ＆もも上げその場かけ足",
+          "スケーターズランジ",
+          "マウンテンクライマー"
+        ],
+        "maxSelected": 3,
+        "set": 8,
+        "count": -1,
+        "recommend": false
+      },
+      {
+        "Lv": 24,
+        "type": [
+          "ギャロップ＆フロアタッチ",
+          "バーピージャンプ",
+          "スクワット＆フロントキック"
+        ],
+        "maxSelected": 3,
+        "set": 8,
+        "count": -1,
         "recommend": false
       }
     ],
@@ -139,7 +405,7 @@
           "シットアップ",
           "バックエクステンション"
         ],
-        "maxSelected": 4,
+        "maxSelected": 3,
         "recommend": false
       },
       {
@@ -283,7 +549,7 @@
           "バックエクステンション"
         ],
         "maxSelected": 4,
-        "recommend": true
+        "recommend": false
       },
       {
         "Lv": 5,

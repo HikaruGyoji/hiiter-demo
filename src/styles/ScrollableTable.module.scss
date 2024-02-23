@@ -36,7 +36,6 @@
   th,
   td {
     text-align: center;
-    padding: 15px 5px;
     border-right: solid 1px #928484;
   }
   td:first-child {
@@ -73,12 +72,14 @@
   .recommend-text {
     color: white;
     font-weight: bold;
+    display: block;
   }
 }
 
 .recommend-text {
   color: #ee817b;
   font-weight: bold;
+  display: block;
 }
 
 // アンドロイド対応
