@@ -3,6 +3,7 @@
   padding: 10px;
   width: 150px;
   margin-right: 20px;
+  position: relative;
 }
 
 .todo {
@@ -11,6 +12,8 @@
   border-radius: 4px;
   padding: 8px;
   margin-bottom: 8px;
+  left: auto !important;
+  top: auto !important;
 }
 
 .deleteButton {
@@ -21,6 +24,7 @@
 }
 
 .itemList {
+  position: relative;
   border: 1px solid #ccc;
   padding: 10px;
   width: 150px;
@@ -32,6 +36,8 @@
   border-radius: 4px;
   padding: 8px;
   margin-bottom: 8px;
+  left: auto !important;
+  top: auto !important;
 }
 
 .dragdrop-wrapper {
