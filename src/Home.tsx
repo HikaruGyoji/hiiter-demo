@@ -5,13 +5,22 @@ import styles from './styles/Home.module.scss';
 import news1 from './assets/img/news1.png';
 import news2 from './assets/img/news2.png';
 import news3 from './assets/img/news3.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Popup from './Popup';
 
 function Home() {
   const [hiitClicked, setHiitClicked] = useState(true);
   const [lowStrengthClicked, setLowStrengthClicked] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedLevel, setSelectedLevel] = useState('');
+
+  useEffect(() => {
+    // localStorage から selectedLevel を取得する
+    const level = localStorage.getItem('selectedLevel');
+    if (level) {
+      setSelectedLevel(level);
+    }
+  }, []); // コンポーネントがマウントされた時のみ実行する
 
   const handleHiitClick = () => {
     setHiitClicked(true);
@@ -35,7 +44,7 @@ function Home() {
 
   // 0から30までのランダムな整数を生成
 
-  const linkTo = hiitClicked ? '/exercise' : '/training';
+  const linkTo = hiitClicked ? '/warmingup' : '/training';
 
   return (
     <div className={styles['userinfo1']}>
@@ -94,7 +103,8 @@ function Home() {
           <div>
             <p>運動レベル</p>
             <span>
-              Lv4<small>（オススメ）</small>
+              Lv{selectedLevel || 4}
+              {selectedLevel === '4' ? <small>（オススメ）</small> : null}
             </span>
             <Link
               to='/levelsetting'

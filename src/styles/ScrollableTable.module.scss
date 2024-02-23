@@ -4,7 +4,7 @@
   margin: 10px 20px;
   background-color: white;
   color: black;
-  max-height: 500px;
+  max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden; /* テーブルの横スクロールを禁止 */
 }
@@ -29,7 +29,7 @@
   }
 
   .second-th {
-    width: 60%;
+    width: 55%;
     border-right: solid 1px #928484;
   }
 

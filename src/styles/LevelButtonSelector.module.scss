@@ -1,0 +1,22 @@
+@use './component/button.scss';
+
+@include button.button;
+
+.level-wrapper {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 0 20px;
+  .button {
+    border-radius: initial;
+    background-color: #f6afaa;
+    height: 40px;
+  }
+
+  .button.-selected {
+    background-color: #ee817b;
+  }
+}

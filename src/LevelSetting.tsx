@@ -1,66 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import styles from './styles/LevelSetting.module.scss';
 import ScrollableTable from './ScrollableTable';
-
-const data = [
-  {
-    Lv: 1,
-    type: ['スクワット', 'プッシュアップ', 'バックエクステンション'],
-    count: 1,
-    recommend: false,
-  },
-  {
-    Lv: 2,
-    type: ['スクワット', 'プッシュアップ', 'バックエクステンション'],
-    count: 2,
-    recommend: false,
-  },
-  {
-    Lv: 3,
-    type: ['スクワット', 'プッシュアップ', 'バックエクステンション'],
-    count: 3,
-    recommend: false,
-  },
-  {
-    Lv: 4,
-    type: ['スクワット', 'プッシュアップ', 'バックエクステンション'],
-    count: 4,
-    recommend: true,
-  },
-  {
-    Lv: 5,
-    type: ['スクワット', 'プッシュアップ', 'バックエクステンション'],
-    count: 4,
-    recommend: false,
-  },
-  {
-    Lv: 6,
-    type: ['スクワット', 'プッシュアップ', 'バックエクステンション'],
-    count: 4,
-    recommend: false,
-  },
-  {
-    Lv: 7,
-    type: ['スクワット', 'プッシュアップ', 'バックエクステンション'],
-    count: 4,
-    recommend: false,
-  },
-  {
-    Lv: 8,
-    type: ['スクワット', 'プッシュアップ', 'バックエクステンション'],
-    count: 4,
-    recommend: false,
-  },
-];
+import LevelButtonSelector from './LevelButtonSelector';
+import ActivityButtonSelector from './ActivityButtonSelector';
+import data from '../src/demoData/levelSetting.json';
 
 function LevelSetting() {
-  const [selectedLevel, setSelectedLevel] = useState<number | null>(null);
+  const [selectedLevel, setSelectedLevel] = useState<number | null>(() => {
+    const storedLevel = localStorage.getItem('selectedLevel');
+    return storedLevel ? parseInt(storedLevel, 10) : 4;
+  });
+
+  const [selectedActivity, setSelectedActivity] = useState<string>(() => {
+    const storedActivity = localStorage.getItem('selectedActivity');
+    return storedActivity || 'hiit';
+  });
+
+  const [selectedCourse, setSelectedCourse] = useState<string>(() => {
+    const storedCourse = localStorage.getItem('selectedCourse');
+    return storedCourse || '初級';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('selectedActivity', selectedActivity);
+  }, [selectedActivity]);
+
+  useEffect(() => {
+    localStorage.setItem('selectedCourse', selectedCourse);
+  }, [selectedCourse]);
+
+  useEffect(() => {
+    console.log(selectedActivity);
+  }, [selectedActivity]);
+
+  useEffect(() => {
+    console.log(selectedCourse);
+  }, [selectedCourse]);
+
+  // @ts-ignore
+  const path = data[selectedActivity][selectedCourse];
+
+  useEffect(() => {
+    if (selectedLevel !== null) {
+      localStorage.setItem('selectedLevel', selectedLevel.toString());
+    }
+  }, [selectedLevel]);
 
   const handleSelectLevel = (level: number) => {
     setSelectedLevel(level);
+  };
+
+  const handleSelectActivity = (activity: string) => {
+    setSelectedActivity(activity);
+  };
+
+  const handleSelectCourse = (course: string) => {
+    setSelectedCourse(course);
   };
 
   return (
@@ -71,23 +69,17 @@ function LevelSetting() {
         <span className={styles['userinfo-span']}>
           運動レベルはいつでも変更できます。
         </span>
-        <ScrollableTable data={data} onSelectLevel={handleSelectLevel} />
+        <LevelButtonSelector onSelectCourse={handleSelectCourse} />
+        <ActivityButtonSelector onSelectActivity={handleSelectActivity} />
+        <ScrollableTable
+          data={path}
+          selectedLevel={selectedLevel}
+          onSelectLevel={handleSelectLevel}
+        />
         <div className={styles['userinfo-header']}>
-          {selectedLevel ? (
-            <Link
-              to='/home'
-              className={`${styles.button} ${styles['-primary']}`}
-            >
-              決定
-            </Link>
-          ) : (
-            <button
-              className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
-              disabled
-            >
-              決定
-            </button>
-          )}
+          <Link to='/home' className={`${styles.button} ${styles['-primary']}`}>
+            決定
+          </Link>
         </div>
       </div>
       <Footer />

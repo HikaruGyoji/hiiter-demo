@@ -2,23 +2,25 @@ import React, { useState } from 'react';
 import styles from './styles/ScrollableTable.module.scss';
 import { Link } from 'react-router-dom';
 
-interface RowData {
-  Lv: number;
-  type: string[];
-  count: number;
-  recommend: boolean;
-}
-
 interface ScrollableTableProps {
-  data: RowData[];
+  data: {
+    Lv: number;
+    type: string[];
+    maxSelected: number;
+    set: number;
+    count: number;
+    recommend: boolean;
+  }[];
+  selectedLevel: number | null;
   onSelectLevel: (level: number) => void;
 }
 
 const ScrollableTable: React.FC<ScrollableTableProps> = ({
   data,
+  selectedLevel, // selectedLevelをpropsから受け取る
   onSelectLevel,
 }) => {
-  const [selectedRow, setSelectedRow] = useState<number | null>(4);
+  const [selectedRow, setSelectedRow] = useState<number | null>(selectedLevel);
 
   const handleRowClick = (level: number) => {
     setSelectedRow(level);
@@ -33,6 +35,8 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
             <th>Lv</th>
             <th className={styles['second-th']}>運動種目</th>
             <th>選択種目数</th>
+            <th>回数</th>
+            <th>セット数</th>
           </tr>
         </thead>
         <tbody>
@@ -59,7 +63,13 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
                 ))}
               </td>
               <td>
-                <div key={index}>{row.count}</div>
+                <div key={index}>{row.maxSelected}</div>
+              </td>
+              <td>
+                <div key={index}>{row.count === -1 ? '-' : row.count}</div>
+              </td>
+              <td>
+                <div key={index}>{row.set === -1 ? '-' : row.set}</div>
               </td>
             </tr>
           ))}

@@ -4,20 +4,21 @@ import Card from './Card';
 import easy from './assets/img/easy.png';
 import normal from './assets/img/normal.png';
 import difficult from './assets/img/difficult.png';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles/UserInfo2.module.scss';
 
 function UserInfo2() {
-  const [selectedCard, setSelectedCard] = useState<string | null>(null); // Nullable string
+  const [selectedCard, setSelectedCard] = useState<string | null>(
+    localStorage.getItem('selectedCourse') || null
+  ); // Nullable string
+
+  useEffect(() => {
+    // Update localStorage when selectedCard changes
+    localStorage.setItem('selectedCourse', selectedCard || '');
+  }, [selectedCard]);
 
   const handleCardClick = (title: string) => {
-    if (selectedCard === title) {
-      // If the same card is clicked again, unselect it
-      setSelectedCard(null);
-    } else {
-      // Replace the previously selected card with the newly selected one
-      setSelectedCard(title);
-    }
+    setSelectedCard(title);
   };
 
   return (
