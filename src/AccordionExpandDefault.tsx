@@ -8,7 +8,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 export default function AccordionExpandDefault() {
   return (
     <div style={{ padding: '20px 30px', height: '1000px' }}>
-      <Accordion style={{ marginBottom: '4px' }}>
+      <Accordion style={{ marginTop: '0px', marginBottom: '4px' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls='panel1-content'
@@ -35,7 +35,7 @@ export default function AccordionExpandDefault() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion style={{ marginBottom: '4px' }}>
+      <Accordion style={{ marginTop: '0px', marginBottom: '4px' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls='panel1-content'
@@ -62,7 +62,7 @@ export default function AccordionExpandDefault() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion style={{ marginBottom: '4px' }}>
+      <Accordion style={{ marginTop: '0px', marginBottom: '4px' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls='panel1-content'
@@ -89,7 +89,7 @@ export default function AccordionExpandDefault() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion style={{ marginBottom: '4px' }}>
+      <Accordion style={{ marginTop: '0px', marginBottom: '4px' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls='panel1-content'
@@ -116,7 +116,7 @@ export default function AccordionExpandDefault() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion style={{ marginBottom: '4px' }}>
+      <Accordion style={{ marginTop: '0px', marginBottom: '4px' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls='panel1-content'
