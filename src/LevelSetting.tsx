@@ -107,7 +107,6 @@ function LevelSetting() {
           </Link>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
