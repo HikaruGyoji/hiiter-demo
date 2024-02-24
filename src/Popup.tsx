@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import styles from './styles/Popup.module.scss';
 import exercise1 from './assets/video/その場かけ足.mp4';
 import exercise2 from './assets/video/ギャロップ＆フロアタッチ.mp4';
-import exercise3 from './assets/video/サイドステップ＆その場かけ足.mp4';
+import exercise3 from './assets/video/サイドステップ＆もも上げその場かけ足.mp4';
 import exercise4 from './assets/video/ジャンピングジャック＆シザーズ.mp4';
 import exercise5 from './assets/video/シットアップ.mp4';
 import exercise6 from './assets/video/スクワット.mp4';
@@ -21,6 +21,53 @@ interface PopupProps {
   exerciseName?: string;
 }
 
+const exerciseDescription: { [key: string]: string } = {
+  その場かけ足:
+    'その場で高速に足踏みすることで、下半身の筋肉と心肺機能を鍛える運動。',
+  'ギャロップ＆フロアタッチ':
+    '横方向にジャンプしながら交互に手で床に触れることで、下半身の筋肉と心肺機能を鍛える運動。',
+  'サイドステップ＆もも上げその場かけ足':
+    '横に大きくステップするサイドステップと膝を高く上げるもも上げその場かけ足を組み合わせた運動で、下半身の筋肉と心肺機能を鍛える運動。',
+  'ジャンピングジャック＆シザーズ':
+    '両足を左右に開閉するジャンピングジャックと、交互に足を前後に開くシザーズを組み合わせた運動で、下半身の筋肉と心肺機能を鍛える運動。',
+  シットアップ:
+    '仰向けになり、膝を曲げて上半身を起こすことで、腹筋を鍛える運動。',
+  スクワット:
+    '足を肩幅に開き、腰を下ろして太ももが床と平行になるまで腰を下げることで、下半身の筋肉を強化する運動。',
+  'スクワット＆ジャンプ':
+    'スクワットの姿勢からジャンプし、着地時に再びスクワットの姿勢に戻ることで、下半身の筋肉と心肺機能を鍛える運動。',
+  'スクワット＆フロントキック':
+    'スクワットの姿勢から立ち上がりながら前方にキックすることで、下半身と体幹の筋肉、心肺機能を鍛える運動。',
+  スケーターズランジ:
+    '片足で跳び、反対側の足を後ろにクロスさせて着地する運動で、下半身と体幹の筋肉、心肺機能を鍛える運動。',
+  バックエクステンション:
+    'うつ伏せの状態から上半身を持ち上げることで、背中の筋肉を鍛える運動。',
+  バーピージャンプ:
+    'プッシュアップの姿勢から立ち上がり、ジャンプする動作を繰り返すことで、全身の筋力と心肺機能を鍛える運動。',
+  プッシュアップ:
+    'うつ伏せの状態から腕を伸ばして体を持ち上げ、胸や腕の筋肉を鍛える運動。',
+  マウンテンクライマー:
+    'プランクの姿勢から交互に膝を胸に引き寄せることで、腹筋や腕の筋肉を鍛える運動。',
+};
+
+// コンポーネント内で利用する部分
+const exerciseNameToKey = {
+  その場かけ足: 'その場かけ足',
+  'ギャロップ＆フロアタッチ': 'ギャロップ＆フロアタッチ',
+  'サイドステップ＆もも上げその場かけ足':
+    'サイドステップ＆もも上げその場かけ足',
+  'ジャンピングジャック＆シザーズ': 'ジャンピングジャック＆シザーズ',
+  シットアップ: 'シットアップ',
+  スクワット: 'スクワット',
+  'スクワット＆ジャンプ': 'スクワット＆ジャンプ',
+  'スクワット＆フロントキック': 'スクワット＆フロントキック',
+  スケーターズランジ: 'スケーターズランジ',
+  バックエクステンション: 'バックエクステンション',
+  バーピージャンプ: 'バーピージャンプ',
+  プッシュアップ: 'プッシュアップ',
+  マウンテンクライマー: 'マウンテンクライマー',
+};
+
 const Popup: React.FC<PopupProps> = ({ onClose, exerciseName }) => {
   const [src, setSrc] = useState<string>('');
 
@@ -33,36 +80,38 @@ const Popup: React.FC<PopupProps> = ({ onClose, exerciseName }) => {
 
   const getExercisePath = (name: string) => {
     switch (name) {
-      case 'その場かけ足':
+      case exerciseNameToKey['その場かけ足']:
         return exercise1;
-      case 'ギャロップ＆フロアタッチ':
+      case exerciseNameToKey['ギャロップ＆フロアタッチ']:
         return exercise2;
-      case 'サイドステップ＆もも上げその場かけ足':
+      case exerciseNameToKey['サイドステップ＆もも上げその場かけ足']:
         return exercise3;
-      case 'ジャンピングジャック＆シザーズ':
+      case exerciseNameToKey['ジャンピングジャック＆シザーズ']:
         return exercise4;
-      case 'シットアップ':
+      case exerciseNameToKey['シットアップ']:
         return exercise5;
-      case 'スクワット':
+      case exerciseNameToKey['スクワット']:
         return exercise6;
-      case 'スクワット＆ジャンプ':
+      case exerciseNameToKey['スクワット＆ジャンプ']:
         return exercise7;
-      case 'スクワット＆フロントキック':
+      case exerciseNameToKey['スクワット＆フロントキック']:
         return exercise8;
-      case 'スケーターズランジ':
+      case exerciseNameToKey['スケーターズランジ']:
         return exercise9;
-      case 'バックエクステンション':
+      case exerciseNameToKey['バックエクステンション']:
         return exercise10;
-      case 'バーピージャンプ':
+      case exerciseNameToKey['バーピージャンプ']:
         return exercise11;
-      case 'プッシュアップ':
+      case exerciseNameToKey['プッシュアップ']:
         return exercise12;
-      case 'マウンテンクライマー':
+      case exerciseNameToKey['マウンテンクライマー']:
         return exercise13;
       default:
         return '';
     }
   };
+
+  // コンポーネントの残りの部分は変更がありません
 
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -109,6 +158,9 @@ const Popup: React.FC<PopupProps> = ({ onClose, exerciseName }) => {
               playsinline
             />
           )}
+          <span className={styles['description']}>
+            {exerciseName && exerciseDescription[exerciseName]}
+          </span>
         </div>
       </div>
     </div>

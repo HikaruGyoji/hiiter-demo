@@ -1,8 +1,14 @@
 .popup-container {
   position: relative;
+  text-align: left;
 }
 
 .exercise-name {
+}
+
+.description {
+  display: block;
+  text-align: left;
 }
 
 .popup {
@@ -15,7 +21,7 @@
   }
   .popup-content {
     position: fixed;
-    top: 50%;
+    top: 40%;
     width: 80%;
     display: flex;
     color: black;
@@ -25,7 +31,7 @@
     border: 1px solid #ccc;
     padding: 40px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    height: 50%;
+    height: 40%;
 
     flex-direction: column;
     p {
