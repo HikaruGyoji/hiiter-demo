@@ -20,6 +20,7 @@ import Group from './Group';
 import Account from './Account';
 import BulletinBoard from './BulletinBoard';
 import TypeSetting from './TypeSetting';
+import HiitSetting from './HiitSetting';
 
 const App = () => (
   <HashRouter>
@@ -45,6 +46,7 @@ const App = () => (
       <Route path='/account' element={<Account />} />
       <Route path='/bulletinboard' element={<BulletinBoard />} />
       <Route path='/typesetting' element={<TypeSetting />} />
+      <Route path='/hiitsetting' element={<HiitSetting />} />
     </Routes>
   </HashRouter>
 );

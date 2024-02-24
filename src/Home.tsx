@@ -124,7 +124,8 @@ function Home() {
         <div className={styles['active-setting2']}>
           <p>運動タイプ</p>
           <div>
-            <div
+            <Link
+              to='/hiitsetting'
               className={`${styles.setbutton} ${
                 hiitClicked ? styles['clicked'] : ''
               }`}
@@ -132,7 +133,7 @@ function Home() {
             >
               <p>HIIT</p>
               <span>いつものトレーニング</span>
-            </div>
+            </Link>
             <div
               className={`${styles.setbutton} ${
                 lowStrengthClicked ? styles['clicked'] : ''
@@ -154,12 +155,12 @@ function Home() {
         </header>
       </div>
       <Footer />
-      {isPopupOpen && (
+      {/* {isPopupOpen && (
         <Popup
           type={hiitClicked ? 'HIIT' : '低強度'}
           onClose={handleClosePopup}
         />
-      )}
+      )} */}
     </div>
   );
 }

@@ -2,8 +2,13 @@
   border: 1px solid #ccc;
   padding: 10px;
   width: 150px;
-  margin-right: 20px;
   position: relative;
+}
+
+.todoListNum {
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
 .todo {
@@ -14,6 +19,10 @@
   margin-bottom: 8px;
   left: auto !important;
   top: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: -webkit-fill-available;
 }
 
 .deleteButton {
@@ -43,4 +52,8 @@
 .dragdrop-wrapper {
   display: flex;
   font-size: 12px;
+  gap: 5px;
+  background-color: white;
+  min-width: 400px;
+  justify-content: center;
 }
