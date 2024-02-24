@@ -87,8 +87,10 @@ function LevelSetting() {
     <div className={styles['userinfo1']}>
       <Header name='レベル設定・変更' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
-        <p className={styles['userinfo-text']}>レベルを選んでください</p>
+        <p className={styles['userinfo-text']}>運動レベルを選択してください</p>
+        <span className={styles['userinfo-span']}>コースを選択</span>
         <LevelButtonSelector onSelectCourse={handleSelectCourse} />
+        <span className={styles['userinfo-span']}>タイプを選択</span>
         <ActivityButtonSelector onSelectActivity={handleSelectActivity} />
         <ScrollableTable
           data={path}

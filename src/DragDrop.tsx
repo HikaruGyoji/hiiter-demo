@@ -164,7 +164,7 @@ const DragDrop = () => {
           </Droppable>
         </div>
         <div>
-          <p>運動種目数：{fixedItems.length}</p>
+          <p>全運動種目：{fixedItems.length}種</p>
           <Droppable droppableId='items'>
             {(provided) => (
               <div

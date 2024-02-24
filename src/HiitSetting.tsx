@@ -6,10 +6,10 @@ import DragDrop from './DragDrop';
 function HiitSetting() {
   return (
     <div className={styles['userinfo1']}>
-      <Header name='完了' backPath='/home' icons={true} />
+      <Header name='HIITメニュー' backPath='/home' icons={true} />
       <div className={styles['userinfo-header']}>
-        <p>HIITメニュー</p>
-        <span>メニューをドラッグ&ドロップで選択してください。</span>
+        <p>メニューのカスタマイズ</p>
+        <span>ドラッグ&ドロップで設定してください。</span>
         <div className={styles['container']}>
           <DragDrop />
         </div>

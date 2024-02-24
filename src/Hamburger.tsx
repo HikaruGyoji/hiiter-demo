@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles/Hamberger.module.scss';
-import userImg from './assets/img/user-img.png';
+import manImg from './assets/img/man.png';
+import womanImg from './assets/img/woman.png';
 import badge from './assets/img/badge.png';
 import { Link } from 'react-router-dom';
 
@@ -10,9 +11,10 @@ interface Props {
 }
 
 function Hamburger(props: Props) {
-  const [userProfile, setUserProfile] = useState<{ username: string } | null>(
-    null
-  );
+  const [userProfile, setUserProfile] = useState<{
+    username: string;
+    sex: string;
+  } | null>(null);
 
   useEffect(() => {
     const profile = localStorage.getItem('userProfile');
@@ -29,7 +31,11 @@ function Hamburger(props: Props) {
         }`}
       >
         <div className={styles['user-name']}>
-          <img src={userImg} alt='userImg' />
+          {userProfile?.sex === '男' ? (
+            <img src={manImg} alt='manImg' />
+          ) : (
+            <img src={womanImg} alt='womanImg' />
+          )}
           <div className={styles['user-name-wrapper']}>
             <div className={styles['user-name-box']}>
               <p>{userProfile?.username ? userProfile.username : 'ヒッティ'}</p>

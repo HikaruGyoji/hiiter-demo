@@ -23,11 +23,11 @@ function TypeSetting() {
 
   return (
     <div className={styles['type-setting']}>
-      <Header name='タイプ設定' backPath='/home' icons={false} />
+      <Header name='目的設定' backPath='/home' icons={false} />
       <div className={styles['margin-area']}>
-        <p className={styles['userinfo-text']}>運動タイプを選んでください</p>
+        <p className={styles['userinfo-text']}>運動目的を選んでください</p>
         <span className={styles['userinfo-span']}>
-          運動タイプはいつでも変更できます。
+          運動目的はいつでも変更できます。
         </span>
         <header className={styles['userinfo-header']}>
           <div className={styles['TypeSetting-wrapper']}>

@@ -22,7 +22,6 @@ function Home() {
     const profile = localStorage.getItem('userProfile');
     if (profile) {
       setUserProfile(JSON.parse(profile)); // 文字列をオブジェクトに変換してセット
-      console.log(JSON.parse(profile)); // 不要な行を削除
     }
   }, []);
 
@@ -114,7 +113,7 @@ function Home() {
         <p>運動設定</p>
         <div className={styles['active-setting1']}>
           <div>
-            <p>タイプ</p>
+            <p>目的</p>
             <span>ダイエット</span>
             <Link
               to='/typesetting'
@@ -124,7 +123,7 @@ function Home() {
             </Link>
           </div>
           <div>
-            <p>運動レベル</p>
+            <p>レベル</p>
             <span>
               {selectedCourse} Lv{selectedLevel || 4}
             </span>
@@ -137,7 +136,7 @@ function Home() {
           </div>
         </div>
         <div className={styles['active-setting2']}>
-          <p>運動タイプ</p>
+          <p>タイプ</p>
           <div>
             <Link
               to='/hiitsetting'
