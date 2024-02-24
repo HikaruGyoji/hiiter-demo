@@ -12,12 +12,7 @@ import data from '../src/demoData/levelSetting.json';
 import { Link } from 'react-router-dom';
 
 const DragDrop = () => {
-  const [tasks, setTasks] = useState<{ id: string; text: string }[]>([
-    { id: '1', text: 'スクワット' },
-    { id: '2', text: 'プッシュアップ' },
-    { id: '3', text: 'シットアップ' },
-    { id: '4', text: 'バックエクステンション' },
-  ]);
+  const [tasks, setTasks] = useState<{ id: string; text: string }[]>([]);
   const [maxSelected, setMaxSelected] = useState<number>(4);
   const [fixedItems, setFixedItems] = useState<{ id: string; text: string }[]>([
     { id: 'd1', text: 'スクワット' },
@@ -58,6 +53,12 @@ const DragDrop = () => {
           setFixedItems(newFixedItems);
         }
       }
+    }
+
+    // Check if hiitTasks exists in localStorage and set it to tasks state if it does
+    const hiitTasks: string | null = localStorage.getItem('hiitTasks');
+    if (hiitTasks) {
+      setTasks(JSON.parse(hiitTasks));
     }
   }, []);
 
