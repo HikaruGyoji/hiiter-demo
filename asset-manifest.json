@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hiiter-demo/static/css/main.02919f41.css",
-    "main.js": "/hiiter-demo/static/js/main.4987ba3a.js",
+    "main.css": "/hiiter-demo/static/css/main.ff2dbd9e.css",
+    "main.js": "/hiiter-demo/static/js/main.f22e80f4.js",
     "reactPlayerYouTube.js": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js",
     "reactPlayerSoundCloud.js": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js",
     "reactPlayerVimeo.js": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js",
@@ -17,6 +17,8 @@
     "reactPlayerPreview.js": "/hiiter-demo/static/js/reactPlayerPreview.b83b93fd.chunk.js",
     "static/js/787.89c1857e.chunk.js": "/hiiter-demo/static/js/787.89c1857e.chunk.js",
     "static/media/test.mp4": "/hiiter-demo/static/media/test.4a7c872a111e0cba24af.mp4",
+    "static/media/woman.png": "/hiiter-demo/static/media/woman.54288fa51dd998a998b8.png",
+    "static/media/man.png": "/hiiter-demo/static/media/man.e2c9f0fa11abb1b39d82.png",
     "static/media/custom.png": "/hiiter-demo/static/media/custom.699b2d74d828cf2f0a23.png",
     "static/media/difficult.png": "/hiiter-demo/static/media/difficult.c9454f796801584da16a.png",
     "static/media/stress.png": "/hiiter-demo/static/media/stress.9760618928f684bee40e.png",
@@ -32,8 +34,8 @@
     "static/media/news2.png": "/hiiter-demo/static/media/news2.c704ca44f4c15c738377.png",
     "static/media/news1.png": "/hiiter-demo/static/media/news1.b994e209fc9ddc115f08.png",
     "index.html": "/hiiter-demo/index.html",
-    "main.02919f41.css.map": "/hiiter-demo/static/css/main.02919f41.css.map",
-    "main.4987ba3a.js.map": "/hiiter-demo/static/js/main.4987ba3a.js.map",
+    "main.ff2dbd9e.css.map": "/hiiter-demo/static/css/main.ff2dbd9e.css.map",
+    "main.f22e80f4.js.map": "/hiiter-demo/static/js/main.f22e80f4.js.map",
     "reactPlayerYouTube.dfccad8e.chunk.js.map": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js.map",
     "reactPlayerSoundCloud.344eba33.chunk.js.map": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js.map",
     "reactPlayerVimeo.ddb368ec.chunk.js.map": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js.map",
@@ -50,7 +52,7 @@
     "787.89c1857e.chunk.js.map": "/hiiter-demo/static/js/787.89c1857e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.02919f41.css",
-    "static/js/main.4987ba3a.js"
+    "static/css/main.ff2dbd9e.css",
+    "static/js/main.f22e80f4.js"
   ]
 }
