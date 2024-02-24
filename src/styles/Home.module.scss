@@ -98,12 +98,11 @@ select {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   div {
     background-color: white;
     padding: 10px 60px;
-    width: 55px;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,7 +130,10 @@ select {
   div {
     background-color: white;
     padding: 10px 30px;
-    width: 120px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     p {
       text-align: center;
       font-size: 12px;
@@ -145,7 +147,7 @@ select {
     a {
       margin: 0;
       font-size: 12px;
-      width: 105px;
+      width: 75px;
       padding: 5px 15px;
       display: block;
     }
@@ -168,7 +170,7 @@ select {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     .setbutton {
       display: flex;
       flex-direction: column;
@@ -180,6 +182,7 @@ select {
       justify-content: center;
       text-decoration: none;
       align-items: center;
+      border-radius: 10px;
       p {
         font-size: 16px;
         margin: 0;
