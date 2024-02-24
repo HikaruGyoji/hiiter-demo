@@ -59,6 +59,13 @@ const DragDrop = () => {
     const hiitTasks: string | null = localStorage.getItem('hiitTasks');
     if (hiitTasks) {
       setTasks(JSON.parse(hiitTasks));
+    } else {
+      setTasks([
+        { id: 'd1', text: 'スクワット' },
+        { id: 'd2', text: 'プッシュアップ' },
+        { id: 'd3', text: 'シットアップ' },
+        { id: 'd4', text: 'バックエクステンション' },
+      ]);
     }
   }, []);
 

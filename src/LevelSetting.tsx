@@ -24,20 +24,14 @@ function LevelSetting() {
     return storedCourse || '初級';
   });
 
+  const [tasks, setTasks] = useState<{ id: string; text: string }[]>([]);
+
   useEffect(() => {
     localStorage.setItem('selectedActivity', selectedActivity);
   }, [selectedActivity]);
 
   useEffect(() => {
     localStorage.setItem('selectedCourse', selectedCourse);
-  }, [selectedCourse]);
-
-  useEffect(() => {
-    console.log(selectedActivity);
-  }, [selectedActivity]);
-
-  useEffect(() => {
-    console.log(selectedCourse);
   }, [selectedCourse]);
 
   // @ts-ignore
@@ -48,6 +42,34 @@ function LevelSetting() {
       localStorage.setItem('selectedLevel', selectedLevel.toString());
     }
   }, [selectedLevel]);
+
+  useEffect(() => {
+    if (selectedCourse && selectedLevel) {
+      // @ts-ignore
+      const selectedCourseData = data['hiit'][selectedCourse];
+      if (selectedCourseData) {
+        const selectedItem = selectedCourseData.find(
+          // @ts-ignore
+          (item: { Lv: number }) => item.Lv === parseInt(selectedLevel, 10)
+        );
+        if (selectedItem) {
+          const initialTasks = [];
+          for (
+            let i = 0;
+            i < selectedItem.type.length && i < selectedItem.maxSelected;
+            i++
+          ) {
+            initialTasks.push({ id: `todo${i}`, text: selectedItem.type[i] });
+          }
+          setTasks(initialTasks);
+        }
+      }
+    }
+  }, [selectedCourse, selectedLevel]);
+
+  useEffect(() => {
+    localStorage.setItem('hiitTasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   const handleSelectLevel = (level: number) => {
     setSelectedLevel(level);
@@ -74,7 +96,13 @@ function LevelSetting() {
           onSelectLevel={handleSelectLevel}
         />
         <div className={styles['userinfo-header']}>
-          <Link to='/home' className={`${styles.button} ${styles['-primary']}`}>
+          <Link
+            to='/home'
+            className={`${styles.button} ${styles['-primary']}`}
+            onClick={() =>
+              localStorage.setItem('hiitTasks', JSON.stringify(tasks))
+            }
+          >
             決定
           </Link>
         </div>
