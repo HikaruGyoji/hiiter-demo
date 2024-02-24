@@ -12,11 +12,19 @@ import data from '../src/demoData/levelSetting.json';
 import { Link } from 'react-router-dom';
 
 const DragDrop = () => {
-  const [tasks, setTasks] = useState<{ id: string; text: string }[]>([]);
-  const [maxSelected, setMaxSelected] = useState<number>(0);
-  const [fixedItems, setFixedItems] = useState<{ id: string; text: string }[]>(
-    []
-  );
+  const [tasks, setTasks] = useState<{ id: string; text: string }[]>([
+    { id: '1', text: 'スクワット' },
+    { id: '2', text: 'プッシュアップ' },
+    { id: '3', text: 'シットアップ' },
+    { id: '4', text: 'バックエクステンション' },
+  ]);
+  const [maxSelected, setMaxSelected] = useState<number>(4);
+  const [fixedItems, setFixedItems] = useState<{ id: string; text: string }[]>([
+    { id: 'd1', text: 'スクワット' },
+    { id: 'd2', text: 'プッシュアップ' },
+    { id: 'd3', text: 'シットアップ' },
+    { id: 'd4', text: 'バックエクステンション' },
+  ]);
   const [menuConfirmed, setMenuConfirmed] = useState<boolean>(false);
 
   useEffect(() => {
