@@ -69,7 +69,7 @@ function Home() {
       <Header name='ホーム' backPath='/explainhiit' icons={true} />
       <div className={styles['margin-area']}>
         <p className={styles['hello-message']}>
-          こんにちは
+          こんにちは&nbsp;
           {userProfile?.username ? userProfile.username : 'ヒッティ'}
           さん
         </p>
