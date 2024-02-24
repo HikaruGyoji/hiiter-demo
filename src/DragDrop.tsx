@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faInfo } from '@fortawesome/free-solid-svg-icons';
 import {
   DragDropContext,
   Draggable,
@@ -182,6 +182,16 @@ const DragDrop = () => {
                         ref={provided.innerRef}
                       >
                         {item.text}
+                        <button
+                          onClick={() => {
+                            console.log('test');
+                          }}
+                        >
+                          <FontAwesomeIcon
+                            icon={faInfo}
+                            className={styles['infoButton']}
+                          />
+                        </button>
                       </div>
                     )}
                   </Draggable>

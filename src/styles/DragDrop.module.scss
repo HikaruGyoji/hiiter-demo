@@ -5,8 +5,8 @@
   border: 1px solid #928484;
   border-radius: 10px;
   padding: 10px;
-  width: 150px;
   position: relative;
+  background-color: white;
 }
 
 .todoListNum {
@@ -49,12 +49,19 @@
   cursor: pointer;
 }
 
+.infoButton {
+  background-color: transparent;
+  border: none;
+  color: #928484;
+  cursor: pointer;
+}
+
 .itemList {
   position: relative;
   border: 1px solid #928484;
   border-radius: 10px;
   padding: 10px;
-  width: 150px;
+  background-color: white;
 }
 
 .item {
@@ -65,17 +72,30 @@
   margin-bottom: 8px;
   left: auto !important;
   top: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  button {
+    border-radius: 50%;
+    border: 1px solid #928484;
+    padding: 2px 6px;
+    font-size: 10px;
+    background-color: white;
+  }
 }
 
 .dragdrop-wrapper {
+  p {
+    font-size: 12px;
+  }
   display: flex;
   font-size: 12px;
   gap: 5px;
-  background-color: white;
-  min-width: 400px;
+  background-color: #fcecea;
   min-height: 300px;
   padding-bottom: 10px;
-  justify-content: center;
+  margin: 0 10px;
 }
 
 .button-wrapper {
@@ -85,11 +105,11 @@
   gap: 5px;
   margin-top: 5px;
   .button {
-    width: 100px;
+    width: 150px;
     padding: 5px 20px;
     margin: 0;
   }
   button {
-    width: 140px !important;
+    width: 190px !important;
   }
 }

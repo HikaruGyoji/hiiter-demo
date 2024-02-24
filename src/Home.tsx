@@ -100,15 +100,15 @@ function Home() {
             <p>新着豆知識</p>
           </a>
         </div>
-        <p>2月の運動状況</p>
+        <p>3月の運動状況</p>
         <div className={styles['active-info']}>
           <div>
             <p>連続回数</p>
-            <span>{randomNum2}</span>
+            <span>1</span>
           </div>
           <div>
             <p>回数/月</p>
-            <span>{randomNum}</span>
+            <span>1</span>
           </div>
         </div>
         <p>運動設定</p>
