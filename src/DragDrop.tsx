@@ -56,10 +56,14 @@ const DragDrop = () => {
     }
 
     if (source.droppableId === 'items' && destination.droppableId === 'tasks') {
-      const task = initialTasks[source.index];
+      const item = fixedItems[source.index];
+      const newTask = {
+        id: `task${tasks.length}`, // 新しいタスクに一意の id を付与する
+        text: item.text,
+      };
       setTasks((prevTasks) => {
         const newTasks = [...prevTasks];
-        newTasks.splice(destination.index, 0, task);
+        newTasks.splice(destination.index, 0, newTask);
         return newTasks;
       });
     }
