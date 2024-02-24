@@ -2,8 +2,17 @@
   position: relative;
 }
 
+.exercise-name {
+}
+
 .popup {
   background-color: red;
+  .popup-close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+  }
   .popup-content {
     position: fixed;
     top: 50%;
@@ -14,9 +23,9 @@
     transform: translate(-50%, -50%);
     background-color: white;
     border: 1px solid #ccc;
-    padding: 20px;
+    padding: 40px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    height: 70%;
+    height: 50%;
 
     flex-direction: column;
     p {

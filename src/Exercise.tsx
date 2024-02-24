@@ -3,7 +3,7 @@ import Header from './Header';
 import styles from './styles/Exercise.module.scss';
 import VideoPlayer from './VideoPlayer';
 import trainingMenuData from './menu/trainingMenu.json';
-import testVideo from './assets/video/バックエクステンション.mp4';
+import testVideo from './assets/video/プッシュアップ.mp4';
 
 function Exercise() {
   return (

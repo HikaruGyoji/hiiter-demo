@@ -102,7 +102,6 @@ const DragDrop = () => {
   };
 
   const handleInfoButtonClick = (exerciseName: string) => {
-    console.log(exerciseName);
     setExerciseName(exerciseName); // クリックされた要素のエクササイズ名を設定
     setIsPopupOpen(true); // infoボタンがクリックされた時にポップアップを表示
   };
