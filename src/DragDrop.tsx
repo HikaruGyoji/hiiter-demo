@@ -10,6 +10,7 @@ import {
 import styles from './styles/DragDrop.module.scss';
 import data from '../src/demoData/levelSetting.json';
 import { Link } from 'react-router-dom';
+import Popup from './Popup'; // Popupコンポーネントのインポート
 
 const DragDrop = () => {
   const [tasks, setTasks] = useState<{ id: string; text: string }[]>([]);
@@ -21,6 +22,8 @@ const DragDrop = () => {
     { id: 'd4', text: 'バックエクステンション' },
   ]);
   const [menuConfirmed, setMenuConfirmed] = useState<boolean>(false);
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false); // ポップアップの表示状態を管理
+  const [exerciseName, setExerciseName] = useState<string>(''); // エクササイズ名の状態を管理
 
   useEffect(() => {
     const selectedLevel: string | null = localStorage.getItem('selectedLevel');
@@ -96,6 +99,16 @@ const DragDrop = () => {
       newTasks.splice(destination.index, 0, draggedTask);
       setTasks(newTasks);
     }
+  };
+
+  const handleInfoButtonClick = (exerciseName: string) => {
+    console.log(exerciseName);
+    setExerciseName(exerciseName); // クリックされた要素のエクササイズ名を設定
+    setIsPopupOpen(true); // infoボタンがクリックされた時にポップアップを表示
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false); // ポップアップを閉じる関数
   };
 
   const handleMenuConfirm = () => {
@@ -180,13 +193,10 @@ const DragDrop = () => {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
+                        onClick={() => handleInfoButtonClick(item.text)} // クリックされた要素のエクササイズ名を渡す
                       >
                         {item.text}
-                        <button
-                          onClick={() => {
-                            console.log('test');
-                          }}
-                        >
+                        <button>
                           <FontAwesomeIcon
                             icon={faInfo}
                             className={styles['infoButton']}
@@ -236,6 +246,9 @@ const DragDrop = () => {
           </div>
         </div>
       </div>
+      {isPopupOpen && (
+        <Popup type='info' onClose={closePopup} exerciseName={exerciseName} />
+      )}
     </DragDropContext>
   );
 };

@@ -6,12 +6,10 @@ import news1 from './assets/img/news1.png';
 import news2 from './assets/img/news2.png';
 import news3 from './assets/img/news3.png';
 import { useEffect, useState } from 'react';
-import Popup from './Popup';
 
 function Home() {
   const [hiitClicked, setHiitClicked] = useState(true);
   const [lowStrengthClicked, setLowStrengthClicked] = useState(false);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedLevel, setSelectedLevel] = useState('');
   const [userProfile, setUserProfile] = useState<{ username: string } | null>(
@@ -43,17 +41,11 @@ function Home() {
   const handleHiitClick = () => {
     setHiitClicked(true);
     setLowStrengthClicked(false);
-    setIsPopupOpen(true);
   };
 
   const handleLowStrengthClick = () => {
     setHiitClicked(false);
     setLowStrengthClicked(true);
-    setIsPopupOpen(true);
-  };
-
-  const handleClosePopup = () => {
-    setIsPopupOpen(false);
   };
 
   const randomNum = Math.floor(Math.random() * 32);
@@ -103,11 +95,11 @@ function Home() {
         <div className={styles['active-info']}>
           <div>
             <p>連続回数</p>
-            <span>1</span>
+            <span>10</span>
           </div>
           <div>
             <p>回数/月</p>
-            <span>1</span>
+            <span>2</span>
           </div>
         </div>
         <p>運動設定</p>
@@ -169,12 +161,6 @@ function Home() {
         </header>
       </div>
       <Footer />
-      {/* {isPopupOpen && (
-        <Popup
-          type={hiitClicked ? 'HIIT' : '低強度'}
-          onClose={handleClosePopup}
-        />
-      )} */}
     </div>
   );
 }

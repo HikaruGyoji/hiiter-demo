@@ -1,5 +1,5 @@
 {
-  "src": "./assets/video/test.mp4",
+  "src": "",
   "menu": [
     { "time": 0, "exercise": "Exercise 1" },
     { "time": 5, "exercise": "Exercise 2" },

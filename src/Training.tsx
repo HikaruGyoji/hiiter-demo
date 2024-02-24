@@ -3,7 +3,7 @@ import Header from './Header';
 import styles from './styles/Training.module.scss';
 import VideoPlayer from './VideoPlayer';
 import trainingMenuData from './menu/trainingMenu.json';
-import testVideo from './assets/video/test.mp4';
+import testVideo from './assets/video/ジャンピングジャック＆シザーズ.mp4';
 
 function Training() {
   return (
