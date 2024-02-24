@@ -59,7 +59,7 @@ function Home() {
 
   const randomNum = Math.floor(Math.random() * 32);
 
-  const randomNum2 = Math.floor(Math.random() * 1200) + randomNum;
+  const randomNum2 = Math.floor(Math.random() * 200) + randomNum;
 
   // 0から30までのランダムな整数を生成
 

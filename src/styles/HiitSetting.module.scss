@@ -79,10 +79,3 @@ select {
   display: flex;
   color: black;
 }
-
-// アンドロイド対応
-@media (max-height: 760px) {
-  .container {
-    margin: 50% 0;
-  }
-}
