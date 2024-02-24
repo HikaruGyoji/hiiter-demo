@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -9,21 +9,20 @@ import {
 } from 'react-beautiful-dnd';
 import styles from './styles/DragDrop.module.scss';
 import data from '../src/demoData/levelSetting.json';
+import { Link } from 'react-router-dom';
 
 const DragDrop = () => {
   const [tasks, setTasks] = useState<{ id: string; text: string }[]>([]);
   const [maxSelected, setMaxSelected] = useState<number>(0);
   const [fixedItems, setFixedItems] = useState<{ id: string; text: string }[]>(
     []
-  ); // fixedItemsのuseStateを追加
+  );
+  const [menuConfirmed, setMenuConfirmed] = useState<boolean>(false);
 
   useEffect(() => {
-    // コンポーネントがマウントされたときにlocalStorageから値を取得してコンソールログに反映
     const selectedLevel: string | null = localStorage.getItem('selectedLevel');
     const selectedCourse: string | null =
       localStorage.getItem('selectedCourse');
-    console.log('selectedLevel:', selectedLevel);
-    console.log('selectedCourse:', selectedCourse);
 
     if (selectedCourse && selectedLevel) {
       // @ts-ignore
@@ -33,9 +32,7 @@ const DragDrop = () => {
           (item: { Lv: number }) => item.Lv === parseInt(selectedLevel)
         );
         if (selectedItem) {
-          console.log(selectedItem.type);
-          console.log(selectedItem.maxSelected);
-          setMaxSelected(selectedItem.maxSelected); // maxSelectedの値を設定
+          setMaxSelected(selectedItem.maxSelected);
           const initialTasks = [];
           for (
             let i = 0;
@@ -50,7 +47,7 @@ const DragDrop = () => {
           for (let i = 0; i < selectedItem.type.length; i++) {
             newFixedItems.push({ id: `item${i}`, text: selectedItem.type[i] });
           }
-          setFixedItems(newFixedItems); // fixedItemsをセット
+          setFixedItems(newFixedItems);
         }
       }
     }
@@ -66,7 +63,7 @@ const DragDrop = () => {
     if (source.droppableId === 'items' && destination.droppableId === 'tasks') {
       const item = fixedItems[source.index];
       const newTask = {
-        id: `task${tasks.length}`, // 新しいタスクに一意の id を付与する
+        id: `task${tasks.length}`,
         text: item.text,
       };
       setTasks((prevTasks) => {
@@ -83,6 +80,11 @@ const DragDrop = () => {
       newTasks.splice(destination.index, 0, draggedTask);
       setTasks(newTasks);
     }
+  };
+
+  const handleMenuConfirm = () => {
+    setMenuConfirmed(true);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 
   return (
@@ -172,8 +174,39 @@ const DragDrop = () => {
               </div>
             )}
           </Droppable>
-          <p>メニュー確定</p>
-          <p>運動開始</p>
+          <div className={styles['button-wrapper']}>
+            {tasks.length === maxSelected ? (
+              <button
+                onClick={handleMenuConfirm}
+                className={`${styles.button} ${styles['-primary']}`}
+              >
+                メニュー確定
+              </button>
+            ) : (
+              <button
+                className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
+                disabled
+              >
+                メニュー確定
+              </button>
+            )}
+            {tasks.length === maxSelected ? (
+              <Link
+                to='/exercise'
+                className={`${styles.button} ${styles['-primary']}`}
+                onClick={handleMenuConfirm}
+              >
+                運動開始
+              </Link>
+            ) : (
+              <button
+                className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
+                disabled
+              >
+                運動開始
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </DragDropContext>
