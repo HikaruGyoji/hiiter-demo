@@ -8,53 +8,53 @@ import {
   DropResult,
 } from 'react-beautiful-dnd';
 import styles from './styles/DragDrop.module.scss';
+import data from '../src/demoData/levelSetting.json';
 
 const DragDrop = () => {
-  const initialTasks = [
-    { id: 'todo0', text: 'スクワット＆ジャンプ' },
-    { id: 'todo1', text: 'ジャンピングジャック＆シザーズ' },
-    { id: 'todo2', text: 'その場かけ足' },
-    { id: 'todo3', text: 'サイドステップ＆もも上げその場かけ足' },
-    { id: 'todo4', text: 'スケーターズランジ' },
-    { id: 'todo5', text: 'ギャロップ＆フロアタッチ' },
-    { id: 'todo6', text: 'バーピージャンプ' },
-    { id: 'todo7', text: 'スクワット＆フロントキック' },
-    { id: 'todo8', text: 'マウンテンクライマー' },
-  ];
-
-  const fixedItems = [
-    { id: 'item0', text: 'スクワット＆ジャンプ' },
-    { id: 'item1', text: 'ジャンピングジャック＆シザーズ' },
-    { id: 'item2', text: 'その場かけ足' },
-    { id: 'item3', text: 'サイドステップ＆もも上げその場かけ足' },
-    { id: 'item4', text: 'スケーターズランジ' },
-    { id: 'item5', text: 'ギャロップ＆フロアタッチ' },
-    { id: 'item6', text: 'バーピージャンプ' },
-    { id: 'item7', text: 'スクワット＆フロントキック' },
-    { id: 'item8', text: 'マウンテンクライマー' },
-  ];
-
-  const [tasks, setTasks] = useState(initialTasks);
-
-  useLayoutEffect(() => {
-    const setDraggableHeight = () => {
-      const draggables = document.querySelectorAll('.todo');
-      draggables.forEach((draggable) => {
-        if (draggable instanceof HTMLElement) {
-          draggable.style.height = `${draggable.offsetHeight}px`;
-        }
-      });
-    };
-    setDraggableHeight();
-  }, [tasks]);
+  const [tasks, setTasks] = useState<{ id: string; text: string }[]>([]);
+  const [maxSelected, setMaxSelected] = useState<number>(0);
+  const [fixedItems, setFixedItems] = useState<{ id: string; text: string }[]>(
+    []
+  ); // fixedItemsのuseStateを追加
 
   useEffect(() => {
     // コンポーネントがマウントされたときにlocalStorageから値を取得してコンソールログに反映
-    const selectedLevel = localStorage.getItem('selectedLevel');
-    const selectedCourse = localStorage.getItem('selectedCourse');
+    const selectedLevel: string | null = localStorage.getItem('selectedLevel');
+    const selectedCourse: string | null =
+      localStorage.getItem('selectedCourse');
     console.log('selectedLevel:', selectedLevel);
     console.log('selectedCourse:', selectedCourse);
-  }, []); // 空の配列を渡すことでマウント時のみ実行されるようにする
+
+    if (selectedCourse && selectedLevel) {
+      // @ts-ignore
+      const selectedCourseData = data['hiit'][selectedCourse];
+      if (selectedCourseData) {
+        const selectedItem = selectedCourseData.find(
+          (item: { Lv: number }) => item.Lv === parseInt(selectedLevel)
+        );
+        if (selectedItem) {
+          console.log(selectedItem.type);
+          console.log(selectedItem.maxSelected);
+          setMaxSelected(selectedItem.maxSelected); // maxSelectedの値を設定
+          const initialTasks = [];
+          for (
+            let i = 0;
+            i < selectedItem.type.length && i < selectedItem.maxSelected;
+            i++
+          ) {
+            initialTasks.push({ id: `todo${i}`, text: selectedItem.type[i] });
+          }
+          setTasks(initialTasks);
+
+          const newFixedItems = [];
+          for (let i = 0; i < selectedItem.type.length; i++) {
+            newFixedItems.push({ id: `item${i}`, text: selectedItem.type[i] });
+          }
+          setFixedItems(newFixedItems); // fixedItemsをセット
+        }
+      }
+    }
+  }, []);
 
   const onDragEnd = (result: DropResult) => {
     const { source, destination } = result;
@@ -89,7 +89,17 @@ const DragDrop = () => {
     <DragDropContext onDragEnd={onDragEnd}>
       <div className={styles['dragdrop-wrapper']}>
         <div>
-          <p>現在のメニュー：9/9</p>
+          {tasks.length !== maxSelected ? (
+            <p>
+              現在のメニュー：
+              <span className={styles['caution']}>{tasks.length}</span>/
+              {maxSelected}
+            </p>
+          ) : (
+            <p>
+              現在のメニュー：{tasks.length}/{maxSelected}
+            </p>
+          )}
           <Droppable droppableId='tasks'>
             {(provided) => (
               <div
@@ -130,14 +140,13 @@ const DragDrop = () => {
                     </Draggable>
                   </div>
                 ))}
-
                 {provided.placeholder}
               </div>
             )}
           </Droppable>
         </div>
         <div>
-          <p>運動種目数：9</p>
+          <p>運動種目数：{fixedItems.length}</p>
           <Droppable droppableId='items'>
             {(provided) => (
               <div
