@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hiiter-demo/static/css/main.17d7a2a3.css",
-    "main.js": "/hiiter-demo/static/js/main.353b6912.js",
+    "main.css": "/hiiter-demo/static/css/main.cc18f312.css",
+    "main.js": "/hiiter-demo/static/js/main.17f8f6c0.js",
     "reactPlayerYouTube.js": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js",
     "reactPlayerSoundCloud.js": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js",
     "reactPlayerVimeo.js": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js",
@@ -16,9 +16,20 @@
     "reactPlayerFilePlayer.js": "/hiiter-demo/static/js/reactPlayerFilePlayer.13238b00.chunk.js",
     "reactPlayerPreview.js": "/hiiter-demo/static/js/reactPlayerPreview.b83b93fd.chunk.js",
     "static/js/787.89c1857e.chunk.js": "/hiiter-demo/static/js/787.89c1857e.chunk.js",
+    "static/media/マウンテンクライマー.mp4": "/hiiter-demo/static/media/マウンテンクライマー.5d6bb9791907fcdc1c8a.mp4",
+    "static/media/スクワット＆ジャンプ.mp4": "/hiiter-demo/static/media/スクワット＆ジャンプ.e0a01e8f4275dfd89d95.mp4",
+    "static/media/ギャロップ＆フロアタッチ.mp4": "/hiiter-demo/static/media/ギャロップ＆フロアタッチ.39e5dce69275322b56ef.mp4",
+    "static/media/バーピージャンプ.mp4": "/hiiter-demo/static/media/バーピージャンプ.f0a2e4747722b8b78194.mp4",
+    "static/media/スケーターズランジ.mp4": "/hiiter-demo/static/media/スケーターズランジ.cfad5a0e1478ffca60b1.mp4",
     "static/media/その場かけ足.mp4": "/hiiter-demo/static/media/その場かけ足.652cef07cf4abf2ae2ae.mp4",
+    "static/media/サイドステップ＆その場かけ足.mp4": "/hiiter-demo/static/media/サイドステップ＆その場かけ足.c9ec649b9764e119c6c2.mp4",
+    "static/media/スクワット＆フロントキック.mp4": "/hiiter-demo/static/media/スクワット＆フロントキック.f17bc18bd5fc79baa012.mp4",
     "static/media/ジャンピングジャック＆シザーズ.mp4": "/hiiter-demo/static/media/ジャンピングジャック＆シザーズ.3f37c7abca077df9bac6.mp4",
+    "static/media/ジャンピングジャック＆シザーズ.mp4": "/hiiter-demo/static/media/ジャンピングジャック＆シザーズ.3f37c7abca077df9bac6.mp4",
+    "static/media/シットアップ.mp4": "/hiiter-demo/static/media/シットアップ.5a8e2786f614cb66b93c.mp4",
     "static/media/プッシュアップ.mp4": "/hiiter-demo/static/media/プッシュアップ.3607be86ce57eafdbc45.mp4",
+    "static/media/バックエクステンション.mp4": "/hiiter-demo/static/media/バックエクステンション.db93e524bc872d74ced0.mp4",
+    "static/media/スクワット.mp4": "/hiiter-demo/static/media/スクワット.5f1e4030c5fc0e45119b.mp4",
     "static/media/woman.png": "/hiiter-demo/static/media/woman.54288fa51dd998a998b8.png",
     "static/media/man.png": "/hiiter-demo/static/media/man.e2c9f0fa11abb1b39d82.png",
     "static/media/custom.png": "/hiiter-demo/static/media/custom.699b2d74d828cf2f0a23.png",
@@ -36,8 +47,8 @@
     "static/media/news2.png": "/hiiter-demo/static/media/news2.c704ca44f4c15c738377.png",
     "static/media/news1.png": "/hiiter-demo/static/media/news1.b994e209fc9ddc115f08.png",
     "index.html": "/hiiter-demo/index.html",
-    "main.17d7a2a3.css.map": "/hiiter-demo/static/css/main.17d7a2a3.css.map",
-    "main.353b6912.js.map": "/hiiter-demo/static/js/main.353b6912.js.map",
+    "main.cc18f312.css.map": "/hiiter-demo/static/css/main.cc18f312.css.map",
+    "main.17f8f6c0.js.map": "/hiiter-demo/static/js/main.17f8f6c0.js.map",
     "reactPlayerYouTube.dfccad8e.chunk.js.map": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js.map",
     "reactPlayerSoundCloud.344eba33.chunk.js.map": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js.map",
     "reactPlayerVimeo.ddb368ec.chunk.js.map": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js.map",
@@ -54,7 +65,7 @@
     "787.89c1857e.chunk.js.map": "/hiiter-demo/static/js/787.89c1857e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.17d7a2a3.css",
-    "static/js/main.353b6912.js"
+    "static/css/main.cc18f312.css",
+    "static/js/main.17f8f6c0.js"
   ]
 }
