@@ -92,7 +92,7 @@ const DragDrop = () => {
 
   const handleMenuConfirm = () => {
     setMenuConfirmed(true);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem('hiitTasks', JSON.stringify(tasks));
   };
 
   return (
@@ -184,12 +184,13 @@ const DragDrop = () => {
           </Droppable>
           <div className={styles['button-wrapper']}>
             {tasks.length === maxSelected ? (
-              <button
+              <Link
+                to='/home'
                 onClick={handleMenuConfirm}
                 className={`${styles.button} ${styles['-primary']}`}
               >
                 メニュー確定
-              </button>
+              </Link>
             ) : (
               <button
                 className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
