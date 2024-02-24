@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles/Hamberger.module.scss';
 import userImg from './assets/img/user-img.png';
 import badge from './assets/img/badge.png';
@@ -10,6 +10,17 @@ interface Props {
 }
 
 function Hamburger(props: Props) {
+  const [userProfile, setUserProfile] = useState<{ username: string } | null>(
+    null
+  );
+
+  useEffect(() => {
+    const profile = localStorage.getItem('userProfile');
+    if (profile) {
+      setUserProfile(JSON.parse(profile)); // 文字列をオブジェクトに変換してセット
+    }
+  }, []);
+
   return (
     <div className={styles['app']}>
       <div
@@ -21,7 +32,7 @@ function Hamburger(props: Props) {
           <img src={userImg} alt='userImg' />
           <div className={styles['user-name-wrapper']}>
             <div className={styles['user-name-box']}>
-              <p>ヒッティ</p>
+              <p>{userProfile?.username ? userProfile.username : 'ヒッティ'}</p>
               <img src={badge} alt='badge' />
             </div>
             <p>無料プラン</p>
