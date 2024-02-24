@@ -12,9 +12,6 @@ function HiitSetting() {
         <div className={styles['container']}>
           <DragDrop />
         </div>
-        <Link to='/home' className={`${styles.button} ${styles['-primary']}`}>
-          完了
-        </Link>
       </div>
     </div>
   );

@@ -102,17 +102,17 @@ const DragDrop = () => {
                         >
                           {task.text}
                           <button
-                            className={styles['deleteButton']}
                             onClick={() => {
                               const newTasks = [...tasks];
                               newTasks.splice(index, 1);
                               setTasks(newTasks);
                             }}
-                          ></button>
-                          <FontAwesomeIcon
-                            icon={faX}
-                            className={styles['deleteButton']}
-                          />
+                          >
+                            <FontAwesomeIcon
+                              icon={faX}
+                              className={styles['deleteButton']}
+                            />
+                          </button>
                         </div>
                       )}
                     </Draggable>

@@ -12,7 +12,8 @@
 }
 
 .todo {
-  background-color: #f4f4f4;
+  background-color: #ee817b;
+  color: white;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 8px;
@@ -23,12 +24,18 @@
   align-items: center;
   justify-content: space-between;
   width: -webkit-fill-available;
+  button {
+    border-radius: 50%;
+    border: 1px solid #ee817b;
+    padding: 3px 5px;
+    font-size: 10px;
+  }
 }
 
 .deleteButton {
   background-color: transparent;
   border: none;
-  color: red;
+  color: #ee817b;
   cursor: pointer;
 }
 
