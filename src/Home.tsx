@@ -14,6 +14,17 @@ function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedLevel, setSelectedLevel] = useState('');
+  const [userProfile, setUserProfile] = useState<{ username: string } | null>(
+    null
+  );
+
+  useEffect(() => {
+    const profile = localStorage.getItem('userProfile');
+    if (profile) {
+      setUserProfile(JSON.parse(profile)); // 文字列をオブジェクトに変換してセット
+      console.log(JSON.parse(profile)); // 不要な行を削除
+    }
+  }, []);
 
   useEffect(() => {
     // localStorage から selectedLevel を取得する
@@ -58,7 +69,11 @@ function Home() {
     <div className={styles['userinfo1']}>
       <Header name='ホーム' backPath='/explainhiit' icons={true} />
       <div className={styles['margin-area']}>
-        <p className={styles['hello-message']}>こんにちはヒッティさん</p>
+        <p className={styles['hello-message']}>
+          こんにちは
+          {userProfile?.username ? userProfile.username : 'ヒッティ'}
+          さん
+        </p>
         <div className={styles['news-wrapper']}>
           <a
             href='https://www.nikkei.com/article/DGXMZO11481080Q7A110C1000000/'

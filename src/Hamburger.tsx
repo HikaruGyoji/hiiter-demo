@@ -52,6 +52,15 @@ function Hamburger(props: Props) {
           <li>
             <Link to='/account'>アカウント</Link>
           </li>
+          <li>
+            <a
+              href='https://docs.google.com/forms/d/e/1FAIpQLSfbgDF44y9zVPvXICUdkYW6owaf8qvpcuEOpQXo8xBxUd3gyA/viewform?usp=sharing'
+              target='_blank'
+              rel='noreferrer'
+            >
+              デモアンケート
+            </a>
+          </li>
         </ul>
       </div>
     </div>

@@ -77,7 +77,6 @@ function UserInfo4() {
     }
   };
 
-  // 身長の選択肢を生成
   const heightOptions = [];
   for (let i = 130; i <= 200; i++) {
     heightOptions.push(
@@ -87,7 +86,6 @@ function UserInfo4() {
     );
   }
 
-  // 体重の選択肢を生成
   const weightOptions = [];
   for (let i = 30; i <= 150; i++) {
     weightOptions.push(
@@ -96,6 +94,20 @@ function UserInfo4() {
       </option>
     );
   }
+
+  const onSaveProfile = () => {
+    const profile = {
+      username,
+      sex,
+      birth,
+      height,
+      weight,
+      work,
+      time,
+      goal,
+    };
+    localStorage.setItem('userProfile', JSON.stringify(profile));
+  };
 
   const allInputsFilled =
     username && sex && birth && height && weight && work && goal;
@@ -226,6 +238,7 @@ function UserInfo4() {
             <Link
               to='/explainhiit'
               className={`${styles.button} ${styles['-primary']}`}
+              onClick={onSaveProfile}
             >
               次へ
             </Link>
