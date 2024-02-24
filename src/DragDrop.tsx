@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import {
   DragDropContext,
   Draggable,
@@ -48,6 +48,14 @@ const DragDrop = () => {
     setDraggableHeight();
   }, [tasks]);
 
+  useEffect(() => {
+    // コンポーネントがマウントされたときにlocalStorageから値を取得してコンソールログに反映
+    const selectedLevel = localStorage.getItem('selectedLevel');
+    const selectedCourse = localStorage.getItem('selectedCourse');
+    console.log('selectedLevel:', selectedLevel);
+    console.log('selectedCourse:', selectedCourse);
+  }, []); // 空の配列を渡すことでマウント時のみ実行されるようにする
+
   const onDragEnd = (result: DropResult) => {
     const { source, destination } = result;
 
@@ -81,7 +89,7 @@ const DragDrop = () => {
     <DragDropContext onDragEnd={onDragEnd}>
       <div className={styles['dragdrop-wrapper']}>
         <div>
-          <p>運動メニュー</p>
+          <p>現在のメニュー：9/9</p>
           <Droppable droppableId='tasks'>
             {(provided) => (
               <div
@@ -90,7 +98,7 @@ const DragDrop = () => {
                 ref={provided.innerRef}
               >
                 {tasks.map((task, index) => (
-                  <div className={styles['todoListNum']}>
+                  <div key={task.id} className={styles['todoListNum']}>
                     <span>{index + 1}</span>
                     <Draggable
                       key={task.id}
@@ -113,7 +121,7 @@ const DragDrop = () => {
                             }}
                           >
                             <FontAwesomeIcon
-                              icon={faX}
+                              icon={faTimes}
                               className={styles['deleteButton']}
                             />
                           </button>
@@ -122,13 +130,14 @@ const DragDrop = () => {
                     </Draggable>
                   </div>
                 ))}
+
                 {provided.placeholder}
               </div>
             )}
           </Droppable>
         </div>
         <div>
-          <p>運動種目</p>
+          <p>運動種目数：9</p>
           <Droppable droppableId='items'>
             {(provided) => (
               <div
@@ -154,8 +163,6 @@ const DragDrop = () => {
               </div>
             )}
           </Droppable>
-          <p>運動種目数</p>
-          <p>現在の選択数</p>
           <p>メニュー確定</p>
           <p>運動開始</p>
         </div>
