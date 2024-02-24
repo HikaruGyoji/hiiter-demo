@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 function Home() {
   const [hiitClicked, setHiitClicked] = useState(true);
   const [lowStrengthClicked, setLowStrengthClicked] = useState(false);
+  const [selectedActivity, setSelectedActivity] = useState('');
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedLevel, setSelectedLevel] = useState('');
   const [userProfile, setUserProfile] = useState<{ username: string } | null>(
@@ -38,24 +39,22 @@ function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    const activity = localStorage.getItem('selectedActivity');
+    if (activity) {
+      setSelectedActivity(activity);
+    }
+  }, []);
+
   const handleHiitClick = () => {
-    setHiitClicked(true);
-    setLowStrengthClicked(false);
+    setSelectedActivity('hiit'); // selectedActivityを'hiit'に設定
+    localStorage.setItem('selectedActivity', 'hiit'); // localStorageに'hiit'をセット
   };
 
   const handleLowStrengthClick = () => {
-    setHiitClicked(false);
-    setLowStrengthClicked(true);
+    setSelectedActivity('training'); // selectedActivityを'hiit'に設定
+    localStorage.setItem('selectedActivity', 'training'); // localStorageに'hiit'をセット
   };
-
-  const randomNum = Math.floor(Math.random() * 32);
-
-  const randomNum2 = Math.floor(Math.random() * 200) + randomNum;
-
-  // 0から30までのランダムな整数を生成
-
-  const linkTo = hiitClicked ? '/warmingup' : '/training';
-
   return (
     <div className={styles['userinfo1']}>
       <Header name='ホーム' backPath='/explainhiit' icons={true} />
@@ -133,27 +132,28 @@ function Home() {
             <Link
               to='/hiitsetting'
               className={`${styles.setbutton} ${
-                hiitClicked ? styles['clicked'] : ''
+                selectedActivity === 'hiit' ? styles['clicked'] : ''
               }`}
               onClick={handleHiitClick}
             >
               <p>HIIT</p>
               <span>いつものトレーニング</span>
             </Link>
-            <div
+            <Link
+              to='/trainingsetting'
               className={`${styles.setbutton} ${
-                lowStrengthClicked ? styles['clicked'] : ''
+                selectedActivity !== 'hiit' ? styles['clicked'] : ''
               }`}
               onClick={handleLowStrengthClick}
             >
               <p>低強度</p>
               <span>やる気がない時はこちら</span>
-            </div>
+            </Link>
           </div>
         </div>
         <header className={styles['userinfo-header']}>
           <Link
-            to='/exercise'
+            to={selectedActivity === 'hiit' ? '/exercise' : '/training'}
             className={`${styles.button} ${styles['-primary']}`}
           >
             運動開始

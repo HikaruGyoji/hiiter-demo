@@ -24,15 +24,20 @@ const DragDrop = () => {
   const [menuConfirmed, setMenuConfirmed] = useState<boolean>(false);
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false); // ポップアップの表示状態を管理
   const [exerciseName, setExerciseName] = useState<string>(''); // エクササイズ名の状態を管理
+  const [selectedActivity, setSelectedActivity] = useState<string>(''); // 選択されたアクティビティの状態を管理
 
   useEffect(() => {
     const selectedLevel: string | null = localStorage.getItem('selectedLevel');
     const selectedCourse: string | null =
       localStorage.getItem('selectedCourse');
+    const storedActivity: string | null =
+      localStorage.getItem('selectedActivity');
 
-    if (selectedCourse && selectedLevel) {
+    if (selectedLevel && selectedCourse && storedActivity) {
+      setSelectedActivity(storedActivity);
+
       // @ts-ignore
-      const selectedCourseData = data['hiit'][selectedCourse];
+      const selectedCourseData = data[storedActivity][selectedCourse];
       if (selectedCourseData) {
         const selectedItem = selectedCourseData.find(
           (item: { Lv: number }) => item.Lv === parseInt(selectedLevel)
@@ -58,17 +63,20 @@ const DragDrop = () => {
       }
     }
 
-    // Check if hiitTasks exists in localStorage and set it to tasks state if it does
-    const hiitTasks: string | null = localStorage.getItem('hiitTasks');
-    if (hiitTasks) {
-      setTasks(JSON.parse(hiitTasks));
-    } else {
-      setTasks([
-        { id: 't1', text: 'スクワット' },
-        { id: 't2', text: 'プッシュアップ' },
-        { id: 't3', text: 'シットアップ' },
-        { id: 't4', text: 'バックエクステンション' },
-      ]);
+    if (storedActivity) {
+      const tasksKey =
+        storedActivity === 'hiit' ? 'hiitTasks' : 'trainingTasks';
+      const storedTasks: string | null = localStorage.getItem(tasksKey);
+      if (storedTasks) {
+        setTasks(JSON.parse(storedTasks));
+      } else {
+        setTasks([
+          { id: 't1', text: 'スクワット' },
+          { id: 't2', text: 'プッシュアップ' },
+          { id: 't3', text: 'シットアップ' },
+          { id: 't4', text: 'バックエクステンション' },
+        ]);
+      }
     }
   }, []);
 
@@ -112,7 +120,10 @@ const DragDrop = () => {
 
   const handleMenuConfirm = () => {
     setMenuConfirmed(true);
-    localStorage.setItem('hiitTasks', JSON.stringify(tasks));
+    localStorage.setItem(
+      selectedActivity === 'hiit' ? 'hiitTasks' : 'trainingTasks',
+      JSON.stringify(tasks)
+    );
   };
 
   return (
@@ -229,7 +240,7 @@ const DragDrop = () => {
             )}
             {tasks.length === maxSelected ? (
               <Link
-                to='/exercise'
+                to={selectedActivity === 'hiit' ? '/exercise' : '/training'}
                 className={`${styles.button} ${styles['-primary']}`}
                 onClick={handleMenuConfirm}
               >

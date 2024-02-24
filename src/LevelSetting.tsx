@@ -34,9 +34,6 @@ function LevelSetting() {
     localStorage.setItem('selectedCourse', selectedCourse);
   }, [selectedCourse]);
 
-  // @ts-ignore
-  const path = data[selectedActivity][selectedCourse];
-
   useEffect(() => {
     if (selectedLevel !== null) {
       localStorage.setItem('selectedLevel', selectedLevel.toString());
@@ -46,7 +43,7 @@ function LevelSetting() {
   useEffect(() => {
     if (selectedCourse && selectedLevel) {
       // @ts-ignore
-      const selectedCourseData = data['hiit'][selectedCourse];
+      const selectedCourseData = data[selectedActivity][selectedCourse];
       if (selectedCourseData) {
         const selectedItem = selectedCourseData.find(
           // @ts-ignore
@@ -65,11 +62,15 @@ function LevelSetting() {
         }
       }
     }
-  }, [selectedCourse, selectedLevel]);
+  }, [selectedCourse, selectedLevel, selectedActivity]);
 
   useEffect(() => {
-    localStorage.setItem('hiitTasks', JSON.stringify(tasks));
-  }, [tasks]);
+    if (selectedActivity === 'hiit') {
+      localStorage.setItem('hiitTasks', JSON.stringify(tasks));
+    } else if (selectedActivity === 'training') {
+      localStorage.setItem('trainingTasks', JSON.stringify(tasks));
+    }
+  }, [tasks, selectedActivity]);
 
   const handleSelectLevel = (level: number) => {
     setSelectedLevel(level);
@@ -93,7 +94,8 @@ function LevelSetting() {
         <span className={styles['userinfo-span']}>タイプを選択</span>
         <ActivityButtonSelector onSelectActivity={handleSelectActivity} />
         <ScrollableTable
-          data={path}
+          // @ts-ignore
+          data={data[selectedActivity][selectedCourse]}
           selectedLevel={selectedLevel}
           onSelectLevel={handleSelectLevel}
         />
@@ -102,7 +104,10 @@ function LevelSetting() {
             to='/home'
             className={`${styles.button} ${styles['-primary']}`}
             onClick={() =>
-              localStorage.setItem('hiitTasks', JSON.stringify(tasks))
+              localStorage.setItem(
+                selectedActivity === 'hiit' ? 'hiitTasks' : 'trainingTasks',
+                JSON.stringify(tasks)
+              )
             }
           >
             決定
