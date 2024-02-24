@@ -61,10 +61,10 @@ const DragDrop = () => {
       setTasks(JSON.parse(hiitTasks));
     } else {
       setTasks([
-        { id: 'd1', text: 'スクワット' },
-        { id: 'd2', text: 'プッシュアップ' },
-        { id: 'd3', text: 'シットアップ' },
-        { id: 'd4', text: 'バックエクステンション' },
+        { id: 't1', text: 'スクワット' },
+        { id: 't2', text: 'プッシュアップ' },
+        { id: 't3', text: 'シットアップ' },
+        { id: 't4', text: 'バックエクステンション' },
       ]);
     }
   }, []);
@@ -79,7 +79,7 @@ const DragDrop = () => {
     if (source.droppableId === 'items' && destination.droppableId === 'tasks') {
       const item = fixedItems[source.index];
       const newTask = {
-        id: `task${tasks.length}`,
+        id: `task${Date.now()}`, // タイムスタンプを使ってユニークなIDを生成
         text: item.text,
       };
       setTasks((prevTasks) => {
