@@ -192,13 +192,13 @@ const DragDrop = () => {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
-                        onClick={() => handleInfoButtonClick(item.text)} // クリックされた要素のエクササイズ名を渡す
                       >
                         {item.text}
                         <button>
                           <FontAwesomeIcon
                             icon={faInfo}
                             className={styles['infoButton']}
+                            onClick={() => handleInfoButtonClick(item.text)} // クリックされた要素のエクササイズ名を渡す
                           />
                         </button>
                       </div>
