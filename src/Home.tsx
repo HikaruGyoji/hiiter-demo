@@ -192,7 +192,7 @@ function Home() {
               </div>
             </div>
             <div className={styles['active-setting2']}>
-              <p>タイプ</p>
+              <p>メニュー</p>
               <div>
                 <Link
                   to='/hiitsetting'
