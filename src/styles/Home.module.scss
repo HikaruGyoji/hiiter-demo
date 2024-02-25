@@ -2,6 +2,12 @@
 
 @include button.button;
 
+.-disabled {
+  padding: 15px;
+  font-size: 24px;
+  border-radius: 36px;
+}
+
 .message-container {
   display: flex;
   align-items: center;

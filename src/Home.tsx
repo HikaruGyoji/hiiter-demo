@@ -255,18 +255,83 @@ function Home() {
                 </Link>
               </div>
             </div>
-            {trainingTasksData.length}
             <header className={styles['userinfo-header']}>
-              {(selectedActivity === 'hiit' &&
-                selectedItem?.set === hiitTasksData?.length) ||
-              (selectedActivity === 'training' &&
-                selectedItem?.set === trainingTasksData?.length) ? (
-                <Link
-                  to={'/exercise'}
-                  className={`${styles.button} ${styles['-primary']}`}
+              {/* HIIT の場合 */}
+              {selectedActivity === 'hiit' &&
+                selectedItem?.set !== hiitTasksData?.length && (
+                  <button
+                    className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
+                    disabled
+                  >
+                    運動開始
+                  </button>
+                )}
+
+              {/* Training の場合 */}
+              {selectedActivity === 'training' &&
+                selectedCourse === '初級' &&
+                selectedItem?.maxSelected !== trainingTasksData?.length && (
+                  <button
+                    className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
+                    disabled
+                  >
+                    運動開始
+                  </button>
+                )}
+
+              {/* Training の場合 */}
+              {selectedActivity === 'training' &&
+                selectedCourse !== '初級' &&
+                selectedItem?.set !== trainingTasksData?.length && (
+                  <button
+                    className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
+                    disabled
+                  >
+                    運動開始
+                  </button>
+                )}
+
+              {/* HIIT の場合 */}
+              {selectedActivity === 'hiit' &&
+                selectedItem?.set === hiitTasksData?.length && (
+                  <Link
+                    to={'/exercise'}
+                    className={`${styles.button} ${styles['-primary']}`}
+                  >
+                    運動開始
+                  </Link>
+                )}
+
+              {/* Training の場合 */}
+              {selectedActivity === 'training' &&
+                selectedCourse === '初級' &&
+                selectedItem?.maxSelected === trainingTasksData?.length && (
+                  <Link
+                    to={'/exercise'}
+                    className={`${styles.button} ${styles['-primary']}`}
+                  >
+                    運動開始
+                  </Link>
+                )}
+
+              {/* Training の場合 */}
+              {selectedActivity === 'training' &&
+                selectedCourse !== '初級' &&
+                selectedItem?.set === trainingTasksData?.length && (
+                  <Link
+                    to={'/exercise'}
+                    className={`${styles.button} ${styles['-primary']}`}
+                  >
+                    運動開始
+                  </Link>
+                )}
+              {selectedActivity === '' ? (
+                <button
+                  className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
+                  disabled
                 >
                   運動開始
-                </Link>
+                </button>
               ) : null}
             </header>
           </div>
