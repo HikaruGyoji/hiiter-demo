@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hiiter-demo/static/css/main.e163fe37.css",
-    "main.js": "/hiiter-demo/static/js/main.4d5b475c.js",
+    "main.css": "/hiiter-demo/static/css/main.25295493.css",
+    "main.js": "/hiiter-demo/static/js/main.0fa13919.js",
     "reactPlayerYouTube.js": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js",
     "reactPlayerSoundCloud.js": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js",
     "reactPlayerVimeo.js": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js",
@@ -24,7 +24,6 @@
     "static/media/その場かけ足.mp4": "/hiiter-demo/static/media/その場かけ足.652cef07cf4abf2ae2ae.mp4",
     "static/media/サイドステップ＆もも上げその場かけ足.mp4": "/hiiter-demo/static/media/サイドステップ＆もも上げその場かけ足.c9ec649b9764e119c6c2.mp4",
     "static/media/スクワット＆フロントキック.mp4": "/hiiter-demo/static/media/スクワット＆フロントキック.f17bc18bd5fc79baa012.mp4",
-    "static/media/ジャンピングジャック＆シザーズ.mp4": "/hiiter-demo/static/media/ジャンピングジャック＆シザーズ.3f37c7abca077df9bac6.mp4",
     "static/media/ジャンピングジャック＆シザーズ.mp4": "/hiiter-demo/static/media/ジャンピングジャック＆シザーズ.3f37c7abca077df9bac6.mp4",
     "static/media/シットアップ.mp4": "/hiiter-demo/static/media/シットアップ.5a8e2786f614cb66b93c.mp4",
     "static/media/プッシュアップ.mp4": "/hiiter-demo/static/media/プッシュアップ.3607be86ce57eafdbc45.mp4",
@@ -47,8 +46,8 @@
     "static/media/diet.png": "/hiiter-demo/static/media/diet.a6d2eb175e02b8276a32.png",
     "service-worker.js": "/hiiter-demo/service-worker.js",
     "index.html": "/hiiter-demo/index.html",
-    "main.e163fe37.css.map": "/hiiter-demo/static/css/main.e163fe37.css.map",
-    "main.4d5b475c.js.map": "/hiiter-demo/static/js/main.4d5b475c.js.map",
+    "main.25295493.css.map": "/hiiter-demo/static/css/main.25295493.css.map",
+    "main.0fa13919.js.map": "/hiiter-demo/static/js/main.0fa13919.js.map",
     "reactPlayerYouTube.dfccad8e.chunk.js.map": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js.map",
     "reactPlayerSoundCloud.344eba33.chunk.js.map": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js.map",
     "reactPlayerVimeo.ddb368ec.chunk.js.map": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js.map",
@@ -65,7 +64,7 @@
     "787.89c1857e.chunk.js.map": "/hiiter-demo/static/js/787.89c1857e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e163fe37.css",
-    "static/js/main.4d5b475c.js"
+    "static/css/main.25295493.css",
+    "static/js/main.0fa13919.js"
   ]
 }
