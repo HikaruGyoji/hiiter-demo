@@ -2,6 +2,10 @@
 
 @include button.button;
 
+.border-caution {
+  border: 2px solid red;
+}
+
 .-disabled {
   padding: 15px;
   font-size: 24px;

@@ -236,7 +236,13 @@ function Home() {
                 <Link
                   to='/hiitsetting'
                   className={`${styles.setbutton} ${
-                    selectedActivity === 'hiit' ? styles['clicked'] : ''
+                    selectedActivity === 'hiit' &&
+                    selectedItem &&
+                    selectedItem.set !== hiitTasksData?.length
+                      ? `${styles['clicked']} ${styles['border-caution']}`
+                      : selectedActivity === 'hiit'
+                      ? styles['clicked']
+                      : ''
                   }`}
                   onClick={handleHiitClick}
                 >
@@ -246,7 +252,18 @@ function Home() {
                 <Link
                   to='/trainingsetting'
                   className={`${styles.setbutton} ${
-                    selectedActivity === 'training' ? styles['clicked'] : ''
+                    selectedActivity === 'training' &&
+                    selectedCourse === '初級' &&
+                    selectedItem &&
+                    selectedItem.maxSelected === trainingTasksData?.length
+                      ? styles['clicked']
+                      : selectedActivity === 'training' &&
+                        selectedItem &&
+                        selectedItem.set !== trainingTasksData?.length
+                      ? `${styles['clicked']} ${styles['border-caution']}`
+                      : selectedActivity === 'training'
+                      ? styles['clicked']
+                      : ''
                   }`}
                   onClick={handleLowStrengthClick}
                 >
