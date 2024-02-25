@@ -9,11 +9,7 @@ function Account() {
       <Header name='アカウント' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
         <header className={styles['userinfo-header']}>
-          <ul className={styles['info-ul']}>
-            <li>アカウント</li>
-            <li>アカウント</li>
-            <li>アカウント</li>
-          </ul>
+          <p className={styles['text']}>この画面は未実装です。</p>
         </header>
       </div>
       <Footer />

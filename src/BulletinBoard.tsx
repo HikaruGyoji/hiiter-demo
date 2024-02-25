@@ -9,11 +9,7 @@ function BulletinBoard() {
       <Header name='みんなの掲示板' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
         <header className={styles['userinfo-header']}>
-          <ul className={styles['info-ul']}>
-            <li>みんなの掲示板</li>
-            <li>みんなの掲示板</li>
-            <li>みんなの掲示板</li>
-          </ul>
+          <p className={styles['text']}>この画面は未実装です。</p>
         </header>
       </div>
       <Footer />

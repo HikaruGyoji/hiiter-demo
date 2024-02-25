@@ -9,11 +9,7 @@ function Group() {
       <Header name='グループ' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
         <header className={styles['userinfo-header']}>
-          <ul className={styles['info-ul']}>
-            <li>グループ</li>
-            <li>グループ</li>
-            <li>グループ</li>
-          </ul>
+          <p className={styles['text']}>この画面は未実装です。</p>
         </header>
       </div>
       <Footer />
