@@ -218,7 +218,7 @@ function Home() {
             </div>
             <header className={styles['userinfo-header']}>
               <Link
-                to={selectedActivity === 'hiit' ? '/exercise' : '/training'}
+                to={'/exercise'}
                 className={`${styles.button} ${styles['-primary']}`}
               >
                 運動開始

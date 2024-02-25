@@ -1,26 +1,60 @@
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import styles from './styles/Break.module.scss';
-import VideoPlayer from './VideoPlayer';
-import trainingMenuData from './menu/trainingMenu.json';
-import testVideo from './assets/video/その場かけ足.mp4';
+import HorizontalBreakVideo from './HorizontalBreakVideo';
+
+interface ExerciseItem {
+  text: string; // あなたの実際のデータ構造に基づいてこの型を調整してください
+  // その他のプロパティがある場合はここに追加します
+}
 
 function Break() {
+  const [hiitTasks, setHiitTasks] = useState<ExerciseItem[]>([]);
+  const [trainingTasks, setTrainingTasks] = useState<ExerciseItem[]>([]);
+  const [selectedActivity, setSelectedActivity] = useState('');
+  const [currentIndex, setCurrentIndex] = useState<number>(0); // currentIndexの型を明示的に指定
+
+  useEffect(() => {
+    const hiitTasks = localStorage.getItem('hiitTasks');
+    const trainingTasks = localStorage.getItem('trainingTasks');
+    const selectedActivity = localStorage.getItem('selectedActivity');
+    const selectedLevel = localStorage.getItem('selectedLevel');
+    const storedIndex = localStorage.getItem('currentIndex'); // currentIndexをローカルストレージから読み込む
+
+    if (hiitTasks) {
+      setHiitTasks(JSON.parse(hiitTasks));
+    }
+
+    if (trainingTasks) {
+      setTrainingTasks(JSON.parse(trainingTasks));
+    }
+
+    if (selectedActivity) {
+      setSelectedActivity(selectedActivity);
+    }
+
+    if (storedIndex) {
+      setCurrentIndex(parseInt(storedIndex, 10)); // 文字列から数値に変換して設定
+    }
+  }, []);
+
   return (
     <div className={styles['userinfo1']}>
-      <Header name='休憩' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
-        <div className={styles['userinfo-header']}>
-          <VideoPlayer src={testVideo} trainingMenu={trainingMenuData.menu} />{' '}
+        <div className={styles['main']}>
+          {selectedActivity === 'hiit' && hiitTasks.length > 0 ? (
+            <HorizontalBreakVideo
+              exerciseName={hiitTasks[currentIndex].text} // currentIndex + 1からcurrentIndexに変更
+            />
+          ) : selectedActivity === 'training' && trainingTasks.length > 0 ? (
+            <HorizontalBreakVideo
+              exerciseName={trainingTasks[currentIndex].text} // currentIndex + 1からcurrentIndexに変更
+            />
+          ) : (
+            <div>No tasks available</div>
+          )}
         </div>
-      </div>
-      <div className={styles['userinfo-header']}>
-        <Link
-          to='/complete'
-          className={`${styles.button} ${styles['-primary']}`}
-        >
-          次へ
-        </Link>
       </div>
     </div>
   );

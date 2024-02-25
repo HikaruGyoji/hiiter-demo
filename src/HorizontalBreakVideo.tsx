@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // useNavigate を追加
 
 import ReactPlayer from 'react-player';
-import styles from './styles/HorizontalVideo.module.scss';
+import styles from './styles/HorizontalBreakVideo.module.scss';
 
 import exercise1 from './assets/video/その場かけ足.mp4';
 import exercise2 from './assets/video/ギャロップ＆フロアタッチ.mp4';
@@ -20,13 +20,9 @@ import exercise13 from './assets/video/マウンテンクライマー.mp4';
 
 interface HorizontalVideoProps {
   exerciseName: string;
-  isLastItem: boolean; // 追加
 }
 
-const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
-  exerciseName,
-  isLastItem,
-}) => {
+const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
   const navigate = useNavigate(); // useNavigate フックを使用
 
   const [src, setSrc] = useState<string>('');
@@ -34,7 +30,7 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
   const [isLandscape, setIsLandscape] = useState<boolean>(
     window.innerWidth > window.innerHeight
   );
-  const [currentTime, setCurrentTime] = useState<number>(20);
+  const [currentTime, setCurrentTime] = useState<number>(10);
   const [totalTime, setTotalTime] = useState<number>(100);
   const [currentIndex, setCurrentIndex] = useState<number>(0); // 1. currentIndexを追加
 
@@ -81,35 +77,18 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
     }
   }, [exerciseName]);
 
-  useEffect(() => {
-    localStorage.setItem('currentIndex', currentIndex.toString()); // 3. localStorageに保存
-  }, [currentIndex]);
-
   const handleClick = () => {
     setIsPlaying(!isPlaying);
   };
 
   const handleActionClick = (action: string) => () => {
     if (action === 'Next') {
-      setCurrentIndex((prevIndex) => {
-        const newIndex = Math.min(
-          prevIndex + 1,
-          Object.keys(exerciseVideos).length - 1
-        );
-        if (isLastItem) {
-          localStorage.setItem('currentIndex', '0');
-          navigate('/complete'); // complete ページに遷移
-        } else {
-          localStorage.setItem('currentIndex', newIndex.toString());
-          navigate('/break'); // setCurrentIndex内で遷移を行う
-        }
-        return isLastItem ? 0 : newIndex; // isLastItemの場合は0を返す
-      });
+      navigate('/exercise'); // setCurrentIndex内で遷移を行う
     } else if (action === 'Previous') {
       setCurrentIndex((prevIndex) => {
         const newIndex = Math.max(prevIndex - 1, 0);
         localStorage.setItem('currentIndex', newIndex.toString());
-        navigate('/break'); // setCurrentIndex内で遷移を行う
+        navigate('/exercise'); // setCurrentIndex内で遷移を行う
         return newIndex;
       });
     }
@@ -125,17 +104,8 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
   };
 
   const handleVideoEnded = () => {
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex + 1;
-      if (isLastItem) {
-        localStorage.setItem('currentIndex', '0');
-        navigate('/complete'); // complete ページに遷移
-      } else {
-        localStorage.setItem('currentIndex', newIndex.toString());
-        navigate('/break'); // setCurrentIndex内で遷移を行う
-      }
-      return isLastItem ? 0 : newIndex; // isLastItemの場合は0を返す
-    });
+    // 動画が終了した時にページ遷移を行う
+    navigate('/exercise');
   };
 
   const handleProgress = (state: {
@@ -144,13 +114,11 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
     loaded: number;
     loadedSeconds: number;
   }) => {
-    if (state.played === 1 && currentTime !== 0) {
-      // 動画が終了し、タイマーがまだ0になっていない場合、タイマーを0にセットする
-      setCurrentTime(0);
-    } else {
-      // 動画が再生中の場合、正確な再生時間からタイマーを更新する
-      setCurrentTime(20 - Math.floor(state.playedSeconds));
+    if (state.playedSeconds >= 10) {
+      navigate('/exercise');
     }
+
+    setCurrentTime(10 - Math.floor(state.playedSeconds));
   };
 
   return (
@@ -168,8 +136,8 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
               playing={isPlaying}
               loop={false}
               controls={false}
-              width='100vw'
-              height='100vh'
+              width='70vw'
+              height='70vh'
               playsinline
               onProgress={handleProgress}
               onEnded={handleVideoEnded}
@@ -188,6 +156,14 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
             <button onClick={handleActionClick('Next')}>次へ</button>
           </div>
         )}
+      </div>
+      <div>
+        次の項目
+        <ul>
+          <li>テスト</li>
+          <li>テスト</li>
+          <li>テスト</li>
+        </ul>
       </div>
       {!isLandscape && (
         <div className={styles['message-container']}>
