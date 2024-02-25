@@ -6,6 +6,7 @@ import styles from './styles/Home.module.scss';
 import news1 from './assets/img/news1.webp';
 import news2 from './assets/img/news2.webp';
 import news3 from './assets/img/news3.webp';
+import data from '../src/demoData/levelSetting.json';
 
 function Home() {
   const [selectedActivity, setSelectedActivity] = useState('');
@@ -32,7 +33,6 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    handleHiitClick();
     const profile = localStorage.getItem('userProfile');
     if (profile) {
       setUserProfile(JSON.parse(profile)); // 文字列をオブジェクトに変換してセット
@@ -62,13 +62,61 @@ function Home() {
   }, []);
 
   const handleHiitClick = () => {
-    setSelectedActivity('hiit'); // selectedActivityを'hiit'に設定
-    localStorage.setItem('selectedActivity', 'hiit'); // localStorageに'hiit'をセット
+    if (selectedActivity === 'hiit') {
+      return;
+    } else {
+      console.log('training');
+      setSelectedActivity('hiit');
+      localStorage.setItem('selectedActivity', 'hiit');
+      // @ts-ignore
+      const selectedCourseData = data['hiit'][selectedCourse];
+      if (selectedCourseData) {
+        const selectedItem = selectedCourseData.find(
+          // @ts-ignore
+          (item: { Lv: number }) => item.Lv === parseInt(selectedLevel, 10)
+        );
+        if (selectedItem) {
+          const initialTasks = [];
+          for (
+            let i = 0;
+            i < selectedItem.type.length && i < selectedItem.maxSelected;
+            i++
+          ) {
+            initialTasks.push({ id: `todo${i}`, text: selectedItem.type[i] });
+          }
+          localStorage.setItem('hiitTasks', JSON.stringify(initialTasks));
+        }
+      }
+    }
   };
 
   const handleLowStrengthClick = () => {
-    setSelectedActivity('training'); // selectedActivityを'hiit'に設定
-    localStorage.setItem('selectedActivity', 'training'); // localStorageに'hiit'をセット
+    if (selectedActivity === 'training') {
+      return;
+    } else {
+      console.log('hiit');
+      setSelectedActivity('training');
+      localStorage.setItem('selectedActivity', 'training');
+      // @ts-ignore
+      const selectedCourseData = data['training'][selectedCourse];
+      if (selectedCourseData) {
+        const selectedItem = selectedCourseData.find(
+          // @ts-ignore
+          (item: { Lv: number }) => item.Lv === parseInt(selectedLevel, 10)
+        );
+        if (selectedItem) {
+          const initialTasks = [];
+          for (
+            let i = 0;
+            i < selectedItem.type.length && i < selectedItem.maxSelected;
+            i++
+          ) {
+            initialTasks.push({ id: `todo${i}`, text: selectedItem.type[i] });
+          }
+          localStorage.setItem('trainingTasks', JSON.stringify(initialTasks));
+        }
+      }
+    }
   };
   return (
     <div className={styles['userinfo1']}>
@@ -159,7 +207,7 @@ function Home() {
                 <Link
                   to='/trainingsetting'
                   className={`${styles.setbutton} ${
-                    selectedActivity !== 'hiit' ? styles['clicked'] : ''
+                    selectedActivity === 'training' ? styles['clicked'] : ''
                   }`}
                   onClick={handleLowStrengthClick}
                 >
