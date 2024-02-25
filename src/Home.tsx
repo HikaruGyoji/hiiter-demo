@@ -15,13 +15,12 @@ function Home() {
     null
   );
   const [isLandscape, setIsLandscape] = useState<boolean>(
-    // 初回のレンダリング時にウィンドウの向きを検出する
-    window.innerWidth < window.innerHeight
+    window.innerWidth > window.innerHeight
   );
 
   useEffect(() => {
     const handleOrientationChange = () => {
-      setIsLandscape(window.innerWidth > window.innerHeight);
+      setIsLandscape(window.orientation === 90 || window.orientation === -90);
     };
 
     // 初期化時にも実行
@@ -73,7 +72,7 @@ function Home() {
   };
   return (
     <div className={styles['userinfo1']}>
-      {isLandscape && (
+      {!isLandscape && (
         <>
           <Header name='ホーム' backPath='/explainhiit' icons={true} />
           <div className={styles['margin-area']}>
@@ -182,7 +181,7 @@ function Home() {
         </>
       )}
 
-      {!isLandscape && (
+      {isLandscape && (
         <div className={styles['message-container']}>
           <p className={styles['message']}>画面を縦向きにしてください</p>
         </div>
