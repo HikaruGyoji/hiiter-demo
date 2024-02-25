@@ -225,7 +225,8 @@ select {
 .news-wrapper a img {
   vertical-align: middle;
   width: 150px;
-  height: auto;
+  height: 150px;
+  border-radius: 10px;
 }
 
 .news-wrapper a p {

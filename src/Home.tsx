@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import styles from './styles/Home.module.scss';
-import news1 from './assets/img/news1.png';
-import news2 from './assets/img/news2.png';
-import news3 from './assets/img/news3.png';
+import news1 from './assets/img/news1.webp';
+import news2 from './assets/img/news2.webp';
+import news3 from './assets/img/news3.webp';
 
 function Home() {
   const [selectedActivity, setSelectedActivity] = useState('');
