@@ -9,9 +9,9 @@ import HorizontalVideo from './HorizontalVideo';
 function Exercise() {
   return (
     <div className={styles['userinfo1']}>
-      <Header name='運動' backPath='/home' icons={true} />
+      {/* <Header name='運動' backPath='/home' icons={true} /> */}
       <div className={styles['margin-area']}>
-        <div className={styles['userinfo-header']}>
+        <div className={styles['main']}>
           <HorizontalVideo exerciseName='プッシュアップ' />
         </div>
       </div>

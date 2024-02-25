@@ -2,91 +2,13 @@
 
 @include button.button;
 
-input,
-select {
-  -webkit-appearance: none;
-  color: black;
-  background-color: white;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.info-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.userinfo1 {
-  text-align: center;
+.main {
   height: 100vh;
-  background-color: #fcecea;
-}
-
-.card-boxes {
+  width: 100vw;
   display: flex;
-}
-
-.margin-area {
-  padding-top: 55px;
-}
-
-.userinfo1-wrapper {
-  margin: 10px 30px;
-}
-
-.userinfo-header {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center;
   background-color: #fcecea;
-  a {
-    bottom: 10%;
-    position: absolute;
-  }
-}
-
-.userinfo-text {
-  margin: 0;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-.userinfo-span {
-  font-size: 12px;
-}
-
-.userinfo-header label {
-  color: black;
-}
-
-.userinfo-header select {
-  width: 320px;
-}
-
-.userinfo-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.container {
-  ul {
-    list-style-type: none;
-    margin: 0px 40px;
-    padding: 10px;
-    height: 120px;
-    background-color: rgba(#928484, 0.3);
-    overflow-y: scroll;
-    color: white;
-    .selected {
-      color: black;
-      font-weight: bold;
-    }
-  }
 }
 
 // アンドロイド対応
