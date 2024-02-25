@@ -3,7 +3,7 @@
   "name": "Hiiter Demo App",
   "start_url": ".",
   "display": "standalone",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "theme_color": "#ee817b",
   "background_color": "#EE817B",
   "icons": [

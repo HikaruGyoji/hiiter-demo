@@ -45,23 +45,24 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
   };
 
   useEffect(() => {
-    if (exerciseName && exerciseVideos[exerciseName]) {
-      setSrc(exerciseVideos[exerciseName]);
-      setIsPlaying(true);
-    }
-  }, [exerciseName]);
-
-  useEffect(() => {
     const handleOrientationChange = () => {
-      setIsLandscape(window.innerWidth > window.innerHeight);
+      setIsLandscape(window.orientation === 90 || window.orientation === -90);
     };
 
-    window.addEventListener('resize', handleOrientationChange);
+    // 初期化時にも実行
+    window.addEventListener('orientationchange', handleOrientationChange);
 
     return () => {
-      window.removeEventListener('resize', handleOrientationChange);
+      window.removeEventListener('orientationchange', handleOrientationChange);
     };
   }, []);
+
+  useEffect(() => {
+    if (exerciseName && exerciseVideos[exerciseName]) {
+      setSrc(exerciseVideos[exerciseName]);
+      setIsPlaying(true); // 動画を自動再生
+    }
+  }, [exerciseName]);
 
   const handleClick = () => {
     setIsPlaying(!isPlaying);

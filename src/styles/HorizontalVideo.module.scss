@@ -1,4 +1,13 @@
-//
+.message-container {
+  display: none; /* 既定では非表示 */
+}
+
+@media (orientation: portrait) {
+  .message-container {
+    display: block; /* 縦向きの場合にのみ表示 */
+  }
+}
+
 .message-container {
   .message {
     color: black;
