@@ -15,6 +15,7 @@ import Popup from './Popup'; // Popupコンポーネントのインポート
 const DragDrop = () => {
   const [tasks, setTasks] = useState<{ id: string; text: string }[]>([]);
   const [maxSelected, setMaxSelected] = useState<number>(4);
+  const [maxSet, setMaxSet] = useState<number>(4);
   const [fixedItems, setFixedItems] = useState<{ id: string; text: string }[]>([
     { id: 'd1', text: 'スクワット' },
     { id: 'd2', text: 'プッシュアップ' },
@@ -25,6 +26,7 @@ const DragDrop = () => {
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false); // ポップアップの表示状態を管理
   const [exerciseName, setExerciseName] = useState<string>(''); // エクササイズ名の状態を管理
   const [selectedActivity, setSelectedActivity] = useState<string>(''); // 選択されたアクティビティの状態を管理
+  const [selectedCourse, setSelectedCourse] = useState<string>(''); // 選択されたアクティビティの状態を管理
 
   useEffect(() => {
     const selectedLevel: string | null = localStorage.getItem('selectedLevel');
@@ -35,6 +37,7 @@ const DragDrop = () => {
 
     if (selectedLevel && selectedCourse && storedActivity) {
       setSelectedActivity(storedActivity);
+      setSelectedCourse(selectedCourse);
 
       // @ts-ignore
       const selectedCourseData = data[storedActivity][selectedCourse];
@@ -44,10 +47,11 @@ const DragDrop = () => {
         );
         if (selectedItem) {
           setMaxSelected(selectedItem.maxSelected);
+          setMaxSet(selectedItem.set);
           const initialTasks = [];
           for (
             let i = 0;
-            i < selectedItem.type.length && i < selectedItem.maxSelected;
+            i < selectedItem.type.length && i < selectedItem.set;
             i++
           ) {
             initialTasks.push({ id: `todo${i}`, text: selectedItem.type[i] });
@@ -130,17 +134,29 @@ const DragDrop = () => {
     <DragDropContext onDragEnd={onDragEnd}>
       <div className={styles['dragdrop-wrapper']}>
         <div>
-          {tasks.length !== maxSelected ? (
+          {selectedActivity === 'training' && selectedCourse === '初級' ? (
+            tasks.length !== maxSet ? (
+              <p>
+                現在のメニュー：
+                <span className={styles['caution']}>{tasks.length}</span>/
+                {maxSelected}
+              </p>
+            ) : (
+              <p>
+                現在のメニュー：{tasks.length}/{maxSelected}
+              </p>
+            )
+          ) : tasks.length !== maxSet ? (
             <p>
               現在のメニュー：
-              <span className={styles['caution']}>{tasks.length}</span>/
-              {maxSelected}
+              <span className={styles['caution']}>{tasks.length}</span>/{maxSet}
             </p>
           ) : (
             <p>
-              現在のメニュー：{tasks.length}/{maxSelected}
+              現在のメニュー：{tasks.length}/{maxSet}
             </p>
           )}
+
           <Droppable droppableId='tasks'>
             {(provided) => (
               <div
@@ -222,7 +238,7 @@ const DragDrop = () => {
             )}
           </Droppable>
           <div className={styles['button-wrapper']}>
-            {tasks.length === maxSelected ? (
+            {tasks.length === maxSet ? (
               <Link
                 to='/home'
                 onClick={handleMenuConfirm}
@@ -238,7 +254,7 @@ const DragDrop = () => {
                 メニュー確定
               </button>
             )}
-            {tasks.length === maxSelected ? (
+            {tasks.length === maxSet ? (
               <Link
                 to={selectedActivity === 'hiit' ? '/exercise' : '/training'}
                 className={`${styles.button} ${styles['-primary']}`}

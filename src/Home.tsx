@@ -19,12 +19,15 @@ function Home() {
     window.innerWidth > window.innerHeight
   );
 
+  const [selectedItem, setSelectedItem] = useState<any>(null);
+  const [hiitTasks, setHiitTasks] = useState<any[]>([]);
+  const [trainingTasks, setTrainingTasks] = useState<any[]>([]);
+
   useEffect(() => {
     const handleOrientationChange = () => {
       setIsLandscape(window.orientation === 90 || window.orientation === -90);
     };
 
-    // 初期化時にも実行
     window.addEventListener('orientationchange', handleOrientationChange);
 
     return () => {
@@ -35,17 +38,16 @@ function Home() {
   useEffect(() => {
     const profile = localStorage.getItem('userProfile');
     if (profile) {
-      setUserProfile(JSON.parse(profile)); // 文字列をオブジェクトに変換してセット
+      setUserProfile(JSON.parse(profile));
     }
   }, []);
 
   useEffect(() => {
-    // localStorage から selectedLevel を取得する
     const level = localStorage.getItem('selectedLevel');
     if (level) {
       setSelectedLevel(level);
     }
-  }, []); // コンポーネントがマウントされた時のみ実行する
+  }, []);
 
   useEffect(() => {
     const course = localStorage.getItem('selectedCourse');
@@ -60,6 +62,24 @@ function Home() {
       setSelectedActivity(activity);
     }
   }, []);
+
+  useEffect(() => {
+    const fetchData = () => {
+      if (selectedActivity && selectedCourse && selectedLevel) {
+        // @ts-ignore
+        const allData = data[selectedActivity][selectedCourse];
+        if (allData) {
+          const selectedItem = allData.find(
+            (item: { Lv: number }) => item.Lv === parseInt(selectedLevel)
+          );
+          setSelectedItem(selectedItem);
+          console.log(selectedItem);
+        }
+      }
+    };
+
+    fetchData();
+  }, [selectedActivity, selectedCourse, selectedLevel]);
 
   const handleHiitClick = () => {
     if (selectedActivity === 'hiit') {
@@ -84,6 +104,7 @@ function Home() {
           ) {
             initialTasks.push({ id: `todo${i}`, text: selectedItem.type[i] });
           }
+          setHiitTasks(initialTasks); // Set hiitTasks state
           localStorage.setItem('hiitTasks', JSON.stringify(initialTasks));
         }
       }
@@ -113,6 +134,7 @@ function Home() {
           ) {
             initialTasks.push({ id: `todo${i}`, text: selectedItem.type[i] });
           }
+          setTrainingTasks(initialTasks);
           localStorage.setItem('trainingTasks', JSON.stringify(initialTasks));
         }
       }
