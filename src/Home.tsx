@@ -23,6 +23,9 @@ function Home() {
   const [hiitTasks, setHiitTasks] = useState<any[]>([]);
   const [trainingTasks, setTrainingTasks] = useState<any[]>([]);
 
+  const [hiitTasksData, setHiitTasksData] = useState<any[]>([]);
+  const [trainingTasksData, setTrainingTasksData] = useState<any[]>([]);
+
   useEffect(() => {
     const handleOrientationChange = () => {
       setIsLandscape(window.orientation === 90 || window.orientation === -90);
@@ -60,6 +63,20 @@ function Home() {
     const activity = localStorage.getItem('selectedActivity');
     if (activity) {
       setSelectedActivity(activity);
+    }
+  }, []);
+  useEffect(() => {
+    const hiitTasksData = localStorage.getItem('hiitTasks');
+    if (hiitTasksData) {
+      const storedHiitTasks = JSON.parse(hiitTasksData);
+      setHiitTasksData(storedHiitTasks);
+    }
+
+    const trainingTasksData = localStorage.getItem('trainingTasks');
+    if (trainingTasksData) {
+      const storedTrainingTasks = JSON.parse(trainingTasksData);
+      console.log(storedTrainingTasks);
+      setTrainingTasksData(storedTrainingTasks);
     }
   }, []);
 
@@ -238,13 +255,19 @@ function Home() {
                 </Link>
               </div>
             </div>
+            {trainingTasksData.length}
             <header className={styles['userinfo-header']}>
-              <Link
-                to={'/exercise'}
-                className={`${styles.button} ${styles['-primary']}`}
-              >
-                運動開始
-              </Link>
+              {(selectedActivity === 'hiit' &&
+                selectedItem?.set === hiitTasksData?.length) ||
+              (selectedActivity === 'training' &&
+                selectedItem?.set === trainingTasksData?.length) ? (
+                <Link
+                  to={'/exercise'}
+                  className={`${styles.button} ${styles['-primary']}`}
+                >
+                  運動開始
+                </Link>
+              ) : null}
             </header>
           </div>
           <Footer />

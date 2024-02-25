@@ -135,7 +135,7 @@ const DragDrop = () => {
       <div className={styles['dragdrop-wrapper']}>
         <div>
           {selectedActivity === 'training' && selectedCourse === '初級' ? (
-            tasks.length !== maxSet ? (
+            tasks.length !== maxSelected ? (
               <p>
                 現在のメニュー：
                 <span className={styles['caution']}>{tasks.length}</span>/
@@ -238,7 +238,24 @@ const DragDrop = () => {
             )}
           </Droppable>
           <div className={styles['button-wrapper']}>
-            {tasks.length === maxSet ? (
+            {selectedActivity === 'training' && selectedCourse === '初級' ? (
+              tasks.length === maxSelected ? (
+                <Link
+                  to='/home'
+                  onClick={handleMenuConfirm}
+                  className={`${styles.button} ${styles['-primary']}`}
+                >
+                  メニュー確定
+                </Link>
+              ) : (
+                <button
+                  className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
+                  disabled
+                >
+                  メニュー確定
+                </button>
+              )
+            ) : tasks.length === maxSet ? (
               <Link
                 to='/home'
                 onClick={handleMenuConfirm}
@@ -254,7 +271,25 @@ const DragDrop = () => {
                 メニュー確定
               </button>
             )}
-            {tasks.length === maxSet ? (
+
+            {selectedActivity === 'training' && selectedCourse === '初級' ? (
+              tasks.length === maxSelected ? (
+                <Link
+                  to={'/training'}
+                  className={`${styles.button} ${styles['-primary']}`}
+                  onClick={handleMenuConfirm}
+                >
+                  運動開始
+                </Link>
+              ) : (
+                <button
+                  className={`${styles.button} ${styles['-primary']} ${styles['-disabled']}`}
+                  disabled
+                >
+                  運動開始
+                </button>
+              )
+            ) : tasks.length === maxSet ? (
               <Link
                 to={selectedActivity === 'hiit' ? '/exercise' : '/training'}
                 className={`${styles.button} ${styles['-primary']}`}
