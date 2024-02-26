@@ -36,12 +36,16 @@ function UserInfo2() {
               <Card
                 img={easy}
                 title={'初級'}
+                width='80px'
+                height='60px'
                 isSelected={selectedCard === '初級'}
                 onClick={handleCardClick}
               />
               <Card
                 img={normal}
                 title={'中級'}
+                width='70px'
+                height='90px'
                 isSelected={selectedCard === '中級'}
                 onClick={handleCardClick}
               />
@@ -50,6 +54,8 @@ function UserInfo2() {
               <Card
                 img={difficult}
                 title={'上級'}
+                width='100px'
+                height='80px'
                 isSelected={selectedCard === '上級'}
                 onClick={handleCardClick}
               />

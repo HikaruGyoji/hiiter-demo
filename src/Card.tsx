@@ -5,18 +5,27 @@ function Card(props: {
   title: string;
   isSelected: boolean;
   onClick: (title: string) => void;
+  width: string; // 親から渡された幅
+  height: string; // 親から渡された高さ
 }) {
-  const cardStyle = {
+  const divStyle = {
     backgroundColor: props.isSelected ? '#f6afaa' : 'white',
+  };
+
+  const cardStyle = {
+    width: props.width,
+    height: props.height,
   };
 
   return (
     <div
       className={styles['card-wrapper']}
-      style={cardStyle}
       onClick={() => props.onClick(props.title)}
+      style={divStyle}
     >
-      <img src={props.img} alt='' className={styles['card-img']} />
+      <div className={styles['card-img']}>
+        <img src={props.img} alt='' style={cardStyle} />
+      </div>
       <p>{props.title}</p>
     </div>
   );

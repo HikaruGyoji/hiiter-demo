@@ -40,12 +40,16 @@ function UserInfo3() {
                 title={'ダイエット'}
                 isSelected={selectedCards.includes('ダイエット')}
                 onClick={handleCardClick}
+                width='80px'
+                height='55px'
               />
               <Card
                 img={muscle}
                 title={'筋力アップ'}
                 isSelected={selectedCards.includes('筋力アップ')}
                 onClick={handleCardClick}
+                width='60px'
+                height='60px'
               />
             </div>
             <div className={styles['card-boxes']}>
@@ -54,12 +58,16 @@ function UserInfo3() {
                 title={'持久力（体力）をつけたい'}
                 isSelected={selectedCards.includes('持久力（体力）をつけたい')}
                 onClick={handleCardClick}
+                width='70px'
+                height='55px'
               />
               <Card
                 img={health}
                 title={'健康維持'}
                 isSelected={selectedCards.includes('健康維持')}
                 onClick={handleCardClick}
+                width='65px'
+                height='50px'
               />
             </div>
             <div className={styles['card-boxes']}>
@@ -68,12 +76,16 @@ function UserInfo3() {
                 title={'ストレス解消'}
                 isSelected={selectedCards.includes('ストレス解消')}
                 onClick={handleCardClick}
+                width='60px'
+                height='60px'
               />
               <Card
                 img={custom}
                 title={'運動習慣を付けたい'}
                 isSelected={selectedCards.includes('運動習慣を付けたい')}
                 onClick={handleCardClick}
+                width='60px'
+                height='60px'
               />
             </div>
           </div>
