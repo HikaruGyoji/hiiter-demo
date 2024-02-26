@@ -2,6 +2,13 @@
 
 @include button.button;
 
+.temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
 input,
 select {
   -webkit-appearance: none;

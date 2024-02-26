@@ -9,7 +9,9 @@ function Account() {
       <Header name='アカウント' backPath='/home' icons={true} />
       <div className={styles['margin-area']}>
         <header className={styles['userinfo-header']}>
-          <p className={styles['text']}>この画面は未実装です。</p>
+          <div className={styles['temp']}>
+            <p className={styles['text']}>この画面は未実装です。</p>
+          </div>
         </header>
       </div>
       <Footer />
