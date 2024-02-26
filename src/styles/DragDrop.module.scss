@@ -1,6 +1,11 @@
 @use './component/button.scss';
 
 @include button.button;
+
+.cautionBorder {
+  border: 3px solid red !important;
+}
+
 .todoList {
   border: 1px solid #928484;
   border-radius: 10px;

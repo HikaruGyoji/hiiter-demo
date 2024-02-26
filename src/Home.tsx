@@ -49,6 +49,9 @@ function Home() {
     const level = localStorage.getItem('selectedLevel');
     if (level) {
       setSelectedLevel(level);
+    } else {
+      setSelectedLevel('4');
+      localStorage.setItem('selectedLevel', '4');
     }
   }, []);
 
@@ -56,6 +59,9 @@ function Home() {
     const course = localStorage.getItem('selectedCourse');
     if (course) {
       setSelectedCourse(course);
+    } else {
+      setSelectedCourse('初級');
+      localStorage.setItem('selectedCourse', '初級');
     }
   }, []);
 
@@ -63,6 +69,9 @@ function Home() {
     const activity = localStorage.getItem('selectedActivity');
     if (activity) {
       setSelectedActivity(activity);
+    } else {
+      setSelectedActivity('hiit');
+      localStorage.setItem('selectedActivity', 'hiit');
     }
   }, []);
   useEffect(() => {
@@ -70,6 +79,22 @@ function Home() {
     if (hiitTasksData) {
       const storedHiitTasks = JSON.parse(hiitTasksData);
       setHiitTasksData(storedHiitTasks);
+    } else {
+      setHiitTasksData([
+        { id: 'todo0', text: 'スクワット' },
+        { id: 'todo1', text: 'プッシュアップ' },
+        { id: 'todo2', text: 'シットアップ' },
+        { id: 'todo3', text: 'バックエクステンション' },
+      ]);
+      localStorage.setItem(
+        'hiitTasks',
+        JSON.stringify([
+          { id: 'todo0', text: 'スクワット' },
+          { id: 'todo1', text: 'プッシュアップ' },
+          { id: 'todo2', text: 'シットアップ' },
+          { id: 'todo3', text: 'バックエクステンション' },
+        ])
+      );
     }
 
     const trainingTasksData = localStorage.getItem('trainingTasks');

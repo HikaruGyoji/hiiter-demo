@@ -130,42 +130,49 @@ const DragDrop = () => {
     );
   };
 
+  const isExceedingMax =
+    selectedActivity === 'training' && selectedCourse === '初級'
+      ? tasks.length !== maxSelected
+      : tasks.length !== maxSet;
+
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className={styles['dragdrop-wrapper']}>
         <div>
           {selectedActivity === 'training' && selectedCourse === '初級' ? (
-            tasks.length !== maxSelected ? (
+            isExceedingMax ? (
               <p>
-                現在のメニュー：
+                現在のセット：
                 <span className={styles['caution']}>{tasks.length}</span>/
                 {maxSelected}
               </p>
             ) : (
               <p>
-                現在のメニュー：{tasks.length}/{maxSelected}
+                現在のセット：{tasks.length}/{maxSelected}
               </p>
             )
-          ) : tasks.length !== maxSet ? (
+          ) : isExceedingMax ? (
             <p>
-              現在のメニュー：
+              現在のセット：
               <span className={styles['caution']}>{tasks.length}</span>/{maxSet}
             </p>
           ) : (
             <p>
-              現在のメニュー：{tasks.length}/{maxSet}
+              現在のセット：{tasks.length}/{maxSet}
             </p>
           )}
-
+          {/* todoリスト */}
           <Droppable droppableId='tasks'>
             {(provided) => (
               <div
-                className={styles['todoList']}
+                className={`${styles['todoList']} ${
+                  isExceedingMax ? styles['cautionBorder'] : ''
+                }`}
                 {...provided.droppableProps}
                 ref={provided.innerRef}
               >
                 {tasks.map((task, index) => (
-                  <div key={task.id} className={styles['todoListNum']}>
+                  <div key={task.id} className={`${styles['todoListNum']}`}>
                     <span>{index + 1}</span>
                     <Draggable
                       key={task.id}
@@ -174,7 +181,7 @@ const DragDrop = () => {
                     >
                       {(provided) => (
                         <div
-                          className={styles['todo']}
+                          className={`${styles['todo']} `}
                           ref={provided.innerRef}
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
