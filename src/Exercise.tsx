@@ -53,7 +53,7 @@ function Exercise() {
               isLastItem={currentIndex === trainingTasks.length - 1}
             />
           ) : (
-            <div>No tasks available</div>
+            <div></div>
           )}
         </div>
       </div>

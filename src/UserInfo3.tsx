@@ -49,7 +49,7 @@ function UserInfo3() {
                 isSelected={selectedCards.includes('筋力アップ')}
                 onClick={handleCardClick}
                 width='60px'
-                height='60px'
+                height='55px'
               />
             </div>
             <div className={styles['card-boxes']}>

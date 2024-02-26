@@ -48,7 +48,7 @@ function UserInfo1() {
                 isSelected={selectedCard === '筋力アップ'}
                 onClick={() => handleCardClick('筋力アップ')}
                 width='60px'
-                height='60px'
+                height='55px'
               />
             </div>
             <div className={styles['card-boxes']}>

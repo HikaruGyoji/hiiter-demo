@@ -11,6 +11,7 @@ function Login() {
       <Header name='ログイン' backPath='/' icons={false} />
       <div className={styles['margin-area']}>
         <header className={styles['header']}>
+          <p className={styles['userinfo-text']}> メールアドレスでログイン</p>
           <input
             className={styles['input-box']}
             type='email'
@@ -27,6 +28,8 @@ function Login() {
           <Link to='/home' className={`${styles.button} ${styles['-primary']}`}>
             メールアドレスでログイン
           </Link>
+          <p className={styles['userinfo-text']}> SNSでログイン</p>
+
           <Link to='/home' className={`${styles.button} ${styles['-google']}`}>
             <img src={google} alt='google' />
             Googleでログイン

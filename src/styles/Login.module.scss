@@ -17,7 +17,7 @@
 }
 
 #password {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .header {
@@ -27,7 +27,7 @@
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding-top: 40px;
+  padding-top: 0;
   background-color: #fcecea;
   .-google {
     img {
@@ -48,4 +48,12 @@
 
 .margin-area {
   padding-top: 55px;
+}
+
+.userinfo-text {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
 }

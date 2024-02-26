@@ -11,6 +11,7 @@ function SignUp() {
       <Header name='新規登録' backPath='/' icons={false} />
       <div className={styles['margin-area']}>
         <header className={styles['header']}>
+          <p className={styles['userinfo-text']}> メールアドレスで登録</p>
           <input
             className={styles['input-box']}
             type='email'
@@ -30,6 +31,8 @@ function SignUp() {
           >
             メールアドレスで登録
           </Link>
+
+          <p className={styles['userinfo-text']}>SNSでサインアップ</p>
           <Link
             to='/userinfo1'
             className={`${styles.button} ${styles['-google']}`}

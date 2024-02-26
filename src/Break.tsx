@@ -71,7 +71,7 @@ function Break() {
               exerciseName={trainingTasks[currentIndex].text}
             />
           ) : (
-            <div>No tasks available</div>
+            <div></div>
           )}
         </div>
       </div>
