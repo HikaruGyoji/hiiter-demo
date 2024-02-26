@@ -17,6 +17,14 @@ import exercise10 from './assets/video/バックエクステンション.mp4';
 import exercise11 from './assets/video/バーピージャンプ.mp4';
 import exercise12 from './assets/video/プッシュアップ.mp4';
 import exercise13 from './assets/video/マウンテンクライマー.mp4';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBackwardStep,
+  faForwardStep,
+  faPause,
+  faPlay,
+} from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 interface HorizontalVideoProps {
   exerciseName: string;
@@ -53,6 +61,28 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
     プッシュアップ: exercise12,
     マウンテンクライマー: exercise13,
   };
+
+  useEffect(() => {
+    let totalDuration = 0;
+    const selectedActivity = localStorage.getItem('selectedActivity');
+    const hiitTasks = JSON.parse(localStorage.getItem('hiitTasks') || '[]');
+    const trainingTasks = JSON.parse(
+      localStorage.getItem('trainingTasks') || '[]'
+    );
+
+    if (selectedActivity === 'hiit') {
+      totalDuration = hiitTasks.length * 20 + (hiitTasks.length - 1) * 10;
+    } else if (selectedActivity === 'training') {
+      totalDuration =
+        trainingTasks.length * 20 + (trainingTasks.length - 1) * 10;
+    }
+
+    // currentIndex に応じてtotalTimeを調整する
+    totalDuration -= currentIndex * 30;
+
+    // totalTime を更新
+    setTotalTime(totalDuration);
+  }, [currentIndex]);
 
   useEffect(() => {
     const handleOrientationChange = () => {
@@ -145,11 +175,13 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
     loadedSeconds: number;
   }) => {
     if (state.played === 1 && currentTime !== 0) {
-      // 動画が終了し、タイマーがまだ0になっていない場合、タイマーを0にセットする
+      // 動画が終了し、かつタイマーがまだ0になっていない場合、タイマーを0にセットする
       setCurrentTime(0);
+      setTotalTime(0); // 動画が終了したらtotalTimeも0にセット
     } else {
-      // 動画が再生中の場合、正確な再生時間からタイマーを更新する
-      setCurrentTime(20 - Math.floor(state.playedSeconds));
+      // 動画が再生中の場合、1秒ごとにタイマーを更新する
+      setCurrentTime((prevTime) => Math.max(prevTime - 1, 0));
+      setTotalTime((prevTotalTime) => Math.max(prevTotalTime - 1, 0));
     }
   };
 
@@ -177,15 +209,51 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
             <div className={styles['time-display']}>
               {formatTime(currentTime)}
             </div>
+            <div className={styles['all-time-display']}>
+              {formatTime(totalTime)}
+            </div>
+            {isLandscape && !isPlaying && (
+              <Link
+                to='/home'
+                className={styles['home-button']}
+                onClick={() => localStorage.setItem('currentIndex', '0')}
+              >
+                ホーム
+              </Link>
+            )}
           </>
         )}
         {isLandscape && !isPlaying && (
           <div className={styles['controls-container']}>
-            <button onClick={handleActionClick('Previous')}>前へ</button>
-            <button onClick={handleActionClick('Play/Pause')}>
-              再生/一時停止
-            </button>
-            <button onClick={handleActionClick('Next')}>次へ</button>
+            <div className={styles['button-text-wrapper']}>
+              <span>前へ</span>
+              <FontAwesomeIcon
+                icon={faBackwardStep}
+                className={styles['control-button']}
+                onClick={handleActionClick('Previous')}
+              />
+            </div>
+
+            <div className={styles['button-text-wrapper']}>
+              <span>再生/停止</span>
+              <FontAwesomeIcon
+                icon={isPlaying ? faPause : faPlay}
+                className={`${styles['control-button']} ${
+                  isPlaying
+                    ? styles['control-button-pause']
+                    : styles['control-button-play']
+                }`}
+                onClick={handleActionClick('Play/Pause')}
+              />
+            </div>
+            <div className={styles['button-text-wrapper']}>
+              <span>次へ</span>
+              <FontAwesomeIcon
+                icon={faForwardStep}
+                className={styles['control-button']}
+                onClick={handleActionClick('Next')}
+              />
+            </div>
           </div>
         )}
       </div>

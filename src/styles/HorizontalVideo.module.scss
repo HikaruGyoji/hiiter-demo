@@ -21,9 +21,33 @@
   left: 10%;
   font-size: 40px;
   color: white;
+  background-color: #818181;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
+.all-time-display {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  font-size: 40px;
+  color: white;
+  background-color: #818181;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
+.home-button {
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
   background-color: #ee817b;
   padding: 0 10px;
   border-radius: 10px;
+  text-decoration-line: none;
 }
 
 .horizontal-video.stopped .video-container {
@@ -45,6 +69,47 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.control-button {
+  color: white;
+  font-size: 60px;
+}
+.control-button-pause {
+  font-size: 60px;
+  padding: 5px 15px;
+  color: white;
+  z-index: 2;
+}
+.control-button-play {
+  font-size: 60px;
+  color: white;
+  z-index: 2;
+}
+
+.button-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-weight: bold;
+}
+
+.control-button-background {
+  position: absolute;
+  background-color: #ee817b;
+  padding: 24px;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.pause {
+  background-color: red;
 }
 
 // アンドロイド対応
