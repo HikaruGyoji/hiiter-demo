@@ -17,9 +17,9 @@
 
 .time-display {
   position: absolute;
-  top: 20%;
-  left: 10%;
-  font-size: 40px;
+  top: 15%;
+  left: 1%;
+  font-size: 36px;
   color: white;
   background-color: #ee817b;
   padding: 0 10px;
@@ -30,8 +30,21 @@
   display: flex !important;
 }
 
+.video-container {
+  .controls-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .horizontal-video.stopped .video-container {
   position: relative;
+  .time-display {
+    top: 3%;
+    left: 2%;
+  }
 }
 
 .horizontal-video.stopped .video-container::before {
@@ -42,13 +55,6 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒 */
-}
-
-.controls-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 // アンドロイド対応

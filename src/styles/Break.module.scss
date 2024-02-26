@@ -11,6 +11,10 @@
   background-color: #fcecea;
 }
 
+.main.-center {
+  justify-content: center;
+}
+
 // アンドロイド対応
 @media (max-height: 760px) {
   .userinfo-header a {

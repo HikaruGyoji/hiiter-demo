@@ -132,12 +132,13 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
         {isLandscape && src && (
           <>
             <ReactPlayer
+              className={styles['video-size']}
               url={src}
               playing={isPlaying}
               loop={false}
               controls={false}
-              width='70vw'
-              height='70vh'
+              width='auto'
+              height='75vh'
               playsinline
               onProgress={handleProgress}
               onEnded={handleVideoEnded}
@@ -157,14 +158,16 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
           </div>
         )}
       </div>
-      <div>
-        次の項目
-        <ul>
-          <li>テスト</li>
-          <li>テスト</li>
-          <li>テスト</li>
-        </ul>
-      </div>
+      {isLandscape && (
+        <div>
+          次の項目
+          <ul>
+            <li>テスト</li>
+            <li>テスト</li>
+            <li>テスト</li>
+          </ul>
+        </div>
+      )}
       {!isLandscape && (
         <div className={styles['message-container']}>
           <p className={styles['message']}>画面を横向きにしてください</p>
