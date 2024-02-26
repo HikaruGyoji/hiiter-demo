@@ -98,7 +98,10 @@ function LevelSetting() {
           data={data[selectedActivity][selectedCourse]}
           selectedLevel={selectedLevel}
           onSelectLevel={handleSelectLevel}
+          selectedActivity={selectedActivity}
+          selectedCourse={selectedCourse}
         />
+
         <div className={styles['userinfo-header']}>
           <Link
             to='/home'

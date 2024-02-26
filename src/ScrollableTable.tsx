@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles/ScrollableTable.module.scss';
 import { Link } from 'react-router-dom';
 
@@ -13,19 +13,45 @@ interface ScrollableTableProps {
   }[];
   selectedLevel: number | null;
   onSelectLevel: (level: number) => void;
+  selectedActivity: string; // 選択されたアクティビティ
+  selectedCourse: string; // 選択されたコース
 }
 
 const ScrollableTable: React.FC<ScrollableTableProps> = ({
   data,
-  selectedLevel, // selectedLevelをpropsから受け取る
+  selectedLevel,
   onSelectLevel,
+  selectedActivity,
+  selectedCourse,
 }) => {
   const [selectedRow, setSelectedRow] = useState<number | null>(selectedLevel);
 
   const handleRowClick = (level: number) => {
     setSelectedRow(level);
     onSelectLevel(level);
+
+    const selectedRowElement = document.getElementById(`row-${level}`);
+    if (selectedRowElement) {
+      selectedRowElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      });
+    }
   };
+
+  useEffect(() => {
+    if (selectedRow !== null) {
+      const selectedRowElement = document.getElementById(`row-${selectedRow}`);
+      if (selectedRowElement) {
+        selectedRowElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'start',
+        });
+      }
+    }
+  }, [selectedRow]);
 
   return (
     <div className={styles['tableContainer']}>
@@ -34,7 +60,9 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
           <tr>
             <th>Lv</th>
             <th className={styles['second-th']}>運動種目</th>
-            <th>選択種目数</th>
+            {selectedActivity === 'training' && selectedCourse === '初級' && (
+              <th>選択種目数</th>
+            )}
             {data[0].count === -1 ? null : <th>回数</th>}
             {data[0].set === -1 ? null : <th>セット数</th>}
           </tr>
@@ -43,6 +71,7 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
           {data.map((row, index) => (
             <tr
               key={index}
+              id={`row-${row.Lv}`}
               onClick={() => handleRowClick(row.Lv)}
               className={selectedRow === row.Lv ? styles['selectedRow'] : ''}
             >
@@ -62,9 +91,11 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
                   </div>
                 ))}
               </td>
-              <td>
-                <div key={index}>{row.maxSelected}</div>
-              </td>
+              {selectedActivity === 'training' && selectedCourse === '初級' && (
+                <td>
+                  <div key={index}>{row.maxSelected}</div>
+                </td>
+              )}
               {row.count === -1 ? null : (
                 <td>
                   <div key={index}>{row.count}</div>
