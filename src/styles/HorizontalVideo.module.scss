@@ -35,6 +35,15 @@
   background-color: #818181;
   padding: 0 10px;
   border-radius: 10px;
+  padding-top: 20px;
+  &::after {
+    content: '合計時間';
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 2px;
+    left: 27px;
+  }
 }
 
 .home-button {

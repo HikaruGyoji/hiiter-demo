@@ -34,7 +34,16 @@
   color: white;
   background-color: #818181;
   padding: 0 10px;
+  padding-top: 20px;
   border-radius: 10px;
+  &::after {
+    content: '合計時間';
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 2px;
+    left: 27px;
+  }
 }
 
 .exercise-wrapper {
@@ -42,21 +51,44 @@
   margin: 0 10px;
   overflow-y: scroll;
   height: 75vh;
+  background: white;
+  border-radius: 10px;
   .exercise-list {
     list-style-type: none;
     padding: 0;
+    margin: 20px;
     li {
+      background-color: #faf9f9;
       margin: 0 10px;
       border-radius: 5px;
-      margin-bottom: 4px;
-      border: 1px solid;
-      padding: 0 20px;
+      margin-bottom: 6px;
+      border: 1px solid #ccc;
+      font-size: 12px;
+      padding: 15px;
     }
     .selected {
-      color: blue;
+      color: #ee817b;
+      background-color: #faf9f9;
+      font-weight: bold;
+      border: 3px solid #ee817b;
+      position: relative;
     }
     .next {
-      color: #ee817b;
+      color: white;
+      background-color: #928484;
+      font-weight: bold;
+      border: 1px solid #928484;
+      position: relative;
+      &::after {
+        background: #ee817b;
+        content: '次';
+        position: absolute;
+        top: -6px;
+        left: -8px;
+        padding: 3px 6px;
+        border-radius: 20px;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+      }
     }
   }
 }
