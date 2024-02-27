@@ -218,8 +218,16 @@
 
 // アンドロイド対応
 @media (max-height: 760px) {
-  // .icons {
-  //   padding-top: 10px;
-  //   padding-bottom: 10px;
-  // }
+  .next::after {
+    font-size: 12px;
+    top: -6px;
+  }
+  .button-text-wrapper {
+    span {
+      font-size: 12px;
+    }
+  }
+  .count-display::after {
+    left: 15px;
+  }
 }
