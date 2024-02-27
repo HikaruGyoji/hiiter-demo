@@ -86,11 +86,11 @@
     transform: translate(-50%, -50%);
   }
 }
-.horizontal-video::after {
-  content: '次のエクササイズを確認';
+.break-title {
   font-size: 24px;
+  margin: 0;
   position: absolute;
-  top: 15px;
+  top: 10px;
   left: 15px;
 }
 

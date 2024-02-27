@@ -270,7 +270,9 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
                   : `${item}（20秒）`}
               </li>
             ))}
+            <li>エクササイズ終了</li>
           </ul>
+          <p className={styles['break-title']}>次のエクササイズを確認</p>
         </div>
       )}
 
