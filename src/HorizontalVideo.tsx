@@ -153,12 +153,7 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
         return isLastItem ? 0 : newIndex; // isLastItemの場合は0を返す
       });
     } else if (action === 'Previous') {
-      setCurrentIndex((prevIndex) => {
-        const newIndex = Math.max(prevIndex - 1, 0);
-        localStorage.setItem('currentIndex', newIndex.toString());
-        navigate('/break'); // setCurrentIndex内で遷移を行う
-        return newIndex;
-      });
+      navigate('/break'); // setCurrentIndex内で遷移を行う
     }
     setIsPlaying(!isPlaying);
   };
@@ -185,22 +180,52 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
     });
   };
 
-  const handleProgress = (state: {
-    played: number;
-    playedSeconds: number;
-    loaded: number;
-    loadedSeconds: number;
-  }) => {
-    if (state.played === 1 && currentTime !== 0) {
-      // 動画が終了し、かつタイマーがまだ0になっていない場合、タイマーを0にセットする
-      setCurrentTime(0);
-      setTotalTime(0); // 動画が終了したらtotalTimeも0にセット
-    } else {
-      // 動画が再生中の場合、1秒ごとにタイマーを更新する
-      setCurrentTime((prevTime) => Math.max(prevTime - 1, 0));
-      setTotalTime((prevTotalTime) => Math.max(prevTotalTime - 1, 0));
+  const handleProgress = (state: any) => {
+    if (!state.played) return; // playedが0の場合は初期化中のため何もしない
+
+    const { playedSeconds, loadedSeconds } = state;
+    setCurrentTime(20 - playedSeconds); // 動画の再生時間から現在の再生位置を引き算してcurrentTimeを設定
+    let totalDuration = 0;
+    const selectedActivity = localStorage.getItem('selectedActivity');
+    const hiitTasks = JSON.parse(localStorage.getItem('hiitTasks') || '[]');
+    const trainingTasks = JSON.parse(
+      localStorage.getItem('trainingTasks') || '[]'
+    );
+
+    if (selectedActivity === 'hiit') {
+      totalDuration = hiitTasks.length * 20 + (hiitTasks.length - 1) * 10;
+    } else if (selectedActivity === 'training') {
+      totalDuration =
+        trainingTasks.length * 20 + (trainingTasks.length - 1) * 10;
     }
+
+    // currentIndex に応じてtotalTimeを調整する
+    totalDuration -= currentIndex * 30;
+
+    setTotalTime(totalDuration - playedSeconds); // totalTimeを設定
   };
+
+  useEffect(() => {
+    let totalDuration = 0;
+    const selectedActivity = localStorage.getItem('selectedActivity');
+    const hiitTasks = JSON.parse(localStorage.getItem('hiitTasks') || '[]');
+    const trainingTasks = JSON.parse(
+      localStorage.getItem('trainingTasks') || '[]'
+    );
+
+    if (selectedActivity === 'hiit') {
+      totalDuration = hiitTasks.length * 20 + (hiitTasks.length - 1) * 10;
+    } else if (selectedActivity === 'training') {
+      totalDuration =
+        trainingTasks.length * 20 + (trainingTasks.length - 1) * 10;
+    }
+
+    // currentIndex に応じてtotalTimeを調整する
+    totalDuration -= currentIndex * 30;
+
+    setTotalTime(totalDuration); // totalTimeを設定
+    console.log(totalDuration);
+  }, []);
 
   useEffect(() => {
     if (selectedCourse === '初級' && selectedActivity === 'training') {
