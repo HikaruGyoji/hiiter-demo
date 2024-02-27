@@ -17,7 +17,7 @@
 
 .time-display {
   position: absolute;
-  top: 17%;
+  top: 20%;
   left: 1%;
   font-size: 36px;
   color: white;
@@ -28,7 +28,7 @@
 
 .all-time-display {
   position: absolute;
-  bottom: 17%;
+  bottom: 20%;
   left: 1%;
   font-size: 40px;
   color: white;
@@ -50,7 +50,7 @@
   border: 1px solid #ccc;
   margin: 0 10px;
   overflow-y: scroll;
-  height: 70vh;
+  height: 65vh;
   background: white;
   border-radius: 10px;
   .exercise-list {
@@ -63,7 +63,7 @@
       border-radius: 5px;
       margin-bottom: 6px;
       border: 1px solid #ccc;
-      font-size: 12px;
+      font-size: 16px;
       padding: 15px;
     }
     .selected {
@@ -129,11 +129,11 @@
 .horizontal-video.stopped .video-container {
   position: relative;
   .time-display {
-    top: 3%;
+    top: 4%;
     left: 2%;
   }
   .all-time-display {
-    bottom: 3%;
+    bottom: 4%;
     left: 2%;
   }
 }
