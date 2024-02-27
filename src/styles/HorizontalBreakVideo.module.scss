@@ -21,9 +21,57 @@
   left: 1%;
   font-size: 36px;
   color: white;
-  background-color: #ee817b;
+  background-color: #818181;
   padding: 0 10px;
   border-radius: 10px;
+}
+
+.all-time-display {
+  position: absolute;
+  bottom: 15%;
+  left: 1%;
+  font-size: 40px;
+  color: white;
+  background-color: #818181;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
+.exercise-wrapper {
+  border: 1px solid;
+  margin: 0 10px;
+  overflow-y: scroll;
+  height: 75vh;
+  .exercise-list {
+    list-style-type: none;
+    padding: 0;
+    li {
+      margin: 0 10px;
+      border-radius: 5px;
+      margin-bottom: 4px;
+      border: 1px solid;
+      padding: 0 20px;
+    }
+    .selected {
+      color: blue;
+    }
+    .next {
+      color: #ee817b;
+    }
+  }
+}
+
+.home-button {
+  position: absolute;
+  bottom: 3%;
+  right: 4%;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  background-color: #ee817b;
+  padding: 12px;
+  border-radius: 50%;
+  text-decoration-line: none;
 }
 
 .horizontal-video {
@@ -38,11 +86,22 @@
     transform: translate(-50%, -50%);
   }
 }
+.horizontal-video::after {
+  content: '次のエクササイズを確認';
+  font-size: 24px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
 
 .horizontal-video.stopped .video-container {
   position: relative;
   .time-display {
     top: 3%;
+    left: 2%;
+  }
+  .all-time-display {
+    bottom: 3%;
     left: 2%;
   }
 }
@@ -55,6 +114,50 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒 */
+}
+
+.controls-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.control-button {
+  color: white;
+  font-size: 48px;
+}
+.control-button-pause {
+  font-size: 48px;
+  padding: 5px 15px;
+  color: white;
+  z-index: 2;
+}
+.control-button-play {
+  font-size: 48px;
+  color: white;
+  z-index: 2;
+}
+
+.button-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-weight: bold;
+}
+
+.control-button-background {
+  position: absolute;
+  background-color: #ee817b;
+  padding: 24px;
+  z-index: 1;
+  border-radius: 50%;
 }
 
 // アンドロイド対応

@@ -17,6 +17,15 @@ import exercise10 from './assets/video/バックエクステンション.mp4';
 import exercise11 from './assets/video/バーピージャンプ.mp4';
 import exercise12 from './assets/video/プッシュアップ.mp4';
 import exercise13 from './assets/video/マウンテンクライマー.mp4';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBackwardStep,
+  faForwardStep,
+  faHouse,
+  faPause,
+  faPlay,
+} from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 interface HorizontalVideoProps {
   exerciseName: string;
@@ -33,6 +42,7 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
   const [currentTime, setCurrentTime] = useState<number>(10);
   const [totalTime, setTotalTime] = useState<number>(100);
   const [currentIndex, setCurrentIndex] = useState<number>(0); // 1. currentIndexを追加
+  const [exerciseList, setExerciseList] = useState<string[]>([]); // exerciseListを追加
 
   const exerciseVideos: { [key: string]: string } = {
     その場かけ足: exercise1,
@@ -49,6 +59,54 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
     プッシュアップ: exercise12,
     マウンテンクライマー: exercise13,
   };
+
+  useEffect(() => {
+    let totalDuration = 0;
+    const selectedActivity = localStorage.getItem('selectedActivity');
+    let list: string[] = []; // exerciseListの一時的な配列を定義
+
+    if (selectedActivity === 'hiit') {
+      const hiitTasks = JSON.parse(localStorage.getItem('hiitTasks') || '[]');
+      for (let i = 0; i < hiitTasks.length; i++) {
+        list.push('休憩');
+        list.push(hiitTasks[i]?.text);
+      }
+    } else if (selectedActivity === 'training') {
+      const trainingTasks = JSON.parse(
+        localStorage.getItem('trainingTasks') || '[]'
+      );
+      for (let i = 0; i < trainingTasks.length; i++) {
+        list.push('休憩');
+        list.push(trainingTasks[i]?.text);
+      }
+    }
+
+    setExerciseList(list); // exerciseListを更新
+
+    const hiitTasks = JSON.parse(localStorage.getItem('hiitTasks') || '[]');
+    const trainingTasks = JSON.parse(
+      localStorage.getItem('trainingTasks') || '[]'
+    );
+
+    if (selectedActivity === 'hiit') {
+      totalDuration = hiitTasks.length * 20 + hiitTasks.length * 10;
+    } else if (selectedActivity === 'training') {
+      totalDuration = trainingTasks.length * 20 + trainingTasks.length * 10;
+    }
+
+    totalDuration -= currentIndex * 30;
+
+    // totalTime を更新
+    setTotalTime(totalDuration);
+  }, [currentIndex]);
+
+  useEffect(() => {
+    const selectedElement = document.querySelector(`.${styles.selected}`);
+    if (selectedElement) {
+      // 選択された要素が表示されるようにスクロールする
+      selectedElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [currentIndex]);
 
   useEffect(() => {
     const handleOrientationChange = () => {
@@ -118,7 +176,8 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
       navigate('/exercise');
     }
 
-    setCurrentTime(10 - Math.floor(state.playedSeconds));
+    setCurrentTime((prevTime) => Math.max(prevTime - 1, 0));
+    setTotalTime((prevTotalTime) => Math.max(prevTotalTime - 1, 0));
   };
 
   return (
@@ -146,28 +205,75 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
             <div className={styles['time-display']}>
               {formatTime(currentTime)}
             </div>
+            <div className={styles['all-time-display']}>
+              {formatTime(totalTime)}
+            </div>
+            {isLandscape && !isPlaying && (
+              <Link
+                to='/home'
+                className={styles['home-button']}
+                onClick={() => localStorage.setItem('currentIndex', '0')}
+              >
+                <FontAwesomeIcon icon={faHouse} />
+              </Link>
+            )}
           </>
         )}
         {isLandscape && !isPlaying && (
           <div className={styles['controls-container']}>
-            <button onClick={handleActionClick('Previous')}>前へ</button>
-            <button onClick={handleActionClick('Play/Pause')}>
-              再生/一時停止
-            </button>
-            <button onClick={handleActionClick('Next')}>次へ</button>
+            <div className={styles['button-text-wrapper']}>
+              <span>前へ</span>
+              <FontAwesomeIcon
+                icon={faBackwardStep}
+                className={styles['control-button']}
+                onClick={handleActionClick('Previous')}
+              />
+            </div>
+
+            <div className={styles['button-text-wrapper']}>
+              <span>再生/停止</span>
+              <FontAwesomeIcon
+                icon={isPlaying ? faPause : faPlay}
+                className={`${styles['control-button']} ${
+                  isPlaying
+                    ? styles['control-button-pause']
+                    : styles['control-button-play']
+                }`}
+                onClick={handleActionClick('Play/Pause')}
+              />
+            </div>
+            <div className={styles['button-text-wrapper']}>
+              <span>次へ</span>
+              <FontAwesomeIcon
+                icon={faForwardStep}
+                className={styles['control-button']}
+                onClick={handleActionClick('Next')}
+              />
+            </div>
           </div>
         )}
       </div>
       {isLandscape && (
-        <div>
-          次の項目
-          <ul>
-            <li>テスト</li>
-            <li>テスト</li>
-            <li>テスト</li>
+        <div className={styles['exercise-wrapper']}>
+          <ul className={styles['exercise-list']}>
+            {exerciseList.map((item, index) => (
+              <li
+                key={index}
+                className={`${
+                  index === currentIndex * 2 ? styles['selected'] : ''
+                } ${index === currentIndex * 2 + 1 ? styles['next'] : ''}`}
+              >
+                {index === 0
+                  ? 'エクササイズの確認'
+                  : item === '休憩'
+                  ? '休憩（10秒）'
+                  : `${item}（20秒）`}
+              </li>
+            ))}
           </ul>
         </div>
       )}
+
       {!isLandscape && (
         <div className={styles['message-container']}>
           <p className={styles['message']}>画面を横向きにしてください</p>

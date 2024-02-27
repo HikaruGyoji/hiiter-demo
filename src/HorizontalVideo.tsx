@@ -21,6 +21,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBackwardStep,
   faForwardStep,
+  faHouse,
   faPause,
   faPlay,
 } from '@fortawesome/free-solid-svg-icons';
@@ -218,7 +219,7 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
                 className={styles['home-button']}
                 onClick={() => localStorage.setItem('currentIndex', '0')}
               >
-                ホーム
+                <FontAwesomeIcon icon={faHouse} />
               </Link>
             )}
           </>

@@ -337,7 +337,7 @@ function Home() {
               {selectedActivity === 'hiit' &&
                 selectedItem?.set === hiitTasksData?.length && (
                   <Link
-                    to={'/exercise'}
+                    to={'/break'}
                     className={`${styles.button} ${styles['-primary']}`}
                   >
                     運動開始
@@ -349,7 +349,7 @@ function Home() {
                 selectedCourse === '初級' &&
                 selectedItem?.maxSelected === trainingTasksData?.length && (
                   <Link
-                    to={'/exercise'}
+                    to={'/break'}
                     className={`${styles.button} ${styles['-primary']}`}
                   >
                     運動開始
@@ -361,7 +361,7 @@ function Home() {
                 selectedCourse !== '初級' &&
                 selectedItem?.set === trainingTasksData?.length && (
                   <Link
-                    to={'/exercise'}
+                    to={'/break'}
                     className={`${styles.button} ${styles['-primary']}`}
                   >
                     運動開始
