@@ -512,7 +512,7 @@
           "シットアップ",
           "バックエクステンション"
         ],
-        "maxSelected": 2,
+        "maxSelected": 1,
         "set": -1,
         "count": 10,
         "recommend": false
@@ -525,7 +525,7 @@
           "シットアップ",
           "バックエクステンション"
         ],
-        "maxSelected": 3,
+        "maxSelected": 1,
         "set": -1,
         "count": 15,
         "recommend": false
@@ -538,7 +538,7 @@
           "シットアップ",
           "バックエクステンション"
         ],
-        "maxSelected": 4,
+        "maxSelected": 1,
         "set": -1,
         "count": 20,
         "recommend": true
@@ -551,7 +551,7 @@
           "シットアップ",
           "バックエクステンション"
         ],
-        "maxSelected": 4,
+        "maxSelected": 1,
         "set": -1,
         "count": 25,
         "recommend": false
@@ -564,7 +564,7 @@
           "シットアップ",
           "バックエクステンション"
         ],
-        "maxSelected": 4,
+        "maxSelected": 1,
         "set": -1,
         "count": 30,
         "recommend": false
@@ -577,7 +577,7 @@
           "シットアップ",
           "バックエクステンション"
         ],
-        "maxSelected": 4,
+        "maxSelected": 1,
         "set": -1,
         "count": 35,
         "recommend": false
@@ -590,7 +590,7 @@
           "シットアップ",
           "バックエクステンション"
         ],
-        "maxSelected": 4,
+        "maxSelected": 1,
         "set": -1,
         "count": 40,
         "recommend": false
