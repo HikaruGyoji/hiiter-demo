@@ -298,7 +298,7 @@ const DragDrop = () => {
               )
             ) : tasks.length === maxSet ? (
               <Link
-                to={'/exercise'}
+                to={'/break'}
                 className={`${styles.button} ${styles['-primary']}`}
                 onClick={handleMenuConfirm}
               >
