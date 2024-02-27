@@ -25,6 +25,14 @@ function Home() {
 
   const [hiitTasksData, setHiitTasksData] = useState<any[]>([]);
   const [trainingTasksData, setTrainingTasksData] = useState<any[]>([]);
+  const [selectedCard, setSelectedCard] = useState<string>('ダイエット'); // デフォルトはダイエット
+
+  useEffect(() => {
+    const storedSelectedCard = localStorage.getItem('selectedCard');
+    if (storedSelectedCard) {
+      setSelectedCard(storedSelectedCard);
+    }
+  }, []);
 
   useEffect(() => {
     const handleOrientationChange = () => {
@@ -234,7 +242,7 @@ function Home() {
             <div className={styles['active-setting1']}>
               <div>
                 <p>目的</p>
-                <span>ダイエット</span>
+                <span>{selectedCard}</span>
                 <Link
                   to='/typesetting'
                   className={`${styles.button} ${styles['-secondary']}`}

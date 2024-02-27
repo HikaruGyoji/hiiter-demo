@@ -55,8 +55,8 @@ function UserInfo3() {
             <div className={styles['card-boxes']}>
               <Card
                 img={physical}
-                title={'持久力（体力）をつけたい'}
-                isSelected={selectedCards.includes('持久力（体力）をつけたい')}
+                title={'体力をつけたい'}
+                isSelected={selectedCards.includes('体力をつけたい')}
                 onClick={handleCardClick}
                 width='70px'
                 height='55px'

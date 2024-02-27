@@ -7,11 +7,18 @@ import diet from './assets/img/diet.png';
 import physical from './assets/img/physical.png';
 import stress from './assets/img/stress.png';
 import custom from './assets/img/custom.png';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles/TypeSetting.module.scss';
 
 function TypeSetting() {
   const [selectedCard, setSelectedCard] = useState<string | null>('ダイエット');
+
+  useEffect(() => {
+    const storedSelectedCard = localStorage.getItem('selectedCard');
+    if (storedSelectedCard) {
+      setSelectedCard(storedSelectedCard);
+    }
+  }, []);
 
   const handleCardClick = (title: string) => {
     if (selectedCard === title) {
@@ -19,6 +26,10 @@ function TypeSetting() {
     } else {
       setSelectedCard(title);
     }
+  };
+
+  const handleDecisionClick = () => {
+    localStorage.setItem('selectedCard', selectedCard || '');
   };
 
   return (
@@ -52,9 +63,9 @@ function TypeSetting() {
             <div className={styles['card-boxes']}>
               <Card
                 img={physical}
-                title={'持久力（体力）をつけたい'}
-                isSelected={selectedCard === '持久力（体力）をつけたい'}
-                onClick={() => handleCardClick('持久力（体力）をつけたい')}
+                title={'体力をつけたい'}
+                isSelected={selectedCard === '体力をつけたい'}
+                onClick={() => handleCardClick('体力をつけたい')}
                 width='70px'
                 height='55px'
               />
@@ -91,6 +102,7 @@ function TypeSetting() {
             <Link
               to='/home'
               className={`${styles.button} ${styles['-primary']}`}
+              onClick={handleDecisionClick}
             >
               決定
             </Link>
