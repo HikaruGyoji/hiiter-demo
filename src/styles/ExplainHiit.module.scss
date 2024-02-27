@@ -68,7 +68,7 @@ select {
   padding: 25px;
   background-color: white;
   text-align: left;
-  height: 590px;
+  height: 600px;
   overflow: scroll;
   p {
     text-align: justify;
@@ -110,6 +110,6 @@ select {
 // アンドロイド対応
 @media (max-height: 760px) {
   .explain-box {
-    height: 450px;
+    height: 480px;
   }
 }
