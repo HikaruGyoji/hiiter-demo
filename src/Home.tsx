@@ -242,7 +242,15 @@ function Home() {
             <div className={styles['active-setting1']}>
               <div>
                 <p>目的</p>
-                <span>{selectedCard}</span>
+                <span
+                  className={
+                    selectedCard === '運動習慣を付けたい'
+                      ? styles['font-adjust']
+                      : ''
+                  }
+                >
+                  {selectedCard}
+                </span>
                 <Link
                   to='/typesetting'
                   className={`${styles.button} ${styles['-secondary']}`}
