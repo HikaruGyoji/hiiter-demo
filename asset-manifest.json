@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hiiter-demo/static/css/main.fbd11173.css",
-    "main.js": "/hiiter-demo/static/js/main.fd8d6f72.js",
+    "main.css": "/hiiter-demo/static/css/main.3c70766c.css",
+    "main.js": "/hiiter-demo/static/js/main.3377bad9.js",
     "reactPlayerYouTube.js": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js",
     "reactPlayerSoundCloud.js": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js",
     "reactPlayerVimeo.js": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js",
@@ -49,8 +49,8 @@
     "static/media/diet.png": "/hiiter-demo/static/media/diet.a6d2eb175e02b8276a32.png",
     "service-worker.js": "/hiiter-demo/service-worker.js",
     "index.html": "/hiiter-demo/index.html",
-    "main.fbd11173.css.map": "/hiiter-demo/static/css/main.fbd11173.css.map",
-    "main.fd8d6f72.js.map": "/hiiter-demo/static/js/main.fd8d6f72.js.map",
+    "main.3c70766c.css.map": "/hiiter-demo/static/css/main.3c70766c.css.map",
+    "main.3377bad9.js.map": "/hiiter-demo/static/js/main.3377bad9.js.map",
     "reactPlayerYouTube.dfccad8e.chunk.js.map": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js.map",
     "reactPlayerSoundCloud.344eba33.chunk.js.map": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js.map",
     "reactPlayerVimeo.ddb368ec.chunk.js.map": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js.map",
@@ -67,7 +67,7 @@
     "787.89c1857e.chunk.js.map": "/hiiter-demo/static/js/787.89c1857e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbd11173.css",
-    "static/js/main.fd8d6f72.js"
+    "static/css/main.3c70766c.css",
+    "static/js/main.3377bad9.js"
   ]
 }
