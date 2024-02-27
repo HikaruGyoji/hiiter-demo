@@ -27,6 +27,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+import data from '../src/demoData/levelSetting.json';
+
 interface HorizontalVideoProps {
   exerciseName: string;
 }
@@ -44,6 +46,11 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0); // 1. currentIndexを追加
   const [exerciseList, setExerciseList] = useState<string[]>([]); // exerciseListを追加
 
+  const [selectedCourse, setSelectedCourse] = useState<string>('');
+  const [selectedActivity, setSelectedActivity] = useState<string>('');
+  const [selectedLevel, setSelectedLevel] = useState<string>('');
+  const [selectedItem, setSelectedItem] = useState<number | null>();
+
   const exerciseVideos: { [key: string]: string } = {
     その場かけ足: exercise1,
     'ギャロップ＆フロアタッチ': exercise2,
@@ -59,6 +66,30 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
     プッシュアップ: exercise12,
     マウンテンクライマー: exercise13,
   };
+
+  useEffect(() => {
+    const course = localStorage.getItem('selectedCourse');
+    const activity = localStorage.getItem('selectedActivity');
+    const level = localStorage.getItem('selectedLevel');
+
+    if (course) setSelectedCourse(course);
+    if (activity) setSelectedActivity(activity);
+    if (level) setSelectedLevel(level);
+  }, []);
+
+  useEffect(() => {
+    if (selectedCourse === '初級' && selectedActivity === 'training') {
+      const selectedCourseData = data['training']['初級'];
+      const selectedItem = selectedCourseData.find(
+        (item: { Lv: number }) => item.Lv === parseInt(selectedLevel)
+      );
+      if (selectedItem !== null) {
+        setSelectedItem(selectedItem?.count);
+      } else {
+        setSelectedItem(null);
+      }
+    }
+  }, [selectedCourse, selectedActivity, selectedLevel]);
 
   useEffect(() => {
     let totalDuration = 0;
@@ -202,12 +233,23 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
               onProgress={handleProgress}
               onEnded={handleVideoEnded}
             />
-            <div className={styles['time-display']}>
-              {formatTime(currentTime)}
-            </div>
-            <div className={styles['all-time-display']}>
-              {formatTime(totalTime)}
-            </div>
+            {selectedCourse === '初級' && selectedActivity === 'training' ? (
+              <>
+                <div className={styles['time-display']}>
+                  {formatTime(currentTime)}
+                </div>
+                <div className={styles['count-display']}>{selectedItem}回</div>
+              </>
+            ) : (
+              <>
+                <div className={styles['time-display']}>
+                  {formatTime(currentTime)}
+                </div>
+                <div className={styles['all-time-display']}>
+                  {formatTime(totalTime)}
+                </div>
+              </>
+            )}
             {isLandscape && !isPlaying && (
               <Link
                 to='/home'
@@ -256,20 +298,36 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
       {isLandscape && (
         <div className={styles['exercise-wrapper']}>
           <ul className={styles['exercise-list']}>
-            {exerciseList.map((item, index) => (
-              <li
-                key={index}
-                className={`${
-                  index === currentIndex * 2 ? styles['selected'] : ''
-                } ${index === currentIndex * 2 + 1 ? styles['next'] : ''}`}
-              >
-                {index === 0
-                  ? 'エクササイズの確認'
-                  : item === '休憩'
-                  ? '休憩（10秒）'
-                  : `${item}（20秒）`}
-              </li>
-            ))}
+            {selectedCourse === '初級' && selectedActivity === 'training'
+              ? exerciseList.map((item, index) => (
+                  <li
+                    key={index}
+                    className={`${
+                      index === currentIndex * 2 ? styles['selected'] : ''
+                    } ${index === currentIndex * 2 + 1 ? styles['next'] : ''}`}
+                  >
+                    {index === 0
+                      ? 'エクササイズの確認'
+                      : item === '休憩'
+                      ? '休憩（10秒）'
+                      : `${item}（${selectedItem}回）`}
+                  </li>
+                ))
+              : exerciseList.map((item, index) => (
+                  <li
+                    key={index}
+                    className={`${
+                      index === currentIndex * 2 ? styles['selected'] : ''
+                    } ${index === currentIndex * 2 + 1 ? styles['next'] : ''}`}
+                  >
+                    {index === 0
+                      ? 'エクササイズの確認'
+                      : item === '休憩'
+                      ? '休憩（10秒）'
+                      : `${item}（20秒）`}
+                  </li>
+                ))}
+
             <li>エクササイズ終了</li>
           </ul>
           <p className={styles['break-title']}>次のエクササイズを確認</p>

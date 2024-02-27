@@ -15,6 +15,26 @@
   }
 }
 
+.count-display {
+  position: absolute;
+  bottom: 20%;
+  left: 1%;
+  font-size: 40px;
+  color: white;
+  background-color: #8181818a;
+  padding: 0 10px;
+  padding-top: 20px;
+  border-radius: 10px;
+  &::after {
+    content: '各回数';
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 2px;
+    left: 33px;
+  }
+}
+
 .time-display {
   position: absolute;
   top: 20%;
@@ -133,6 +153,10 @@
     left: 2%;
   }
   .all-time-display {
+    bottom: 4%;
+    left: 2%;
+  }
+  .count-display {
     bottom: 4%;
     left: 2%;
   }

@@ -26,6 +26,7 @@ import {
   faPlay,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import data from '../src/demoData/levelSetting.json';
 
 interface HorizontalVideoProps {
   exerciseName: string;
@@ -47,6 +48,11 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
   const [totalTime, setTotalTime] = useState<number>(100);
   const [currentIndex, setCurrentIndex] = useState<number>(0); // 1. currentIndexを追加
 
+  const [selectedCourse, setSelectedCourse] = useState<string>('');
+  const [selectedActivity, setSelectedActivity] = useState<string>('');
+  const [selectedLevel, setSelectedLevel] = useState<string>('');
+  const [selectedItem, setSelectedItem] = useState<number | null>();
+
   const exerciseVideos: { [key: string]: string } = {
     その場かけ足: exercise1,
     'ギャロップ＆フロアタッチ': exercise2,
@@ -62,6 +68,16 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
     プッシュアップ: exercise12,
     マウンテンクライマー: exercise13,
   };
+
+  useEffect(() => {
+    const course = localStorage.getItem('selectedCourse');
+    const activity = localStorage.getItem('selectedActivity');
+    const level = localStorage.getItem('selectedLevel');
+
+    if (course) setSelectedCourse(course);
+    if (activity) setSelectedActivity(activity);
+    if (level) setSelectedLevel(level);
+  }, []);
 
   useEffect(() => {
     let totalDuration = 0;
@@ -186,6 +202,20 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
     }
   };
 
+  useEffect(() => {
+    if (selectedCourse === '初級' && selectedActivity === 'training') {
+      const selectedCourseData = data['training']['初級'];
+      const selectedItem = selectedCourseData.find(
+        (item: { Lv: number }) => item.Lv === parseInt(selectedLevel)
+      );
+      if (selectedItem !== null) {
+        setSelectedItem(selectedItem?.count);
+      } else {
+        setSelectedItem(null);
+      }
+    }
+  }, [selectedCourse, selectedActivity, selectedLevel]);
+
   return (
     <div
       className={`${styles['horizontal-video']} ${
@@ -199,7 +229,9 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
             <ReactPlayer
               url={src}
               playing={isPlaying}
-              loop={false}
+              loop={
+                selectedCourse === '初級' && selectedActivity === 'training'
+              }
               controls={false}
               width='100vw'
               height='100vh'
@@ -207,12 +239,25 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
               onProgress={handleProgress}
               onEnded={handleVideoEnded}
             />
-            <div className={styles['time-display']}>
-              {formatTime(currentTime)}
-            </div>
-            <div className={styles['all-time-display']}>
-              {formatTime(totalTime)}
-            </div>
+
+            {selectedCourse === '初級' && selectedActivity === 'training' ? (
+              <>
+                <div className={styles['caution-display']}>
+                  終了したら画面をタップし次へ進んでください
+                </div>
+                <div className={styles['time-display']}>{selectedItem}回</div>
+              </>
+            ) : (
+              <>
+                <div className={styles['time-display']}>
+                  {formatTime(currentTime)}
+                </div>
+                <div className={styles['all-time-display']}>
+                  {formatTime(totalTime)}
+                </div>
+              </>
+            )}
+
             {isLandscape && !isPlaying && (
               <Link
                 to='/home'

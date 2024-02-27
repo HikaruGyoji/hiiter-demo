@@ -15,6 +15,17 @@
   }
 }
 
+.caution-display {
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  font-size: 24px;
+  color: white;
+  background-color: #8181818a;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
 .time-display {
   position: absolute;
   top: 5%;
