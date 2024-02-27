@@ -154,7 +154,7 @@ const Popup: React.FC<PopupProps> = ({ onClose, exerciseName }) => {
               loop={true}
               controls={false}
               width='100%'
-              height='100%'
+              height='80%'
               playsinline
             />
           )}

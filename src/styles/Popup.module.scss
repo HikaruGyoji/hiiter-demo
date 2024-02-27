@@ -12,6 +12,9 @@
 }
 
 .popup {
+  p {
+    font-size: 16px;
+  }
   background-color: red;
   .popup-close {
     position: absolute;
@@ -31,8 +34,7 @@
     border: 1px solid #ccc;
     padding: 40px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    height: 40%;
-
+    height: 35%;
     flex-direction: column;
     p {
       margin: 0;
