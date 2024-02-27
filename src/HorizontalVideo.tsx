@@ -190,7 +190,7 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
     <div
       className={`${styles['horizontal-video']} ${
         isPlaying ? '' : styles['stopped']
-      }`}
+      } ${isLandscape ? styles['background-primary'] : ''}`}
       onClick={handleClick}
     >
       <div className={styles['video-container']}>
