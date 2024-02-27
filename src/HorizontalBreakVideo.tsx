@@ -197,7 +197,7 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
               loop={false}
               controls={false}
               width='auto'
-              height='75vh'
+              height='70vh'
               playsinline
               onProgress={handleProgress}
               onEnded={handleVideoEnded}

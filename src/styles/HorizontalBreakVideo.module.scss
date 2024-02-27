@@ -17,7 +17,7 @@
 
 .time-display {
   position: absolute;
-  top: 15%;
+  top: 17%;
   left: 1%;
   font-size: 36px;
   color: white;
@@ -28,7 +28,7 @@
 
 .all-time-display {
   position: absolute;
-  bottom: 15%;
+  bottom: 17%;
   left: 1%;
   font-size: 40px;
   color: white;
@@ -47,10 +47,10 @@
 }
 
 .exercise-wrapper {
-  border: 1px solid;
+  border: 1px solid #ccc;
   margin: 0 10px;
   overflow-y: scroll;
-  height: 75vh;
+  height: 70vh;
   background: white;
   border-radius: 10px;
   .exercise-list {
@@ -86,7 +86,7 @@
         top: -6px;
         left: -8px;
         padding: 3px 6px;
-        border-radius: 20px;
+        border-radius: 50%;
         box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
       }
     }
