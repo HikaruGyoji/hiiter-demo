@@ -282,7 +282,7 @@ const DragDrop = () => {
             {selectedActivity === 'training' && selectedCourse === '初級' ? (
               tasks.length === maxSelected ? (
                 <Link
-                  to={'/training'}
+                  to={'/break'}
                   className={`${styles.button} ${styles['-primary']}`}
                   onClick={handleMenuConfirm}
                 >

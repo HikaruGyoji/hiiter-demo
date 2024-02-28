@@ -138,20 +138,20 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
 
   const handleActionClick = (action: string) => () => {
     if (action === 'Next') {
-      setCurrentIndex((prevIndex) => {
-        const newIndex = Math.min(
-          prevIndex + 1,
-          Object.keys(exerciseVideos).length - 1
-        );
-        if (isLastItem) {
-          localStorage.setItem('currentIndex', '0');
-          navigate('/complete'); // complete ページに遷移
-        } else {
+      if (isLastItem) {
+        localStorage.setItem('currentIndex', '0');
+        navigate('/complete'); // complete ページに遷移
+      } else {
+        setCurrentIndex((prevIndex) => {
+          const newIndex = Math.min(
+            prevIndex + 1,
+            Object.keys(exerciseVideos).length - 1
+          );
           localStorage.setItem('currentIndex', newIndex.toString());
           navigate('/break'); // setCurrentIndex内で遷移を行う
-        }
-        return isLastItem ? 0 : newIndex; // isLastItemの場合は0を返す
-      });
+          return newIndex;
+        });
+      }
     } else if (action === 'Previous') {
       navigate('/break'); // setCurrentIndex内で遷移を行う
     }
@@ -224,7 +224,6 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({
     totalDuration -= currentIndex * 30;
 
     setTotalTime(totalDuration); // totalTimeを設定
-    console.log(totalDuration);
   }, []);
 
   useEffect(() => {

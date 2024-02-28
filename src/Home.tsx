@@ -108,7 +108,6 @@ function Home() {
     const trainingTasksData = localStorage.getItem('trainingTasks');
     if (trainingTasksData) {
       const storedTrainingTasks = JSON.parse(trainingTasksData);
-      console.log(storedTrainingTasks);
       setTrainingTasksData(storedTrainingTasks);
     }
   }, []);
@@ -123,7 +122,6 @@ function Home() {
             (item: { Lv: number }) => item.Lv === parseInt(selectedLevel)
           );
           setSelectedItem(selectedItem);
-          console.log(selectedItem);
         }
       }
     };
@@ -135,7 +133,6 @@ function Home() {
     if (selectedActivity === 'hiit') {
       return;
     } else {
-      console.log('training');
       setSelectedActivity('hiit');
       localStorage.setItem('selectedActivity', 'hiit');
       // @ts-ignore
@@ -165,7 +162,6 @@ function Home() {
     if (selectedActivity === 'training') {
       return;
     } else {
-      console.log('hiit');
       setSelectedActivity('training');
       localStorage.setItem('selectedActivity', 'training');
       // @ts-ignore

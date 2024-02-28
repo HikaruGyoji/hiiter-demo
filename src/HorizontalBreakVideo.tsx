@@ -150,7 +150,6 @@ const HorizontalVideo: React.FC<HorizontalVideoProps> = ({ exerciseName }) => {
     totalDuration -= currentIndex * 30;
 
     setTotalTime(totalDuration); // totalTimeを設定
-    console.log(totalDuration);
   }, []);
 
   useEffect(() => {
