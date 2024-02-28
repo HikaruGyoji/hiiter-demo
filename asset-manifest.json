@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hiiter-demo/static/css/main.03662bcf.css",
-    "main.js": "/hiiter-demo/static/js/main.0f32403f.js",
+    "main.js": "/hiiter-demo/static/js/main.23e35bb7.js",
     "reactPlayerYouTube.js": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js",
     "reactPlayerSoundCloud.js": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js",
     "reactPlayerVimeo.js": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js",
@@ -50,7 +50,7 @@
     "service-worker.js": "/hiiter-demo/service-worker.js",
     "index.html": "/hiiter-demo/index.html",
     "main.03662bcf.css.map": "/hiiter-demo/static/css/main.03662bcf.css.map",
-    "main.0f32403f.js.map": "/hiiter-demo/static/js/main.0f32403f.js.map",
+    "main.23e35bb7.js.map": "/hiiter-demo/static/js/main.23e35bb7.js.map",
     "reactPlayerYouTube.dfccad8e.chunk.js.map": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js.map",
     "reactPlayerSoundCloud.344eba33.chunk.js.map": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js.map",
     "reactPlayerVimeo.ddb368ec.chunk.js.map": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js.map",
@@ -68,6 +68,6 @@
   },
   "entrypoints": [
     "static/css/main.03662bcf.css",
-    "static/js/main.0f32403f.js"
+    "static/js/main.23e35bb7.js"
   ]
 }
