@@ -142,23 +142,23 @@ const DragDrop = () => {
           {selectedActivity === 'training' && selectedCourse === '初級' ? (
             isExceedingMax ? (
               <p>
-                現在のセット：
+                現在の選択数：
                 <span className={styles['caution']}>{tasks.length}</span>/
                 {maxSelected}
               </p>
             ) : (
               <p>
-                現在のセット：{tasks.length}/{maxSelected}
+                現在の選択数：{tasks.length}/{maxSelected}
               </p>
             )
           ) : isExceedingMax ? (
             <p>
-              現在のセット：
+              現在の選択数：
               <span className={styles['caution']}>{tasks.length}</span>/{maxSet}
             </p>
           ) : (
             <p>
-              現在のセット：{tasks.length}/{maxSet}
+              現在の選択数：{tasks.length}/{maxSet}
             </p>
           )}
           {/* todoリスト */}

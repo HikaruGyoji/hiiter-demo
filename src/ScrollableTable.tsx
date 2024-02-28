@@ -61,10 +61,10 @@ const ScrollableTable: React.FC<ScrollableTableProps> = ({
             <th>Lv</th>
             <th className={styles['second-th']}>運動種目</th>
             {selectedActivity === 'training' && selectedCourse === '初級' && (
-              <th>選択種目数</th>
+              <th>選択数</th>
             )}
             {data[0].count === -1 ? null : <th>回数</th>}
-            {data[0].set === -1 ? null : <th>セット数</th>}
+            {data[0].set === -1 ? null : <th>選択数</th>}
           </tr>
         </thead>
         <tbody>
