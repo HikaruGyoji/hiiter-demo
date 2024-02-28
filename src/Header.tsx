@@ -32,10 +32,14 @@ function Header(props: { name: string; backPath: string; icons: boolean }) {
     <div className={styles['Header']}>
       <header className={styles['wrapper']}>
         <div className={styles['header-wrapper']}>
-          <Link to={props.backPath}>
-            {' '}
-            <FontAwesomeIcon icon={faAngleLeft} /> 戻る
-          </Link>
+          {window.location.hash !== '#/home' ? (
+            <Link to={props.backPath}>
+              {' '}
+              <FontAwesomeIcon icon={faAngleLeft} /> 戻る
+            </Link>
+          ) : (
+            <div>　　　</div>
+          )}
           <span>{props.name}</span>
           {props.icons ? (
             <div>

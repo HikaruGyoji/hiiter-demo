@@ -8,7 +8,7 @@ import animation3 from './assets/img/animation3.gif';
 function ExplainHiit() {
   return (
     <div className={styles['userinfo1']}>
-      <Header name='HIITって何' backPath='/userinfo4' icons={false} />
+      <Header name='HIITって何' backPath='/home' icons={false} />
       <div className={styles['margin-area']}>
         <div className={styles['explain-box']}>
           <p>

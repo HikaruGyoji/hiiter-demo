@@ -23,15 +23,23 @@ export default function AccordionExpandDefault() {
                   display: 'block',
                 }}
               >
-                2024/02/11
+                2024/03/02
               </span>
-              <p style={{ margin: '0' }}>アップデートのお知らせ</p>
+              <p style={{ margin: '0' }}>アンケートのお願い</p>
             </div>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography style={{ textAlign: 'left' }}>
-            デモ開発用のアップデートを行いました。
+            本日はご協力ありがとうございます。指示がありましたら、こちらの
+            <a
+              href='https://docs.google.com/forms/d/e/1FAIpQLSfbgDF44y9zVPvXICUdkYW6owaf8qvpcuEOpQXo8xBxUd3gyA/viewform?usp=sharing'
+              target='_blank'
+              rel='noreferrer'
+            >
+              デモアンケート
+            </a>
+            へのご協力をお願いします。
           </Typography>
         </AccordionDetails>
       </Accordion>
