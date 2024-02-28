@@ -31,7 +31,7 @@ export default function AccordionExpandDefault() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography style={{ textAlign: 'left' }}>
-            本日はご協力ありがとうございます。指示がありましたら、こちらの
+            本日はご参加いただきありがとうございます。指示がありましたら、こちらの
             <a
               href='https://docs.google.com/forms/d/e/1FAIpQLSfbgDF44y9zVPvXICUdkYW6owaf8qvpcuEOpQXo8xBxUd3gyA/viewform?usp=sharing'
               target='_blank'
