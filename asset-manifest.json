@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hiiter-demo/static/css/main.8f0bcaee.css",
-    "main.js": "/hiiter-demo/static/js/main.7d6b0af0.js",
+    "main.js": "/hiiter-demo/static/js/main.cd0ddcb8.js",
     "reactPlayerYouTube.js": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js",
     "reactPlayerSoundCloud.js": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js",
     "reactPlayerVimeo.js": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js",
@@ -41,7 +41,7 @@
     "static/media/stress.png": "/hiiter-demo/static/media/stress.9760618928f684bee40e.png",
     "static/media/muscle.png": "/hiiter-demo/static/media/muscle.65ac31080e774b49dd7f.png",
     "static/media/easy.png": "/hiiter-demo/static/media/easy.e01f8f479fa20223607a.png",
-    "static/media/logo.png": "/hiiter-demo/static/media/logo.1a4e0cc4e09b0c5c12de.png",
+    "static/media/logo.png": "/hiiter-demo/static/media/logo.04108164e5aa68063208.png",
     "static/media/normal.png": "/hiiter-demo/static/media/normal.cbb2db21cf0d486a9b01.png",
     "static/media/health.png": "/hiiter-demo/static/media/health.cf2247530372a9057acb.png",
     "static/media/animation2.gif": "/hiiter-demo/static/media/animation2.bfac35c1fcfb0883820b.gif",
@@ -50,7 +50,7 @@
     "service-worker.js": "/hiiter-demo/service-worker.js",
     "index.html": "/hiiter-demo/index.html",
     "main.8f0bcaee.css.map": "/hiiter-demo/static/css/main.8f0bcaee.css.map",
-    "main.7d6b0af0.js.map": "/hiiter-demo/static/js/main.7d6b0af0.js.map",
+    "main.cd0ddcb8.js.map": "/hiiter-demo/static/js/main.cd0ddcb8.js.map",
     "reactPlayerYouTube.dfccad8e.chunk.js.map": "/hiiter-demo/static/js/reactPlayerYouTube.dfccad8e.chunk.js.map",
     "reactPlayerSoundCloud.344eba33.chunk.js.map": "/hiiter-demo/static/js/reactPlayerSoundCloud.344eba33.chunk.js.map",
     "reactPlayerVimeo.ddb368ec.chunk.js.map": "/hiiter-demo/static/js/reactPlayerVimeo.ddb368ec.chunk.js.map",
@@ -68,6 +68,6 @@
   },
   "entrypoints": [
     "static/css/main.8f0bcaee.css",
-    "static/js/main.7d6b0af0.js"
+    "static/js/main.cd0ddcb8.js"
   ]
 }
