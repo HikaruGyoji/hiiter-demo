@@ -283,23 +283,6 @@ select {
   text-decoration: none;
 }
 
-@media (max-height: 812px) {
-  .news-wrapper a img {
-    width: 180px;
-    height: 140px;
-  }
-  .active-info div {
-    padding: 10px 55px;
-  }
-}
-
-@media (max-height: 792px) {
-  .news-wrapper a img {
-    width: 170px;
-    height: 140px;
-  }
-}
-
 // アンドロイド対応
 @media (max-height: 760px) {
   .margin-area p {
